@@ -9,8 +9,10 @@ body {
 #container {
     margin: auto;
     width: 900px;
-    height: 80vh;
+    height: 600px;
+    max-height: 600px;
     display: flex;
+    background-color: black;
 }
 
 .left-side {
@@ -87,4 +89,9 @@ form label {
     box-sizing: border-box;
     padding: 20px;
     margin: 10px;
+}
+
+.big-text {
+    font-size: 2em;
+    margin-top: 10px;
 }
