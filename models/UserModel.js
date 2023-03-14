@@ -38,7 +38,18 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    
+    illnesses: {
+        type: String,
+        required: false
+    },
+    medications: {
+        type: String,
+        required: false
+    },
+    sleepApnea: {
+        type: String,
+        required: false
+    },
 })
 
 userSchema.statics.signup = async function (email, password, firstName, lastName, phoneNumber) {
