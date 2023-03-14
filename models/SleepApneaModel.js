@@ -1,0 +1,1 @@
+// apnea level: lievä, keskivaikea, vaikea, obstruktiivinen

@@ -6,7 +6,7 @@ const app = express();
 
 const options = {
     layoutsDir: 'views/layouts',
-    defaultLayout: 'main',
+    defaultLayout: 'split',
     partialsDir: 'views/partials',
     // helpers: require('./lib/helpers.js')
 };
@@ -24,6 +24,10 @@ app.get('/', (req, res) => {
         handlebars.registerHelper('rightPartial', function(context, options) {
             return 'signInRight'
         }));
+});
+
+app.get('/main', (req, res) => {
+    res.render('mainView', { layout: 'main-page' });
 });
 
 app.use(express.static('public/'));
