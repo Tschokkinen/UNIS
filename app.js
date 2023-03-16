@@ -1,9 +1,24 @@
+require('dotenv').config();
 const express = require('express');
+const cookieParser = require('cookie-parser');
 const { engine } = require('express-handlebars');
-const handlebars = require('handlebars');
-const { changePartial } = require('./lib/helpers.js');
+const { default: mongoose } = require('mongoose');
+const connectDB = require('./config/dbConnection');
+
+
+// Routes
+const index = require('./routes'); // Login, main and register
+
+connectDB();
 
 const app = express();
+
+app.use(express.json());
+
+app.use(cookieParser());
+
+// Required to get req.body data out
+app.use(express.urlencoded({ extended: true }));
 
 const options = {
     layoutsDir: 'views/layouts',
@@ -16,20 +31,12 @@ app.engine('handlebars', engine(options));
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 
-app.get('/', (req, res) => {
-    res.render(
-        'splitView',
-        changePartial('leftPartial', 'signInLeft'),
-        changePartial('rightPartial', 'signInRight')
-    )
-});
 
-app.get('/main', (req, res) => {
-    res.render('mainView', { layout: 'main-page' });
-});
+app.use('/', index);
 
 app.use(express.static('public/'));
 
-app.listen(3000, () => {
-    console.log("Server running on port: 3000");
+mongoose.connection.once('open', () => {
+    console.log("Connected to MongoDB");
+    app.listen(3000, () => console.log("Server running on port: 3000"));
 });
