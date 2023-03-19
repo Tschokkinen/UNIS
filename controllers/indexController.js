@@ -66,7 +66,6 @@ const signIn = async (req, res) => {
         );
 
         res.cookie('jwt', refreshToken, { httpOnly: true, secure: true, sameSite: 'None', maxAge: 24 * 60 * 60 * 1000 });
-        console.log("Result ", result);
         res.status(200).json({ accessToken });
     } else {
         res.sendStatus(401);
