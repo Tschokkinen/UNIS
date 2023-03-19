@@ -53,7 +53,7 @@ app.use(
 
 
 app.use('/', require('./routes/index'));
-// app.use(verifyJWT);
+app.use(verifyJWT);
 app.use('/main', require('./routes/main'));
 
 
