@@ -1,0 +1,2 @@
+15.3.2023
+- In signInLeft.handlebars: change login action from GET to POST

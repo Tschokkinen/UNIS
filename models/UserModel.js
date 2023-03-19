@@ -7,11 +7,11 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
     firstName: {
         type: String,
-        required: true
+        required: false
     },
     lastName: {
         type: String,
-        required: true
+        required: false
     },
     age: {
         type: Date,
@@ -27,7 +27,7 @@ const userSchema = new Schema({
     },
     phonenumber: {
         type: Number,
-        required: true
+        required: false
     },
     email: {
         type: String,
@@ -50,6 +50,7 @@ const userSchema = new Schema({
         type: String,
         required: false
     },
+    refreshToken: String
 })
 
 userSchema.statics.signup = async function (email, password, firstName, lastName, phoneNumber) {
