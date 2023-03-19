@@ -1,16 +1,13 @@
 const router = require('express').Router();
 
-const { signIn, register, registerUser, main } = require('../controllers/indexController');
-const { authorize } = require('../controllers/authorizationController');
+const { signInPage, signIn, registerPage, registerUser } = require('../controllers/indexController');
 
 router.route('/')
-    .get(signIn)
-    .post(authorize);
+    .get(signInPage)
+    .post(signIn);
 
 router.route('/register')
-    .get(register)
+    .get(registerPage)
     .post(registerUser);
-
-router.get('/main', main);
 
 module.exports = router;
