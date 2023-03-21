@@ -53,47 +53,48 @@ const userSchema = new Schema({
     refreshToken: String
 })
 
-userSchema.statics.signup = async function (email, password, firstName, lastName, phoneNumber) {
-    if (!email || !password || !firstName || !lastName || !phoneNumber) {
-        // Error here (throw Error)
-    }
-    if (!validator.isEmail(email)) {
-        // Error here
-    }
-    if (!validator.isStrongPassword(password)) {
-        // Error here
-    }
+// Statics not in use at the moment!
+// userSchema.statics.signup = async function (email, password, firstName, lastName, phoneNumber) {
+//     if (!email || !password || !firstName || !lastName || !phoneNumber) {
+//         // Error here (throw Error)
+//     }
+//     if (!validator.isEmail(email)) {
+//         // Error here
+//     }
+//     if (!validator.isStrongPassword(password)) {
+//         // Error here
+//     }
 
-    const exists = await this.findOne({ email });
+//     const exists = await this.findOne({ email });
 
-    if (exists) {
-        // Error here
-    }
+//     if (exists) {
+//         // Error here
+//     }
 
-    const salt = await bcrypt.genSalt(10);
-    const hash = await bcrypt.hash(password, salt);
+//     const salt = await bcrypt.genSalt(10);
+//     const hash = await bcrypt.hash(password, salt);
 
-    const user = await this.create({ email, password: hash, firstName, lastName, phoneNumber });
+//     const user = await this.create({ email, password: hash, firstName, lastName, phoneNumber });
 
-    return user;
-}
+//     return user;
+// }
 
-userSchema.statics.login = async function (email, password) {
-    if (!email || !password) {
-        // Error here
-    }
+// userSchema.statics.login = async function (email, password) {
+//     if (!email || !password) {
+//         // Error here
+//     }
 
-    const user = await this.findOne({email});
-    if (!user) {
-        // Error here
-    }
+//     const user = await this.findOne({email});
+//     if (!user) {
+//         // Error here
+//     }
 
-    const match = await bcrypt.compare(password, user.password);
-    if (!match) {
-        // Error
-    }
+//     const match = await bcrypt.compare(password, user.password);
+//     if (!match) {
+//         // Error
+//     }
 
-    return user;
-}
+//     return user;
+// }
 
 module.exports = mongoose.model('User', userSchema);

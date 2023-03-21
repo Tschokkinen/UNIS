@@ -1,28 +1,38 @@
 require('dotenv').config();
+
 const express = require('express');
-const session = require('express-session');
-const MongoStore = require("connect-mongo");
 const cookieParser = require('cookie-parser');
-const { logger } = require('./middleware/logger');
+const path = require('path')
 const { engine } = require('express-handlebars');
 const { default: mongoose } = require('mongoose');
 const connectDB = require('./config/dbConnection');
+
+// Middleware
 const verifyJWT = require('./middleware/verifyJWT');
+const { logger } = require('./middleware/logger');
+
+// Cors
 const cors = require('cors');
 const corsOptions = require('./config/corsOptions');
 
+// Connect to database
 connectDB();
+
 const app = express();
-app.use(logger);
+
+// Logger to get console logs for GET, POST etc.
+app.use(logger); 
+
 app.use(express.json());
 app.use(cookieParser());
+
+// Is cross origin (CORS) even needed???
 app.use(cors(corsOptions));
-
-
 
 // Required to get req.body data out
 app.use(express.urlencoded({ extended: true }));
 
+// Options for handlebars
 const options = {
     layoutsDir: 'views/layouts',
     defaultLayout: 'split',
@@ -34,29 +44,12 @@ app.engine('handlebars', engine(options));
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 
-app.use(express.static('public/'));
-
-app.use(
-    session({
-        secret: process.env.SECRET,
-        resave: true,
-        saveUninitialized: false,
-        cookie: {
-            httpOnly: true,
-            maxAge: 60000
-        },
-        store: MongoStore.create({
-            mongoUrl: process.env.MONGO_URI
-        })
-    })
-);
-
+// Path for static files
+app.use('/', express.static(path.join(__dirname, 'public/')));
 
 app.use('/', require('./routes/index'));
-app.use(verifyJWT);
+app.use(verifyJWT); // Endpoints beyond this middleware require authentication
 app.use('/main', require('./routes/main'));
-
-
 
 mongoose.connection.once('open', () => {
     console.log("Connected to MongoDB");
