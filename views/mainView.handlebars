@@ -20,12 +20,40 @@
 <section id="right">
     <button id="hrv_load">
         <img id="heart_img" src="assets/img/heart_ekg.png" alt="Download HRV measurements">
-        <br><span>HRV download<img id="green_light_img" src="assets/img/green_light'.png"
-                alt="HRV. Green light. Measured today."></span></button></button>
+        <br><span>HRV download</span></button></button>
     <button id="main_function_measure">
         <img id="sleep_img" src="assets/img/sleep.png" alt="Sleep meter">
         <br><span>Sleep meter<img id="green_light_img" src="assets/img/green_light'.png"
                 alt="Sleep meter. Green light. Measured today."></span></button>
+
+    <div class="form-popup" id="sleepMeterForm">
+        <form action="" class="form-container">
+            <section id="popup-left">
+                <h2 id="pop_up_header_sleep_meter">SLEEP METER</h2>
+                <p id="sleep_p">"How did you sleep?"</p>
+                <div class="smiley_meter">
+                    <img class="smiley_img" id="red_img" onclick="redMark('red_img')" src="assets/img/red.png"
+                        alt="I slept very well.">
+                    <img class="smiley_img" id="orange_img" onclick="orangeMark('orange_img')"
+                        src="assets/img/orange.png" alt="I slept well.">
+                    <img class="smiley_img" id="yellow_img" onclick="yellowMark('yellow_img')"
+                        src="assets/img/yellow.png" alt="I slept moderately.">
+                    <img class="smiley_img" id="green2_img" onclick="green2Mark('green2_img')"
+                        src="assets/img/green2.png" alt="I slept poorly.">
+                    <img class="smiley_img" id="green1_img" onclick="green1Mark('green1_img')"
+                        src="assets/img/green1.png" alt="I slept very poorly.">
+                </div>
+                <button type="submit" class="modal_save_btn">Save</button>
+            </section>
+            <section id="popup-right">
+                <button type="button" class="modal_save_btn cancel" onclick="closeForm()"
+                    aria-hidden="true">&times;</button>
+                <h2 id="pop_up_header_add_notes">Add notes</h2>
+                <input type="text" placeholder="Add notes. Max. 100 characters." maxlength="100">
+            </section>
+        </form>
+    </div>
+
     <button id="main_function_measure">
         <img id="mood_img" src="assets/img//emotions.png" alt="Mood meter.">
         <br><span>Mood meter<img id="green_light_img" src="assets/img/green_light'.png"
