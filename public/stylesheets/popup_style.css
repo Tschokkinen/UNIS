@@ -1,0 +1,137 @@
+/* The popup/modal form - hidden by default */
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 15%;
+    margin-bottom: 5%;
+    z-index: 3;
+    height: 80%;
+    width: 70%;
+    box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
+}
+
+#popup-left {
+    flex: 1.5;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border-style: ridge;
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+#popup-right {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    background-color: rgb(151, 150, 150);
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+#sleep_p {
+    color: black;
+    font-size: 1.5em;
+    font-style: italic;
+    margin-top: 10%;
+}
+
+#pop_up_header_sleep_meter {
+    margin-top: 40px;
+}
+
+#pop_up_header_add_notes {
+    margin-top: -15px;
+}
+
+/* Add styles to the form container */
+.form-container {
+    height: 100%;
+    padding: 16px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 5px;
+    display: flex;
+}
+
+/* input field */
+.form-container input[type=text] {
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    background: #f1f1f1;
+    float: right;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: black;
+    width: 60%;
+    height: 65%;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus {
+    background-color: white;
+    outline: none;
+    border-radius: 5px;
+}
+
+/* Set a style for the submit/login button */
+.form-container .modal_save_btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 20%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+    background-color: red;
+    align-self: flex-end;
+    align-items: center;
+    padding: 0px 0px;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 2em;
+}
+
+/* Add some hover effects to buttons */
+.form-container .modal_save_btn:hover,
+.open-button:hover {
+    opacity: 1;
+}
+
+.smiley_meter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 10%;
+    margin-bottom: 15%;
+}
+
+.smiley_img {
+    width: 15%;
+    min-width: 50px;
+    margin: 2%;
+    margin-top: -4%;
+}
+
+@media screen and (max-width:750px) {
+
+  .form-container {
+    flex-direction: column;
+  }
+  .form-popup {
+    height: 95%;
+    margin-right: 18%;
+  }
+}
