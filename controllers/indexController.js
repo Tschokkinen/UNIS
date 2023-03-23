@@ -30,20 +30,26 @@ const signIn = async (req, res) => {
         // // create a token
         //   const token = createToken(user._id);
 
-        if (!email || !password) return res.status(400).json({ 'message': 'Email and password required. ' });
+        // if (!email || !password) return res.status(400).json({ 'message': 'Email and password required. ' });
         // Render error page/notification here!
 
-        const findUser = await User.findOne({ email: email }).exec();
-        if (!findUser) return res.status(401);
+        // const findUser = await User.findOne({ email: email }).exec();
+        const user = await User.login(email, password);
+        // if (!user) return res.status(401);
 
-        const match = await bcrypt.compare(password, findUser.password);
+        // const match = await bcrypt.compare(password, user.password);
+        const _id = user._id;
+        console.log("ID: ", _id);
 
-        if (match) {
+        // Remove if-else when system is working: redundant due to 
+        // UserModel data verification!
+        if (user) {
             const accessToken = jwt.sign(
                 {
-                    "UserInfo": {
-                        "email": findUser.email
-                    }
+                    // "UserInfo": {
+                    //     "email": findUser.email
+                    // }
+                    _id
                 },
                 process.env.ACCESS_TOKEN_SECRET,
                 {
@@ -72,7 +78,7 @@ const registerPage = (req, res) => {
 
 // Verify registering form data
 const registerUser = async (req, res) => {
-    const { email, password } = req.body;
+    const { firstName, lastName, email, password } = req.body;
     console.log("Form data: ", req.body);
 
     if (!email || !password) {
@@ -89,6 +95,8 @@ const registerUser = async (req, res) => {
         const hashedPwd = await bcrypt.hash(password, saltRounds);
 
         const newUser = await User.create({
+            "lastName": lastName,
+            "firstName": firstName,
             "email": email,
             "password": hashedPwd
         });

@@ -1,7 +1,14 @@
 const router = require('express').Router();
 
-const main = require('../controllers/mainController');
+const { main, saveSleep } = require('../controllers/mainController');
 
 router.get('/', main);
+
+router.post('/saveSleep', saveSleep);
+
+router.get('/logout', (req, res) => {
+    res.clearCookie('cookieToken');
+    res.redirect('/');
+})
 
 module.exports = router;
