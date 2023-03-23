@@ -1,5 +1,49 @@
-const main = (req, res) => {
-        res.render('mainView', { layout: 'main-page' });
+const { changePartial } = require('../lib/helpers.js');
+const SleepReview = require('../models/SleepReview');
+const User = require('../models/UserModel');
+const jwt = require('jsonwebtoken');
+
+const main = async (req, res) => {
+        const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
+        console.log(decoded._id);
+
+        req.body.user = decoded._id;
+        const user = await User.findById(req.body.user);
+        const firstName = user.firstName;
+        const lastName = user.lastName;
+
+        console.log("User: ", user);
+        res.render(
+                'mainView',
+                {
+                        layout: 'main-page',
+                        firstName,
+                        lastName
+                }),
+                changePartial('sleepMeter', 'sleepMeter')
 };
 
-module.exports = main;
+const saveSleep = async (req, res) => {
+        try {
+                const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
+                console.log(decoded._id);
+                req.body.user = decoded._id;
+                console.log(req.body);
+                const sleeReview = await SleepReview.create({
+                        "comments": req.body.comments,
+                        "user": req.body.user
+                });
+
+                console.log(SleepReview);
+                res.redirect('/main');
+                // res.status(200).json({ "Message": "Success"});
+        } catch (err) {
+                console.error(err);
+                res.sendStatus(500);
+        }
+
+
+        // res.status(200);
+};
+
+module.exports = { main, saveSleep };
