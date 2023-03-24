@@ -38,12 +38,13 @@ const signIn = async (req, res) => {
         // if (!user) return res.status(401);
 
         // const match = await bcrypt.compare(password, user.password);
-        const _id = user._id;
-        console.log("ID: ", _id);
+
 
         // Remove if-else when system is working: redundant due to 
         // UserModel data verification!
         if (user) {
+            const _id = user._id;
+            // console.log("ID: ", _id);
             const accessToken = jwt.sign(
                 {
                     // "UserInfo": {
@@ -64,6 +65,8 @@ const signIn = async (req, res) => {
 
     } catch (error) {
         res.status(400).json({ error: error.message });
+        // res.status(400).redirect('/');
+        // res.status(400);
     }
 }
 

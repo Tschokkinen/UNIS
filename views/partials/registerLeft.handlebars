@@ -1,15 +1,19 @@
-<form id="register" class="form" action="/register" method="POST">
+
+<form id="formID" class="form" action="/register" method="POST">
+    <h1>Register new user</h1>
     <label for="firstName">First name</label>
-    <input id="firstName" type="text" name="firstName" placeholder="First name" />
+    <input tag="INPUT" class="big-input" id="firstName" type="text" name="firstName" placeholder="First name" />
 
     <label for="lastName">Last name</label>
-    <input id="lastName" type="text" name="lastName" placeholder="Last name" />
+    <input tag="INPUT" class="big-input" id="lastName" type="text" name="lastName" placeholder="Last name" />
 
     <label for="email">Email</label>
-    <input id="email" type="email" name="email" placeholder="Email" />
+    <input tag="INPUT" class="big-input"  id="email" type="email" name="email" placeholder="Email" />
 
     <label for="password">Password</label>
-    <input id="password" type="password" name="password" placeholder="Password" />
+    <input tag="INPUT" class="big-input" id="password" type="password" name="password" placeholder="Password" />
 </form>
 
-<button class="button" type="submit" form="register">Register</button>
+<button class="button" type="submit" form="formID">Register</button>
+
+<script src="scripts/validateForm.js"></script>

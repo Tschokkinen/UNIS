@@ -53,7 +53,7 @@ const userSchema = new Schema({
     refreshToken: String
 })
 
-// Statics not in use at the moment!
+// Static not in use at the moment!
 // userSchema.statics.signup = async function (email, password, firstName, lastName, phoneNumber) {
 //     if (!email || !password || !firstName || !lastName || !phoneNumber) {
 //         // Error here (throw Error)
@@ -79,19 +79,20 @@ const userSchema = new Schema({
 //     return user;
 // }
 
+// Handles user verification on login.
 userSchema.statics.login = async function (email, password) {
     if (!email || !password) {
-        // Error here
+        throw Error('All fields must be filled');
     }
 
     const user = await this.findOne({email});
     if (!user) {
-        // Error here
+        throw Error('Incorrect email');
     }
 
     const match = await bcrypt.compare(password, user.password);
     if (!match) {
-        // Error
+        throw Error('Incorrect password');
     }
 
     return user;

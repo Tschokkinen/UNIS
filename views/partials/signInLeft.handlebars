@@ -4,17 +4,17 @@
 </div>
 
 <!-- Log in form: Email and password -->
-<form id="signin-form" class="form" action="/" method="POST">
+<form id="formID" class="form" action="/" method="POST">
     <label for="email">Email</label>
-    <input class="big-input" id="email" type="email" name="email" placeholder="Email">
+    <input tag="INPUT" class="big-input" id="email" type="email" name="email" placeholder="Email">
 
     <label for="password">Password</label>
-    <input class="big-input" id="password" type="password" name="password" placeholder="Password" height="100">
+    <input tag="INPUT" class="big-input" id="password" type="password" name="password" placeholder="Password" height="100">
 </form>
 
 <div class="put-in-column">
     <!-- Log in button -->
-    <button class="button" type="submit" form="signin-form">SIGN IN</button>
+    <button class="button" type="submit" form="formID">SIGN IN</button>
 
     <!-- Register button -->
     <form class="form" action="/register" method="GET">
@@ -25,3 +25,7 @@
 <div class="align-center">
     <span>Problems logging in? Click here.</span>
 </div>
+
+
+
+<script src="scripts/validateForm.js"></script>
