@@ -1,5 +1,7 @@
 /* The popup/modal form - hidden by default */
-.form-popup {
+
+/*SLEEPMETER*/
+.form-popup-sleep {
     display: none;
     position: fixed;
     bottom: 0;
@@ -12,7 +14,7 @@
     box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
 }
 
-#popup-left {
+#popup-left-sleep {
     flex: 1.5;
     background-color: white;
     display: flex;
@@ -22,7 +24,7 @@
     flex-direction: column;
 }
 
-#popup-right {
+#popup-right-sleep {
     display: flex;
     align-items: center;
     flex: 1;
@@ -42,12 +44,12 @@
     margin-top: 40px;
 }
 
-#pop_up_header_add_notes {
+#pop_up_header_add_notes_sleep {
     margin-top: -15px;
 }
 
 /* Add styles to the form container */
-.form-container {
+.form-container-sleep {
     height: 100%;
     padding: 16px;
     background-color: white;
@@ -57,7 +59,7 @@
 }
 
 /* input field */
-.form-container input[type=text] {
+.form-container-sleep input[type=text] {
     padding: 15px;
     margin: 5px 0 22px 0;
     background: #f1f1f1;
@@ -70,14 +72,14 @@
 }
 
 /* When the inputs get focus, do something */
-.form-container input[type=text]:focus {
+.form-container-sleep input[type=text]:focus {
     background-color: white;
     outline: none;
     border-radius: 5px;
 }
 
 /* Set a style for the submit/login button */
-.form-container .modal_save_btn {
+.form-container-sleep .sleep_save_btn {
     background-color: #04AA6D;
     color: white;
     padding: 16px 20px;
@@ -90,7 +92,7 @@
 }
 
 /* Add a red background color to the cancel button */
-.form-container .cancel {
+.form-container-sleep .cancel {
     background-color: red;
     align-self: flex-end;
     align-items: center;
@@ -102,12 +104,11 @@
 }
 
 /* Add some hover effects to buttons */
-.form-container .modal_save_btn:hover,
-.open-button:hover {
+.form-container-sleep .sleep_save_btn:hover {
     opacity: 1;
 }
 
-.smiley_meter {
+.smiley_meter_sleep {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -118,20 +119,278 @@
     margin-bottom: 15%;
 }
 
-.smiley_img {
+.smiley_img_sleep {
     width: 15%;
     min-width: 50px;
     margin: 2%;
     margin-top: -4%;
 }
 
+/*MOODMETER*/
+
+.form-popup-mood {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 15%;
+    margin-bottom: 5%;
+    z-index: 3;
+    height: 80%;
+    width: 70%;
+    box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
+}
+
+#popup-left-mood {
+    flex: 1.5;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border-style: ridge;
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+#popup-right-mood {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    background-color: rgb(151, 150, 150);
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+#mood_p {
+    color: black;
+    font-size: 1.5em;
+    font-style: italic;
+    margin-top: 10%;
+}
+
+#pop_up_header_mood {
+    margin-top: 40px;
+}
+
+#pop_up_header_add_notes_mood {
+    margin-top: -15px;
+}
+
+/* Add styles to the form container */
+.form-container-mood {
+    height: 100%;
+    padding: 16px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 5px;
+    display: flex;
+}
+
+/* input field */
+.form-container-mood input[type=text] {
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    background: #f1f1f1;
+    float: right;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: black;
+    width: 60%;
+    height: 65%;
+}
+
+/* When the inputs get focus, do something */
+.form-container-mood input[type=text]:focus {
+    background-color: white;
+    outline: none;
+    border-radius: 5px;
+}
+
+/* Set a style for the submit/login button */
+.form-container-mood .mood_save_btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 20%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container-mood .cancel {
+    background-color: red;
+    align-self: flex-end;
+    align-items: center;
+    padding: 0px 0px;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 2em;
+}
+
+/* Add some hover effects to buttons */
+.form-container-mood .mood_save_btn:hover {
+    opacity: 1;
+}
+
+.smiley_meter_mood {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 10%;
+    margin-bottom: 15%;
+}
+
+.smiley_img_mood {
+    width: 15%;
+    min-width: 50px;
+    margin: 2%;
+    margin-top: -4%;
+}
+
+/*BLOOD PRESSURE FORM*/
+
+/*MOODMETER*/
+
+.form-popup-bloodpressure {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 15%;
+    margin-bottom: 5%;
+    z-index: 3;
+    height: 80%;
+    width: 70%;
+    box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
+}
+
+#popup-left-bloodpressure {
+    flex: 1.5;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border-style: ridge;
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+#popup-right-bloodpressure {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    background-color: rgb(151, 150, 150);
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+#bloodpressure_p {
+    color: black;
+    font-size: 1.5em;
+    font-style: italic;
+    margin-top: 10%;
+}
+
+#pop_up_header_bloodpressure {
+    margin-top: 40px;
+}
+
+#pop_up_header_add_notes_bloodpressure {
+    margin-top: -15px;
+}
+
+/* Add styles to the form container */
+.form-container-bloodpressure {
+    height: 100%;
+    padding: 16px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 5px;
+    display: flex;
+}
+
+/* input field */
+.form-container-bloodpressure input[type=text] {
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    background: #f1f1f1;
+    float: right;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: black;
+    width: 60%;
+    height: 65%;
+}
+
+/* When the inputs get focus, do something */
+.form-container-bloodpressure input[type=text]:focus {
+    background-color: white;
+    outline: none;
+    border-radius: 5px;
+}
+
+/* Set a style for the submit/login button */
+.form-container-bloodpressure .bloodpressure_save_btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 20%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container-bloodpressure .cancel {
+    background-color: red;
+    align-self: flex-end;
+    align-items: center;
+    padding: 0px 0px;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 2em;
+}
+
+/* Add some hover effects to buttons */
+.form-container-bloodpressure .bloodpressure_save_btn:hover {
+    opacity: 1;
+}
+
+
 @media screen and (max-width:750px) {
 
-  .form-container {
-    flex-direction: column;
-  }
-  .form-popup {
-    height: 95%;
-    margin-right: 18%;
-  }
+    .form-container-sleep {
+        flex-direction: column;
+    }
+
+    .form-popup-sleep {
+        height: 95%;
+        margin-right: 18%;
+    }
+
+    .form-container-mood {
+        flex-direction: column;
+    }
+
+    .form-popup-mood {
+        height: 95%;
+        margin-right: 18%;
+    }
+
+    .form-container-bloodpressure {
+        flex-direction: column;
+    }
+
+    .form-popup-bloodpressure {
+        height: 95%;
+        margin-right: 18%;
+    }
 }
