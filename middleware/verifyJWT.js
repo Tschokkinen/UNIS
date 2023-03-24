@@ -13,11 +13,10 @@ const verifyJWT = (req, res, next) => {
         process.env.ACCESS_TOKEN_SECRET,
         (err, decoded) => {
             if (err) {
-                res.sendStatus(403); // Invalid token
-                // res.redirect('/');
+                // res.sendStatus(403); // Invalid token
+                res.redirect('/');
             } else {
-                req.email = decoded.UserInfo.email;
-                console.log(req.email);
+                // req.email = decoded.UserInfo.email;
                 next();
             }
         }

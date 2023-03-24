@@ -1,7 +1,7 @@
 <section id="left">
     <div class="patient_info_list">
-        <h4 class="f_name">Firstname</h4>
-        <h4 class="l_name"> Lastname</h4>
+        <h4 class="f_name">{{firstName}}</h4>
+        <h4 class="l_name">{{lastName}}</h4>
         <img class="userimg" src="assets/img/user.png" alt="This is an image the user.">
         <div class="profile_details_box">
             <ul>
@@ -26,10 +26,10 @@
         <br><span>Sleep meter<img id="green_light_img" src="assets/img/green_light.png"
                 alt="Sleep meter. Green light. Measured today."></span></button>
 
-   {{> (sleepMeter) }}
+    {{> (sleepMeter) }}
 
     <button id="main_function_measure" onclick="openFormMood()">
-        <img id="mood_img" src="assets/img//emotions.png" alt="Mood meter.">
+        <img id="mood_img" src="assets/img/emotions.png" alt="Mood meter.">
         <br><span>Mood meter<img id="green_light_img" src="assets/img/green_light.png"
                 alt="Mood meter. Green light. Measured today."></span></button>
     

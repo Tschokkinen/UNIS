@@ -7,11 +7,11 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
     firstName: {
         type: String,
-        required: false
+        required: true
     },
     lastName: {
         type: String,
-        required: false
+        required: true
     },
     age: {
         type: Date,
@@ -79,22 +79,22 @@ const userSchema = new Schema({
 //     return user;
 // }
 
-// userSchema.statics.login = async function (email, password) {
-//     if (!email || !password) {
-//         // Error here
-//     }
+userSchema.statics.login = async function (email, password) {
+    if (!email || !password) {
+        // Error here
+    }
 
-//     const user = await this.findOne({email});
-//     if (!user) {
-//         // Error here
-//     }
+    const user = await this.findOne({email});
+    if (!user) {
+        // Error here
+    }
 
-//     const match = await bcrypt.compare(password, user.password);
-//     if (!match) {
-//         // Error
-//     }
+    const match = await bcrypt.compare(password, user.password);
+    if (!match) {
+        // Error
+    }
 
-//     return user;
-// }
+    return user;
+}
 
 module.exports = mongoose.model('User', userSchema);
