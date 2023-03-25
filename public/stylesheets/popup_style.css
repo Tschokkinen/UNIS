@@ -76,6 +76,7 @@
     border-radius: 5px;
 }
 
+
 /* Set a style for the submit/login button */
 .form-container .modal_save_btn {
     background-color: #04AA6D;
@@ -123,6 +124,18 @@
     min-width: 50px;
     margin: 2%;
     margin-top: -4%;
+}
+
+.form-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 10%;
+    margin-bottom: 15%;
 }
 
 @media screen and (max-width:750px) {
