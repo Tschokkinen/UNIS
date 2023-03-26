@@ -205,6 +205,7 @@
     border-radius: 8px;
 }
 
+
 /* Set a style for the submit/login button */
 .form-container-mood .mood_save_btn {
     background-color: #04AA6D;
@@ -253,6 +254,8 @@
     margin-top: -4%;
 }
 
+@media screen and (max-width:750px) {
+=======
 /*BLOOD PRESSURE FORM*/
 
 .form-popup-bloodpressure {

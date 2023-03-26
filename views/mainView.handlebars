@@ -6,9 +6,9 @@
         <img class="userimg" src="assets/img/user.png" alt="This is an image the user.">
         <div class="profile_details_box">
             <ul>
-                <li><b>Height: </b> <span id="height">000</span> cm</li><br>
-                <li><b>Weight: </b><span id="weight">000</span> kg</li><br>
-                <li><b>BMI= </b><span id="bmi">00</span></li><br>
+                <li><b>Height: </b> <span id="height">{{height}}</span> cm</li><br>
+                <li><b>Weight: </b><span id="weight">{{weight}}</span> kg</li><br>
+                <li><b>BMI= </b><span id="bmi">{{bmi}}</span></li><br>
                 <li><b>General health: </b><span id="general_health">Not available</span></li><br>
                 <li><b>Medications: </b><span id="medications">Not available</span></li><br>
                 <li><b>Sleep apnea: </b><span id="bmi">Not available</span></li>
@@ -30,7 +30,9 @@
 
     {{> (sleepMeter) }}
 
+
     <button id="main_function_measure" onclick="openFormMood()">
+
         <img id="mood_img" src="assets/img/emotions.png" alt="Mood meter.">
         <br><span>Mood meter<img id="green_light_img" src="assets/img/green_light.png"
                 alt="Mood meter. Green light. Measured today."></span></button>

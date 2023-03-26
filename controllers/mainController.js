@@ -3,6 +3,17 @@ const SleepReview = require('../models/SleepReview');
 const User = require('../models/UserModel');
 const jwt = require('jsonwebtoken');
 
+const calculateBMI = (height, weight) => {
+        let heightToInt = parseInt(height);
+        let weightToInt = parseInt(weight);
+        if (heightToInt === 0 || weightToInt === 0) {
+                return "0";
+        }
+        let bmi = (heightToInt * heightToInt) / weightToInt;
+        console.log(bmi);
+        return bmi.toString();
+}
+
 const main = async (req, res) => {
         const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
         console.log(decoded._id);
@@ -11,6 +22,9 @@ const main = async (req, res) => {
         const user = await User.findById(req.body.user);
         const firstName = user.firstName;
         const lastName = user.lastName;
+        const height = user.height ?? "0";
+        const weight = user.weight ?? "0";
+        const bmi = calculateBMI(height, weight);
 
         console.log("User: ", user);
         res.render(
@@ -18,14 +32,17 @@ const main = async (req, res) => {
                 {
                         layout: 'main-page',
                         firstName,
-                        lastName
+                        lastName,
+                        height,
+                        weight,
+                        bmi
                 }),
                 changePartial('sleepMeter', 'sleepMeter'),
                 changePartial('moodMeter', 'moodMeter'),
-                changePartial('bloodpressureMeter', 'bloodpressureMeter');
-                changePartial('messageToProfessional', 'messageToProfessional');
-                changePartial('messageToSupport', 'messageToSupport');
-                changePartial('changeUserInfo', 'changeUserInfo');
+                changePartial('bloodpressureMeter', 'bloodpressureMeter'),
+                changePartial('messageToProfessional', 'messageToProfessional'),
+                changePartial('messageToSupport', 'messageToSupport'),
+                changePartial('changeUserInfo', 'changeUserInfo')
 };
 
 const saveSleep = async (req, res) => {
@@ -49,7 +66,9 @@ const saveSleep = async (req, res) => {
 
 
         // res.status(200);
-}; const saveMood = (req, res) => {
+}; 
+
+const saveMood = (req, res) => {
         console.log(req.body);
         res.redirect('/main');
 };

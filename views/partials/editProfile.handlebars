@@ -1,0 +1,61 @@
+<div class="form-popup" id="editProfileForm">
+
+
+    <form id="" action="/" class="form-container" method="PATCH">
+        <section id="popup-left">
+            <h1>Change user info</h1>
+<div class="form-column">
+            <label for="firstName">First name</label>
+            <input tag="INPUT" class="big-input" id="firstName" type="text" name="firstName" placeholder="First name" />
+
+            <label for="lastName">Last name</label>
+            <input tag="INPUT" class="big-input" id="lastName" type="text" name="lastName" placeholder="Last name" />
+
+            <label for="height">Height</label>
+            <input class="big-input" id="height" type="text" name="height" placeholder="Height" />
+
+            <label for="weight">Weight</label>
+            <input class="big-input" id="weight" type="text" name="weight" placeholder="Weight" />
+
+            <label for="age">Age</label>
+            <input class="big-input" id="age" type="text" name="age" placeholder="Age" />
+
+            <label for="phonenumber">Phonenumber</label>
+            <input tag="INPUT" class="big-input" id="phonenumber" type="text" name="phonenumber"
+                placeholder="Phonenumber" />
+
+            <label for="email">Email</label>
+            <input tag="INPUT" class="big-input" id="email" type="email" name="email" placeholder="Email" />
+
+            <label for="password">Password</label>
+            <input tag="INPUT" class="big-input" id="password" type="password" name="password" placeholder="Password" />
+</div>
+            <button form="" type="submit" class="modal_save_btn"
+                onclick="closeFormWithParams('editProfileForm')">Save</button>
+
+        </section>
+
+
+        <section id="popup-right">
+            <button type="button" class="modal_save_btn cancel" onclick="closeFormWithParams('editProfileForm')"
+                aria-hidden="true">&times;</button>
+            <div class="patient_info_list">
+                <h4 class="f_name">{{firstName}}</h4>
+                <h4 class="l_name">{{lastName}}</h4>
+                <img class="userimg" src="assets/img/user.png" alt="This is an image the user.">
+                <div class="profile_details_box">
+                    <ul>
+                        <li><b>Height: </b> <span id="height">000</span> cm</li><br>
+                        <li><b>Weight: </b><span id="weight">000</span> kg</li><br>
+                        <li><b>BMI= </b><span id="bmi">00</span></li><br>
+                        <li><b>General health: </b><span id="general_health">Not available</span></li><br>
+                        <li><b>Medications: </b><span id="medications">Not available</span></li><br>
+                        <li><b>Sleep apnea: </b><span id="bmi">Not available</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </form>
+</div>
+
+<script src="scripts/validateForm.js"></script>
