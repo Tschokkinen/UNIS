@@ -50,6 +50,7 @@ app.use('/', express.static(path.join(__dirname, 'public/')));
 app.use('/', require('./routes/index'));
 app.use(verifyJWT); // Endpoints beyond this middleware require authentication
 app.use('/main', require('./routes/main'));
+app.use('/charts', require('./routes/charts'));
 
 mongoose.connection.once('open', () => {
     console.log("Connected to MongoDB");

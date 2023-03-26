@@ -14,8 +14,14 @@
                 <li><b>Sleep apnea: </b><span id="bmi">Not available</span></li>
             </ul>
         </div>
+<<<<<<< HEAD
+        <a href=""><button class="edit_profile_button" onclick="openForm">Edit profile</button></a>
+        {{!-- <button class="edit_profile_button" onclick="openFormWithParams('editProfileForm')">Edit profile</button>
+        --}}
+=======
         <button class="edit_profile_button" onclick="openFormChangeUserInfo()">Edit profile</button>
             {{> (changeUserInfo) }}
+>>>>>>> a862bfcbce57d78f033bf15f13370ca57ef79035
     </div>
 </section>
 
@@ -30,6 +36,10 @@
 
     {{> (sleepMeter) }}
 
+<<<<<<< HEAD
+    {{!-- {{> (editProfile) }} --}}
+=======
+>>>>>>> a862bfcbce57d78f033bf15f13370ca57ef79035
 
     <button id="main_function_measure" onclick="openFormMood()">
 
@@ -49,8 +59,12 @@
     <button id="main_function_other">
         <img id="oxygen_img" src="assets/img/oxygen.png" alt="Gadgets to treat sleep apnea and their evaluation.">
         <br><span>Gadgets</span></button>
+
     <button id="main_function_other">
-        <img id="graph_img" src="assets/img/graph.png" alt="History and analysis of measurements.">
+        <a href="/charts">
+            <img id="graph_img" src="assets/img/graph.png" alt="History and analysis of measurements.">
+        </a>
+        
         <br><span>History</span></button>
     <button id="main_function_other">
         <img id="book_img" src="assets/img/book.png" alt="Infobank for people with sleep apnea.">
