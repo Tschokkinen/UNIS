@@ -1,6 +1,14 @@
 const router = require('express').Router();
 
-const { main, saveSleep, saveMood, saveBloodpressure, messageToProfessional, messageToSupport, changeUserInfo } = require('../controllers/mainController');
+const { 
+    main, 
+    saveSleep, 
+    saveMood, 
+    saveBloodpressure, 
+    messageToProfessional, 
+    messageToSupport, 
+    changeUserInfo 
+} = require('../controllers/mainController');
 
 router.get('/', main);
 
