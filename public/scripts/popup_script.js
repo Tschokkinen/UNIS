@@ -2,6 +2,9 @@
 const sleepForm = document.getElementById("sleepMeterForm");
 const moodForm = document.getElementById("moodMeterForm");
 const bloodpressureForm = document.getElementById("bloodpressureForm");
+const sendMsgToPro = document.getElementById("messageToProForm");
+const sendMsgToSupport = document.getElementById("messageSupportForm");
+const changeUserInfo = document.getElementById("changeUserInfoForm");
 
 const redSmiley_sleep = document.getElementById("red_img_sleep");
 const orangeSmiley_sleep = document.getElementById("orange_img_sleep");
@@ -27,10 +30,25 @@ function openFormBP() {
     bloodpressureForm.style.display = "block";
 }
 
+function openFormSendMsgToPro() {
+    sendMsgToPro.style.display = "block";
+}
+
+function openFormSendMsgSupport() {
+    sendMsgToSupport.style.display = "block";
+}
+
+function openFormChangeUserInfo() {
+    changeUserInfo.style.display = "block";
+}
+
 function closeForm() {
     sleepForm.style.display = "none";
     moodForm.style.display = "none";
     bloodpressureForm.style.display = "none";
+    sendMsgToSupport.style.display = "none";
+    sendMsgToPro.style.display = "none";
+    sendMsgToSupport.style.display = "none";
 }
 
 function redMarkSleep() {

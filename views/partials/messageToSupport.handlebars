@@ -1,0 +1,15 @@
+<div class="form-popup-messageSupport" id="messageSupportForm">
+    <form id="messageSupport" action="/main/messageSupport" class="form-container-messageSupport" method="POST">
+        <section id="popup-left-messageSupport">
+            <h2 id="pop_up_header_messageSupport">MESSAGE IT-SUPPORT</h2>
+          <input class="smallInput" type="text" name="headerOfMessageSupport" placeholder="Header of your message." maxlength="50" required>
+          <input class="bigInput" type="text" name="contenOfMessageSupport" placeholder="Your message. Max 500 characters." maxlength="500" required>
+            <button form="messageSupport" type="submit" class="messageIT_send_btn" >Send</button>
+        </section>
+        <section id="popup-right-messageSupport">
+            <button type="button" class="messageIT_send_btn cancel" onclick="closeForm()"
+                aria-hidden="true">&times;</button>
+            <h2 id="pop_up_header_add_notes_messageSupport">Under construction...</h2>
+         </section>
+    </form>
+</div>

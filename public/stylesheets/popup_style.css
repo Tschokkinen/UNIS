@@ -59,7 +59,7 @@
 }
 
 /* input field */
-.form-container-sleep input[type=text] {
+.form-container-sleep input[type=text].bigInput {
     padding: 15px;
     margin: 5px 0 22px 0;
     background: #f1f1f1;
@@ -72,10 +72,10 @@
 }
 
 /* When the inputs get focus, do something */
-.form-container-sleep input[type=text]:focus {
+.form-container-sleep input[type=text]:focus.bigInput {
     background-color: white;
     outline: none;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 /* Set a style for the submit/login button */
@@ -186,7 +186,7 @@
 }
 
 /* input field */
-.form-container-mood input[type=text] {
+.form-container-mood input[type=text].bigInput {
     padding: 15px;
     margin: 5px 0 22px 0;
     background: #f1f1f1;
@@ -199,10 +199,10 @@
 }
 
 /* When the inputs get focus, do something */
-.form-container-mood input[type=text]:focus {
+.form-container-mood input[type=text]:focus.bigInput {
     background-color: white;
     outline: none;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 /* Set a style for the submit/login button */
@@ -255,8 +255,6 @@
 
 /*BLOOD PRESSURE FORM*/
 
-/*MOODMETER*/
-
 .form-popup-bloodpressure {
     display: none;
     position: fixed;
@@ -289,11 +287,11 @@
     flex-direction: column;
 }
 
-#bloodpressure_p {
-    color: black;
-    font-size: 1.5em;
+#bloodpressure_a {
+    color: rgb(26, 0, 156);
+    font-size: 1.2em;
     font-style: italic;
-    margin-top: 10%;
+    margin-bottom: 5%;
 }
 
 #pop_up_header_bloodpressure {
@@ -301,7 +299,7 @@
 }
 
 #pop_up_header_add_notes_bloodpressure {
-    margin-top: -15px;
+    margin-top: -40px;
 }
 
 /* Add styles to the form container */
@@ -314,8 +312,19 @@
     display: flex;
 }
 
-/* input field */
-.form-container-bloodpressure input[type=text] {
+/* input fields */
+
+.form-container-bloodpressure input[type=text].smallInput {
+    padding: 10px;
+    background: #f1f1f1;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: black;
+    margin-bottom: 5%;
+}
+
+
+.form-container-bloodpressure input[type=text].bigInput {
     padding: 15px;
     margin: 5px 0 22px 0;
     background: #f1f1f1;
@@ -328,10 +337,10 @@
 }
 
 /* When the inputs get focus, do something */
-.form-container-bloodpressure input[type=text]:focus {
+.form-container-bloodpressure input[type=text]:focus.smallInput.bigInput {
     background-color: white;
     outline: none;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 /* Set a style for the submit/login button */
@@ -343,7 +352,7 @@
     border-radius: 5px;
     cursor: pointer;
     width: 20%;
-    margin-bottom: 10px;
+    margin-bottom: 10%;
     opacity: 0.8;
 }
 
@@ -361,6 +370,350 @@
 
 /* Add some hover effects to buttons */
 .form-container-bloodpressure .bloodpressure_save_btn:hover {
+    opacity: 1;
+}
+
+/*SEND MESSAGE TO PROFESSIONAL*/
+
+.form-popup-messagePro {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 15%;
+    margin-bottom: 5%;
+    z-index: 3;
+    height: 80%;
+    width: 70%;
+    box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
+}
+
+#popup-left-messagePro {
+    flex: 1.5;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border-style: ridge;
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+#popup-right-messagePro {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    background-color: rgb(151, 150, 150);
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+#messagePro_a {
+    color: rgb(26, 0, 156);
+    font-size: 1.2em;
+    font-style: italic;
+    margin-bottom: 5%;
+}
+
+#pop_up_header_messagePro {
+    margin-top: 40px;
+}
+
+#pop_up_header_add_notes_messagePro {
+    margin-top: -40px;
+}
+
+/* Add styles to the form container */
+.form-container-messagePro {
+    height: 100%;
+    padding: 16px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 5px;
+    display: flex;
+}
+
+/* input fields */
+
+.form-container-messagePro input[type=text].smallInput  {
+    margin-bottom: 7%;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: black;
+    padding: 2%;
+}
+
+.form-container-messagePro input[type=text].bigInput {
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    background: #f1f1f1;
+    float: right;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: black;
+    width: 60%;
+    height: 65%;
+}
+
+/* When the inputs get focus, do something */
+.form-container-messagePro input[type=text]:focus.bigInput.smallInput {
+    background-color: white;
+    outline: none;
+    border-radius: 8px;
+}
+
+/* Set a style for the submit/login button */
+.form-container-messagePro .message_send_btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 20%;
+    margin-bottom: 10%;
+    opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container-messagePro .cancel {
+    background-color: red;
+    align-self: flex-end;
+    align-items: center;
+    padding: 0px 0px;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 2em;
+}
+
+/* Add some hover effects to buttons */
+.form-container-messagePro .message_send_btn .message_send_btn:hover {
+    opacity: 1;
+}
+
+/*MESSAGE TO SUPPORT*/
+
+.form-popup-messageSupport {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 15%;
+    margin-bottom: 5%;
+    z-index: 3;
+    height: 80%;
+    width: 70%;
+    box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
+}
+
+#popup-left-messageSupport {
+    flex: 1.5;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border-style: ridge;
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+#popup-right-messageSupport {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    background-color: rgb(151, 150, 150);
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+#messageSupport_a {
+    color: rgb(26, 0, 156);
+    font-size: 1.2em;
+    font-style: italic;
+    margin-bottom: 5%;
+}
+
+#pop_up_header_messageSupport {
+    margin-top: 40px;
+}
+
+#pop_up_header_add_notes_messageSupport {
+    margin-top: -40px;
+}
+
+/* Add styles to the form container */
+.form-container-messageSupport {
+    height: 100%;
+    padding: 16px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 5px;
+    display: flex;
+}
+
+/* input fields */
+
+.form-container-messageSupport input[type=text].smallInput  {
+    padding: 10px;
+    width: 20%;
+    background: #f1f1f1;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: black;
+    margin-bottom: 7%;
+}
+
+.form-container-messageSupport input[type=text].bigInput {
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    background: #f1f1f1;
+    float: right;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: black;
+    width: 60%;
+    height: 65%;
+}
+
+/* When the inputs get focus, do something */
+.form-container-messageSupport input[type=text]:focus.smallInput.bigInput {
+    background-color: white;
+    outline: none;
+    border-radius: 8px;
+}
+
+/* Set a style for the submit/login button */
+.form-container-messageSupport .messageIT_send_btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 20%;
+    margin-bottom: 10%;
+    opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container-messageSupport .cancel {
+    background-color: red;
+    align-self: flex-end;
+    align-items: center;
+    padding: 0px 0px;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 2em;
+}
+
+/* Add some hover effects to buttons */
+.form-container-messageSupport .message_send_btn .message_send_btn:hover {
+    opacity: 1;
+}
+
+/*CHANGE USER INFO*/
+
+.form-popup-changeUserInfo {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 15%;
+    margin-bottom: 5%;
+    z-index: 3;
+    height: 80%;
+    width: 70%;
+    box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
+}
+
+#popup-left-changeUserInfo {
+    flex: 1.5;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border-style: ridge;
+    border-radius: 5px;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#popup-right-changeUserInfo {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    background-color: rgb(151, 150, 150);
+    border-radius: 5px;
+    flex-direction: column;
+}
+
+#pop_up_header_changeUserInfo {
+    margin-top: 40px;
+}
+
+.fl_name {
+    margin-top: -40px;
+    line-height: 2;
+}
+
+/* Add styles to the form container */
+.form-container-changeUserInfo {
+    height: 100%;
+    padding: 16px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 5px;
+    display: flex;
+}
+
+.changeUserInfoAttr{
+}
+
+/* input fields */
+
+.form-container-changeUserInfo input[type=text].smallInput  {
+    margin-top: -15px;
+    padding: 5px;
+    background: #f1f1f1;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: black;
+}
+
+/* When the inputs get focus, do something */
+.form-container-messageSupport input[type=text]:focus.smallInput {
+    background-color: white;
+    outline: none;
+    border-radius: 8px;
+}
+
+/* Set a style for the submit/login button */
+.form-container-changeUserInfo .changeUserInfo_send_btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 20%;
+    margin-bottom: 10%;
+    opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container-changeUserInfo .cancel {
+    background-color: red;
+    align-self: flex-end;
+    align-items: center;
+    padding: 0px 0px;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 2em;
+}
+
+/* Add some hover effects to buttons */
+.form-container-mchangeUserInfo .changeUserInfo_send_btn:hover {
     opacity: 1;
 }
 
@@ -390,6 +743,24 @@
     }
 
     .form-popup-bloodpressure {
+        height: 95%;
+        margin-right: 18%;
+    }
+
+    .form-container-messagePro {
+        flex-direction: column;
+    }
+
+    .form-popup-messagePro {
+        height: 95%;
+        margin-right: 18%;
+    }
+
+    .form-container-messageSupport {
+        flex-direction: column;
+    }
+
+    .form-popup-messageSupport {
         height: 95%;
         margin-right: 18%;
     }

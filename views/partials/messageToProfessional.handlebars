@@ -1,0 +1,15 @@
+<div class="form-popup-messagePro" id="messageToProForm">
+    <form id="messageToPro" action="/main/messageToProfessional" class="form-container-messagePro" method="POST">
+        <section id="popup-left-messagePro">
+            <h2 id="pop_up_header_messagePro">MESSAGE YOUR PROFESSIONAL</h2>
+            <input class="smallInput" type="text" name="messageToProHeader" placeholder="Topic of your message." maxlength="50" required>
+            <input class="bigInput" type="text" name="messageToProContent" placeholder="Message to your healthcare professional. Max. 500 characters." maxlength="500" required>
+           <button form="messageTopro" type="submit" class="message_send_btn" >Send</button>
+        </section>
+        <section id="popup-right-messagePro">
+            <button type="button" class="message_send_btn cancel" onclick="closeForm()"
+                aria-hidden="true">&times;</button>
+            <h2 id="pop_up_header_add_notes_messageTopro">Under construction...</h2>
+             </section>
+    </form>
+</div>
