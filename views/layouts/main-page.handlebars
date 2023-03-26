@@ -15,29 +15,31 @@
 
 <body>
     <div class="wrapper">
-        <header>
+             <header>
             <img class="unislogo" src="/assets/img/UNIS_logo.png" alt="UNIS sleep apnea application logo.">
             <nav>
                 <ul>
-                    <li><a href=""><i class="fa-sharp fa-solid fa-circle-info"></i></a></li>
-                    <li><a href=""><i class="fa-solid fa-envelope"></i></a></li>
+                    <li><a onclick="openFormSendMsgSupport()"><i class="fa-sharp fa-solid fa-circle-info"></i></a></li>
+                        {{> (messageToSupport) }}
+                    <li><a onclick="openFormSendMsgToPro()"><i class="fa-solid fa-envelope"></i></a></li>
+                        {{> (messageToProfessional) }}
                     <li><a href="/main/logout"><button class="logOutButton">LOG OUT</button></a></li>
                 </ul>
             </nav>
         </header>
 
-        <main class="container">
+    <main class="container">
 
             {{{ body }}}
-            
-        </main>
+
+    </main>
 
     </div>
 
     <footer>
         <p class="copy">This is a footer with copyrights</p>
     </footer>
-    <script src="scripts/popup_script1.js"></script>
+    <script src="scripts/popup_script.js"></script>
 </body>
 
 </html>

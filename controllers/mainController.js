@@ -20,7 +20,12 @@ const main = async (req, res) => {
                         firstName,
                         lastName
                 }),
-                changePartial('sleepMeter', 'sleepMeter')
+                changePartial('sleepMeter', 'sleepMeter'),
+                changePartial('moodMeter', 'moodMeter'),
+                changePartial('bloodpressureMeter', 'bloodpressureMeter');
+                changePartial('messageToProfessional', 'messageToProfessional');
+                changePartial('messageToSupport', 'messageToSupport');
+                changePartial('changeUserInfo', 'changeUserInfo');
 };
 
 const saveSleep = async (req, res) => {
@@ -44,6 +49,29 @@ const saveSleep = async (req, res) => {
 
 
         // res.status(200);
+}; const saveMood = (req, res) => {
+        console.log(req.body);
+        res.redirect('/main');
 };
 
-module.exports = { main, saveSleep };
+const saveBloodpressure = (req, res) => {
+        console.log(req.body);
+        res.redirect('/main');
+};
+
+const messageToProfessional = (req, res) => {
+        console.log(req.body);
+        res.redirect('/main');
+};
+
+const messageToSupport = (req, res) => {
+        console.log(req.body);
+        res.redirect('/main');
+};
+
+const changeUserInfo = (req, res) => {
+        console.log(req.body);
+        res.redirect('/main');
+};
+
+module.exports = { main, saveSleep, saveSleep, saveMood, saveBloodpressure, messageToProfessional, messageToSupport, changeUserInfo };
