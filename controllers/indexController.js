@@ -100,6 +100,10 @@ const registerUser = async (req, res) => {
         const newUser = await User.create({
             "lastName": lastName,
             "firstName": firstName,
+            "height": "",
+            "weight": "",
+            "age": "",
+            "phonenumber": "",
             "email": email,
             "password": hashedPwd
         });

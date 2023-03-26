@@ -7,10 +7,12 @@ const {
     saveBloodpressure, 
     messageToProfessional, 
     messageToSupport, 
-    changeUserInfo 
+    changeUserInfo,
+    requestUserData
 } = require('../controllers/mainController');
 
 router.get('/', main);
+router.get('/requestUserData', requestUserData);
 
 router.post('/saveSleep', saveSleep);
 router.post('/saveMood', saveMood);

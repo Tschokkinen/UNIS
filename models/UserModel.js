@@ -14,7 +14,7 @@ const userSchema = new Schema({
         required: true
     },
     age: {
-        type: Date,
+        type: Number, // Convert to Date and new Date() for automatic age calculation!
         required: false
     },
     weight: {
@@ -25,8 +25,8 @@ const userSchema = new Schema({
         type: Number,
         required: false
     },
-    phonenumber: {
-        type: Number,
+    phonenumber: { 
+        type: String, // Using Number leads to having first zero dropped form the number!
         required: false
     },
     email: {

@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const sleepReviewSchema = new Schema({
-    sleepQuality: {
+const moodReviewSchema = new Schema({
+    moodQuality: {
         type: Number,
         required: false
     },
@@ -21,4 +21,4 @@ const sleepReviewSchema = new Schema({
     }
 })
 
-module.exports = mongoose.model('SleepReview', sleepReviewSchema);
+module.exports = mongoose.model('MoodReview', moodReviewSchema);
