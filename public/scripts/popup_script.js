@@ -49,6 +49,7 @@ function closeForm() {
     sendMsgToSupport.style.display = "none";
     sendMsgToPro.style.display = "none";
     sendMsgToSupport.style.display = "none";
+    changeUserInfo.style.display = "none";
 }
 
 function redMarkSleep() {

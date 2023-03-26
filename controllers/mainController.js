@@ -1,29 +1,52 @@
 const { changePartial } = require('../lib/helpers.js');
-const SleepReview = require('../models/SleepReview');
-const User = require('../models/UserModel');
 const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
+
+const UserModel = require('../models/UserModel');
+const User = require('../models/UserModel');
+const SleepReview = require('../models/SleepReview');
+const MoodReview = require('../models/MoodReview');
+
+const saltRounds = 10;
 
 const calculateBMI = (height, weight) => {
-        let heightToInt = parseInt(height);
-        let weightToInt = parseInt(weight);
-        if (heightToInt === 0 || weightToInt === 0) {
+        // let heightToInt = parseInt(height);
+        // let weightToInt = parseInt(weight);
+        // if (heightToInt === 0 || weightToInt === 0) {
+        //         return "0";
+        // }
+
+        if (height === 0 || weight === 0) {
                 return "0";
         }
-        let bmi = (heightToInt * heightToInt) / weightToInt;
+
+        let bmi = (height * height) / weight;
         console.log(bmi);
-        return bmi.toString();
+        return bmi.toFixed(2);
+
+        // let bmi = (heightToInt * heightToInt) / weightToInt;
+        // console.log(bmi);
+        // return bmi.toString();
+}
+
+const getUserID = (req) => {
+        const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
+        // console.log(decoded._id);
+        req.body.user = decoded._id;
+        return req.body.user;
 }
 
 const main = async (req, res) => {
-        const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
-        console.log(decoded._id);
+        // const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
+        // console.log(decoded._id);
 
-        req.body.user = decoded._id;
-        const user = await User.findById(req.body.user);
+        // req.body.user = decoded._id;
+        // const userID = decode(req);
+        const user = await User.findById(getUserID(req));
         const firstName = user.firstName;
         const lastName = user.lastName;
-        const height = user.height ?? "0";
-        const weight = user.weight ?? "0";
+        const height = user.height ?? 0;
+        const weight = user.weight ?? 0;
         const bmi = calculateBMI(height, weight);
 
         console.log("User: ", user);
@@ -47,16 +70,16 @@ const main = async (req, res) => {
 
 const saveSleep = async (req, res) => {
         try {
-                const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
-                console.log(decoded._id);
-                req.body.user = decoded._id;
-                console.log(req.body);
-                const sleeReview = await SleepReview.create({
-                        "comments": req.body.comments,
-                        "user": req.body.user
+                // const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
+                // console.log(decoded._id);
+                // req.body.user = decoded._id;
+                // console.log(req.body);
+                await SleepReview.create({
+                        "comments": req.body.sleepmetertext,
+                        "user": getUserID(req)
+                        // "user": req.body.user
                 });
 
-                console.log(SleepReview);
                 res.redirect('/main');
                 // res.status(200).json({ "Message": "Success"});
         } catch (err) {
@@ -64,13 +87,29 @@ const saveSleep = async (req, res) => {
                 res.sendStatus(500);
         }
 
+        // res.status(200);
+};
+
+const saveMood = async (req, res) => {
+        try {
+                // const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
+                // console.log(decoded._id);
+                // req.body.user = decoded._id;
+                // console.log(req.body);
+                await MoodReview.create({
+                        "comments": req.body.moodmetertext,
+                        "user": getUserID(req)
+                        // "user": req.body.user
+                });
+
+                res.redirect('/main');
+                // res.status(200).json({ "Message": "Success"});
+        } catch (err) {
+                console.error(err);
+                res.sendStatus(500);
+        }
 
         // res.status(200);
-}; 
-
-const saveMood = (req, res) => {
-        console.log(req.body);
-        res.redirect('/main');
 };
 
 const saveBloodpressure = (req, res) => {
@@ -88,9 +127,73 @@ const messageToSupport = (req, res) => {
         res.redirect('/main');
 };
 
-const changeUserInfo = (req, res) => {
-        console.log(req.body);
+const changeUserInfo = async (req, res) => {
+        const { 
+                firstName, 
+                lastName, 
+                height, 
+                weight, 
+                age, 
+                phonenumber, 
+                email, 
+                password 
+        } = req.body;
+
+        const hashedPwd = await bcrypt.hash(password, saltRounds);
+        // console.log(req.body);
+
+        // Get current user data.
+        const user = await User.findById(getUserID(req));
+
+        // console.log("Current user height: ", user.height);
+
+        await UserModel.updateOne(
+                {
+                        _id: getUserID(req)
+                },
+                {
+                        $set:
+                        {
+                                "firstName": firstName != "" ? firstName : user.firstName,
+                                "lastName": lastName != "" ? lastName : user.lastName,
+                                "height": height != "" ? height : user.height,
+                                "weight": weight != "" ? weight : user.weight,
+                                "age": age != "" ? age : user.age,
+                                "phonenumber": phonenumber != "" ? phonenumber : user.phonenumber,
+                                "email": email != "" ? email : user.email,
+                                "password": hashedPwd != "" ? hashedPwd : user.password
+                        }
+                }
+        )
+
         res.redirect('/main');
 };
 
-module.exports = { main, saveSleep, saveSleep, saveMood, saveBloodpressure, messageToProfessional, messageToSupport, changeUserInfo };
+const requestUserData = async (req, res) => {
+        const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
+        // console.log(decoded._id);
+        req.body.user = decoded._id;
+        const user = await User.findById(req.body.user);
+        const userData = {
+                "firstName": user.firstName,
+                "lastName": user.lastName,
+                "weight": user.weight,
+                "height": user.height,
+                "age": user.age,
+                "phonenumber": user.phonenumber,
+                "email": user.email
+        };
+        res.status(200).json(userData);
+}
+
+module.exports = {
+        main,
+        saveSleep,
+        saveSleep,
+        saveMood,
+        saveBloodpressure,
+        messageToProfessional,
+        messageToSupport,
+        changeUserInfo,
+        requestUserData
+};
