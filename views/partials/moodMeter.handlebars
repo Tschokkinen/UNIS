@@ -1,0 +1,27 @@
+<div class="form-popup-mood" id="moodMeterForm">
+    <form id="moodMeter" action="/main/saveMood" class="form-container-mood" method="POST">
+        <section id="popup-left-mood">
+            <h2 id="pop_up_header_mood">MOOD METER</h2>
+            <p id="mood_p">"How are you feeling today??"</p>
+            <div class="smiley_meter_mood">
+                <img class="smiley_img_mood" id="red_img_mood" onclick="redMarkMood('red_img_mood')"
+                    src="assets/img/moodMeterImg/red_mood.png" alt="My mood is very bad.">
+                <img class="smiley_img_mood" id="orange_img_mood" onclick="orangeMarkMood('orange_img_mood')"
+                    src="assets/img/moodMeterImg/orange_mood.png" alt="My mood is bad.">
+                <img class="smiley_img_mood" id="yellow_img_mood" onclick="yellowMarkMood('yellow_img_mood')"
+                    src="assets/img/moodMeterImg/yellow_mood.png" alt="My mood is moderate.">
+                <img class="smiley_img_mood" id="green2_img_mood" onclick="green2MarkMood('green2_img_mood')"
+                    src="assets/img/moodMeterImg/green2_mood.png" alt="My mood is good.">
+                <img class="smiley_img_mood" id="green1_img_mood" onclick="green1MarkMood('green1_img_mood')"
+                    src="assets/img/moodMeterImg/green1_mood.png" alt="My mood is very good.">
+            </div>
+            <button form="moodMeter" type="submit" class="mood_save_btn" onclick="closeForm()">Save</button>
+        </section>
+        <section id="popup-right-mood">
+            <button type="button" class="mood_save_btn cancel" onclick="closeForm()" aria-hidden="true">&times;</button>
+            <h2 id="pop_up_header_add_notes_mood">Add notes</h2>
+            <input class="bigInput" type="text" name="moodmetertext" placeholder="Add notes. Max. 100 characters."
+                maxlength="100">
+        </section>
+    </form>
+</div>
