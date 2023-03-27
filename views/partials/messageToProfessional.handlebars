@@ -2,14 +2,29 @@
     <form id="messageToPro" action="/main/messageToProfessional" class="form-container-messagePro" method="POST">
         <section id="popup-left-messagePro">
             <h2 id="pop_up_header_messagePro">MESSAGE YOUR PROFESSIONAL</h2>
-            <input class="smallInput" type="text" name="messageToProHeader" placeholder="Topic of your message." maxlength="50" required>
+            <h5 id="headers_msgPro">Topic:</h5>
+            <input class="smallInput" type="text" name="messageToProHeader" placeholder="Topic of your message." maxlength="50" required><br>
+            <h5 id="headers_msgPro">Message:</h5>
             <input class="bigInput" type="text" name="messageToProContent" placeholder="Message to your healthcare professional. Max. 500 characters." maxlength="500" required>
-           <button form="messageTopro" type="submit" class="message_send_btn" >Send</button>
+           <button form="messageToPro" type="submit" class="message_send_btn" >Send</button>
         </section>
         <section id="popup-right-messagePro">
             <button type="button" class="message_send_btn cancel" onclick="closeForm()"
                 aria-hidden="true">&times;</button>
-            <h2 id="pop_up_header_add_notes_messageTopro">Under construction...</h2>
+            <h2 id="header_messagePro">YTHS - Contact</h2>
+            
+            <figure id="msgProFigure">
+                <figcaption><a href="www.yths.fi">www.yths.fi</a></figcaption>
+                <img class="msgProImg" src="assets/img/msgPro_img.png" alt="Message to professional image. Stethoscope.">    
+            </figure>
+
+            <div class="YTHS_details_box">
+            <ul>
+                <li><b>Your professional: </b>Teija Terkka, th</li>
+                <li class="listitemsMsgPro"><b>E-mail: </b> teija.terkka@yths.fi</li>
+                <li class="listitemsMsgPro"><b>Tel: </b> 010 123 1234 (Weekdays, 9-15)</li>
+            </ul>
+        </div>
              </section>
     </form>
 </div>
