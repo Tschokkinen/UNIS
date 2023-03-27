@@ -10,17 +10,13 @@ const MoodReview = require('../models/MoodReview');
 const saltRounds = 10;
 
 const calculateBMI = (height, weight) => {
-        // let heightToInt = parseInt(height);
-        // let weightToInt = parseInt(weight);
-        // if (heightToInt === 0 || weightToInt === 0) {
-        //         return "0";
-        // }
-
         if (height === 0 || weight === 0) {
                 return "0";
         }
 
-        let bmi = (height * height) / weight;
+        const heightToMeters = height/100;
+        console.log("heightToMeters: ", heightToMeters);
+        let bmi = weight / (heightToMeters * heightToMeters);
         console.log(bmi);
         return bmi.toFixed(2);
 
