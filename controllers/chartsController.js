@@ -1,5 +1,7 @@
 const SleepReview = require('../models/SleepReview');
 const MoodReview = require('../models/MoodReview');
+const Bloodpressure = require('../models/BloodPressureModel');
+
 const User = require('../models/UserModel');
 const jwt = require('jsonwebtoken');
 const path = require('path');
@@ -15,20 +17,21 @@ const getSleepData = async (req, res) => {
     const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
         // console.log(decoded._id);
     req.body.user = decoded._id;
-    const user = await User.findById(req.body.user);
+    // const user = await User.findById(req.body.user);
 
     const sleepReviews = await SleepReview.find({ 'user': req.body.user });
-    console.log(sleepReviews);
+    // console.log(sleepReviews);
     const sleeps = [];
     for (var i = 0; i < sleepReviews.length; i++) {
         // sleeps.push(sleepReviews[i].sleepQuality);
         const newSleep = {
             'sleepQuality': sleepReviews[i].sleepQuality,
-            'date': sleepReviews[i].createdAt
+            'date': sleepReviews[i].createdAt,
+            'comments': sleepReviews[i].comments
         }
         sleeps.push(newSleep);
     }
-    console.log(sleeps);
+    // console.log(sleeps);
     // res.status(200).json({ 'message': 'success '});
     res.json(sleeps);
 }
@@ -37,22 +40,43 @@ const getMoodData = async (req, res) => {
     const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
         // console.log(decoded._id);
     req.body.user = decoded._id;
-    const user = await User.findById(req.body.user);
+    // const user = await User.findById(req.body.user);
 
     const moodReviews = await MoodReview.find({ 'user': req.body.user });
-    console.log(moodReviews);
+    // console.log(moodReviews);
     const moods = [];
     for (var i = 0; i < moodReviews.length; i++) {
         // sleeps.push(sleepReviews[i].sleepQuality);
         const newMood = {
             'moodQuality': moodReviews[i].moodQuality,
+            'comments': moodReviews[i].comments,
             'date': moodReviews[i].createdAt
         }
         moods.push(newMood);
     }
-    console.log(moods);
+    // console.log(moods);
     // res.status(200).json({ 'message': 'success '});
     res.json(moods);
 }
 
-module.exports = { getSleepReviews, getSleepData, getMoodData };
+const getBloodpressureData = async (req, res) => {
+    const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
+    req.body.user = decoded._id;
+    // const user = await User.findById(req.body.user);
+
+    const bloodpressure = await Bloodpressure.find({'user': req.body.user});
+    const bloodpressures = [];
+    for (var i = 0; i < bloodpressure.length; i++) {
+        const newBloodpressure = {
+            'systolicPressure': bloodpressure[i].systolicPressure,
+            'diastolicPressure': bloodpressure[i].diastolicPressure,
+            'comments': bloodpressure[i].comments,
+            'date': bloodpressure[i].createdAt
+        }
+        bloodpressures.push(newBloodpressure);
+    }
+    console.log("chartsController (bloodpressures): ", bloodpressures);
+    res.json(bloodpressures);
+}
+
+module.exports = { getSleepReviews, getSleepData, getMoodData, getBloodpressureData };
