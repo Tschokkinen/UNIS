@@ -407,19 +407,53 @@
     flex-direction: column;
 }
 
-#messagePro_a {
-    color: rgb(26, 0, 156);
-    font-size: 1.2em;
-    font-style: italic;
-    margin-bottom: 5%;
-}
-
 #pop_up_header_messagePro {
     margin-top: 40px;
 }
 
-#pop_up_header_add_notes_messagePro {
-    margin-top: -40px;
+#header_messagePro {
+    margin-top: -15px;
+    margin-bottom: 8px;
+}
+
+#msgProFigure {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+}
+
+#msgProFigure figcaption {
+    margin-bottom: 10px;
+}
+
+.msgProImg {
+    border-radius: 50%;
+    width: 30%;
+    box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.YTHS_details_box {
+    background-color: rgb(241, 241, 241);
+    padding-bottom: 0.2em;
+    border-radius: 7px;
+    border-style: solid;
+    border-width: 2px;
+    width: 80%;
+    margin: 28px;
+}
+
+.YTHS_details_box ul {
+    list-style-type:circle;
+    font-size: 1em;
+    margin-left: 2em;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.2em;
+}
+
+.YTHS_details_box ul .listitemsMsgPro {
+    margin-top: -24px;
 }
 
 /* Add styles to the form container */
@@ -435,27 +469,35 @@
 /* input fields */
 
 .form-container-messagePro input[type=text].smallInput  {
-    margin-bottom: 7%;
     border-radius: 5px;
     border-width: 2px;
     border-color: black;
+    background: #f1f1f1;
     padding: 2%;
+    width: 75%;
 }
 
 .form-container-messagePro input[type=text].bigInput {
     padding: 15px;
-    margin: 5px 0 22px 0;
     background: #f1f1f1;
     float: right;
     border-radius: 5px;
     border-width: 2px;
     border-color: black;
-    width: 60%;
-    height: 65%;
+    width: 75%;
+    height: 50%;
+    margin-bottom: 5%;
+}
+
+#headers_msgPro {
+    align-self: baseline;
+    margin-left: 10%;
+    margin-bottom: 1%;
 }
 
 /* When the inputs get focus, do something */
-.form-container-messagePro input[type=text]:focus.bigInput.smallInput {
+.form-container-messagePro input[type=text]:focus.bigInput,
+input[type=text]:focus.smallInput {
     background-color: white;
     outline: none;
     border-radius: 8px;
@@ -466,11 +508,12 @@
     background-color: #04AA6D;
     color: white;
     padding: 16px 20px;
+    align-self: center;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     width: 20%;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
     opacity: 0.8;
 }
 
@@ -492,6 +535,7 @@
 }
 
 /*MESSAGE TO SUPPORT*/
+
 
 .form-popup-messageSupport {
     display: none;
@@ -525,19 +569,53 @@
     flex-direction: column;
 }
 
-#messageSupport_a {
-    color: rgb(26, 0, 156);
-    font-size: 1.2em;
-    font-style: italic;
-    margin-bottom: 5%;
-}
-
 #pop_up_header_messageSupport {
     margin-top: 40px;
 }
 
-#pop_up_header_add_notes_messageSupport {
-    margin-top: -40px;
+#header_messageSupport {
+    margin-top: -15px;
+    margin-bottom: 8px;
+}
+
+#msgSupportFigure {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+}
+
+#msgSupportFigure figcaption {
+    margin-bottom: 10px;
+}
+
+.msgSupportImg {
+    border-radius: 40%;
+    width: 50%;
+    box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.support_details_box {
+    background-color: rgb(241, 241, 241);
+    padding-bottom: 0.2em;
+    border-radius: 7px;
+    border-style: solid;
+    border-width: 2px;
+    width: 80%;
+    margin: 28px;
+}
+
+.support_details_box ul {
+    list-style-type:circle;
+    font-size: 1em;
+    margin-left: 2em;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.2em;
+}
+
+.support_details_box ul .listitemsMsgSupport {
+    margin-top: -24px;
 }
 
 /* Add styles to the form container */
@@ -553,44 +631,55 @@
 /* input fields */
 
 .form-container-messageSupport input[type=text].smallInput  {
-    padding: 10px;
-    width: 20%;
-    background: #f1f1f1;
     border-radius: 5px;
     border-width: 2px;
     border-color: black;
-    margin-bottom: 7%;
+    background: #f1f1f1;
+    padding: 2%;
+    width: 75%;
 }
 
 .form-container-messageSupport input[type=text].bigInput {
     padding: 15px;
-    margin: 5px 0 22px 0;
     background: #f1f1f1;
     float: right;
     border-radius: 5px;
     border-width: 2px;
     border-color: black;
-    width: 60%;
-    height: 65%;
+    width: 75%;
+    height: 50%;
+    margin-bottom: 5%;
+}
+
+#headers_msgSupport {
+    align-self: baseline;
+    margin-left: 10%;
+    margin-bottom: 1%;
+}
+
+#download_manua_btn {
+
 }
 
 /* When the inputs get focus, do something */
-.form-container-messageSupport input[type=text]:focus.smallInput.bigInput {
+.form-container-messageSupport input[type=text]:focus.bigInput,
+input[type=text]:focus.smallInput {
     background-color: white;
     outline: none;
     border-radius: 8px;
 }
 
 /* Set a style for the submit/login button */
-.form-container-messageSupport .messageIT_send_btn {
+.form-container-messageSupport .message_send_btn {
     background-color: #04AA6D;
     color: white;
     padding: 16px 20px;
+    align-self: center;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     width: 20%;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
     opacity: 0.8;
 }
 
@@ -681,7 +770,7 @@
 }
 
 /* When the inputs get focus, do something */
-.form-container-messageSupport input[type=text]:focus.smallInput {
+.form-container-changeUserInfo input[type=text]:focus.smallInput {
     background-color: white;
     outline: none;
     border-radius: 8px;
