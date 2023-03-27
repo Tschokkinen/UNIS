@@ -608,6 +608,7 @@ input[type=text]:focus.smallInput {
 .support_details_box ul {
     list-style-type:circle;
     font-size: 1em;
+    font-size: 1em;
     margin-left: 2em;
     flex-direction: column;
     align-items: flex-start;
