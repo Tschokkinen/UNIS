@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/Tschokkinen/UNIS#readme",
   "dependencies": {
-    "@amcharts/amcharts4": "^4.10.35",
+    
+    "@amcharts/amcharts5": "^5.3.8",
     "bcrypt": "^5.1.0",
     "connect-mongo": "^5.0.0",
     "cookie-parser": "^1.4.6",
