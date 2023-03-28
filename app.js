@@ -12,8 +12,8 @@ const verifyJWT = require('./middleware/verifyJWT');
 const { logger } = require('./middleware/logger');
 
 // Cors
-const cors = require('cors');
-const corsOptions = require('./config/corsOptions');
+// const cors = require('cors');
+// const corsOptions = require('./config/corsOptions');
 
 // Connect to database
 connectDB();
@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Is cross origin (CORS) even needed???
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 // Required to get req.body data out
 app.use(express.urlencoded({ extended: true }));
