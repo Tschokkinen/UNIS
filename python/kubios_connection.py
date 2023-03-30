@@ -1,6 +1,18 @@
+
 # https://www.nylas.com/blog/making-use-of-environment-variables-in-python/
 # Move sensitive data to .env when solution is working!
 import sys
+import subprocess
+
+import imp
+try:
+    imp.find_module('requests')
+    found = True
+except ImportError:
+    # found = False
+    # implement pip as a subprocess:
+    subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'requests'])
+
 # import logging
 # import uuid
 # from pprint import pprint
