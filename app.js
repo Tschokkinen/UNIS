@@ -29,6 +29,10 @@ app.use(cookieParser());
 // Is cross origin (CORS) even needed???
 // app.use(cors(corsOptions));
 
+// app.use(cors({
+//     origin: '*'
+// }));
+
 // Required to get req.body data out
 app.use(express.urlencoded({ extended: true }));
 
@@ -48,6 +52,7 @@ app.set('views', './views');
 app.use('/', express.static(path.join(__dirname, 'public/')));
 
 app.use('/', require('./routes/index'));
+app.use('/kubios', require('./routes/kubios')); // TEST ENDPOINT
 app.use(verifyJWT); // Endpoints beyond this middleware require authentication
 app.use('/main', require('./routes/main'));
 app.use('/charts', require('./routes/charts'));
