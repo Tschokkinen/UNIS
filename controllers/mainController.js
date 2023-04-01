@@ -2,33 +2,17 @@ const { changePartial } = require('../lib/helpers.js');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
+const { getUserID, calculateBMI } = require('../lib/generalHelpers.js');
+
 // Models
 const User = require('../models/UserModel');
 const SleepReview = require('../models/SleepReview');
 const MoodReview = require('../models/MoodReview');
 const BloodPressure = require('../models/BloodPressureModel');
 
-const saltRounds = 10;
+// const saltRounds = 10;
 
-const calculateBMI = (height, weight) => {
-    if (height === 0 || weight === 0) {
-        return "0";
-    }
-
-    const heightToMeters = height / 100;
-    console.log("heightToMeters: ", heightToMeters);
-    let bmi = weight / (heightToMeters * heightToMeters);
-    console.log(bmi);
-    return bmi.toFixed(2);
-}
-
-const getUserID = (req) => {
-    const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
-    // console.log(decoded._id);
-    req.body.user = decoded._id;
-    return req.body.user;
-}
-
+// Get data for the application main view.
 const main = async (req, res) => {
     // const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
     // console.log(decoded._id);
@@ -61,6 +45,7 @@ const main = async (req, res) => {
         changePartial('changeUserInfo', 'changeUserInfo')
 };
 
+// Save sleep data to MongoDB.
 const saveSleep = async (req, res) => {
     try {
         // const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
@@ -73,7 +58,8 @@ const saveSleep = async (req, res) => {
             // "user": req.body.user
         });
 
-        res.redirect('/main');
+        // res.redirect('/main');
+        res.status(200).redirect('/main');
         // res.status(200).json({ "Message": "Success"});
     } catch (err) {
         console.error(err);
@@ -83,6 +69,7 @@ const saveSleep = async (req, res) => {
     // res.status(200);
 };
 
+// Save mood data to MongoDB.
 const saveMood = async (req, res) => {
     try {
         // const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
@@ -95,7 +82,7 @@ const saveMood = async (req, res) => {
             // "user": req.body.user
         });
 
-        res.redirect('/main');
+        res.status(200).redirect('/main');
         // res.status(200).json({ "Message": "Success"});
     } catch (err) {
         console.error(err);
@@ -103,10 +90,14 @@ const saveMood = async (req, res) => {
     }
 
     // res.status(200);
+
 };
 
+// Save bloodpressure to MongoDB.
 const saveBloodpressure = async (req, res) => {
+    console.log("BLOOD");
     console.log(req.body);
+    console.log("Systolic pressure: ", req.body.systolicPressure);
     try {
         await BloodPressure.create({
             "systolicPressure": req.body.systolicPressure,
@@ -114,11 +105,13 @@ const saveBloodpressure = async (req, res) => {
             "comments": req.body.bloodpressureText,
             "user": getUserID(req)
         });
+        
+        res.status(200);
         res.redirect('/main');
     } catch (err) {
         console.error(err);
         res.sendStatus(500);
-    }  
+    }
 };
 
 const messageToProfessional = (req, res) => {
@@ -131,6 +124,7 @@ const messageToSupport = (req, res) => {
     res.redirect('/main');
 };
 
+// Change user info.
 const changeUserInfo = async (req, res) => {
     const {
         firstName,
@@ -140,44 +134,56 @@ const changeUserInfo = async (req, res) => {
         age,
         phonenumber,
         email,
-        password
+        // password
     } = req.body;
 
-    const hashedPwd = await bcrypt.hash(password, saltRounds);
-    // console.log(req.body);
-
+    console.log("POST changeUserInfo");
     // Get current user data.
     const user = await User.findById(getUserID(req));
 
+    // const check = await User.verifyPassword(password, getUserID(req));
+
+    // if (!check) {
+    //     res.status(500).json({ 'message': 'wrong password'});
+    //     // res.status(500);
+    // }
+    // const hashedPwd = await bcrypt.hash(password, saltRounds);
+    // console.log(req.body);
+
     // console.log("Current user height: ", user.height);
 
-    await User.updateOne(
-        {
-            _id: getUserID(req)
-        },
-        {
-            $set:
+    try {
+        await User.updateOne(
             {
-                "firstName": firstName != "" ? firstName : user.firstName,
-                "lastName": lastName != "" ? lastName : user.lastName,
-                "height": height != "" ? height : user.height,
-                "weight": weight != "" ? weight : user.weight,
-                "age": age != "" ? age : user.age,
-                "phonenumber": phonenumber != "" ? phonenumber : user.phonenumber,
-                "email": email != "" ? email : user.email,
-                "password": hashedPwd != "" ? hashedPwd : user.password
+                _id: getUserID(req)
+            },
+            {
+                $set:
+                {
+                    "firstName": firstName != "" ? firstName : user.firstName,
+                    "lastName": lastName != "" ? lastName : user.lastName,
+                    "height": height != "" ? height : user.height,
+                    "weight": weight != "" ? weight : user.weight,
+                    "age": age != "" ? age : user.age,
+                    "phonenumber": phonenumber != "" ? phonenumber : user.phonenumber,
+                    "email": email != "" ? email : user.email,
+                    // "password": hashedPwd != "" ? hashedPwd : user.password
+                }
             }
-        }
-    )
-
+        )
+        res.status(200);
+    } catch (err) {
+        console.error(err);
+        res.sendStatus(500);
+    }
     res.redirect('/main');
 };
 
 const requestUserData = async (req, res) => {
-    const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
-    // console.log(decoded._id);
-    req.body.user = decoded._id;
-    const user = await User.findById(req.body.user);
+    // const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
+    // // console.log(decoded._id);
+    // req.body.user = decoded._id;
+    const user = await User.findById(getUserID(req));
     const userData = {
         "firstName": user.firstName,
         "lastName": user.lastName,
@@ -190,6 +196,14 @@ const requestUserData = async (req, res) => {
     res.status(200).json(userData);
 }
 
+// NOT IN USE: If removed, remove validatePassword from UserModel, also.
+const checkPassword = async (req, res) => {
+    console.log("checkPassword req.password: ", req.body.password);
+    const match = await User.validatePassword(getUserID(req), req.body.password);
+    console.log("checkPassword match value: ", match);
+    res.status(200).json({ 'match': match });
+}
+
 module.exports = {
     main,
     saveSleep,
@@ -199,5 +213,6 @@ module.exports = {
     messageToProfessional,
     messageToSupport,
     changeUserInfo,
-    requestUserData
+    requestUserData,
+    checkPassword
 };

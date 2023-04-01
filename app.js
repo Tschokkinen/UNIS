@@ -52,7 +52,6 @@ app.set('views', './views');
 app.use('/', express.static(path.join(__dirname, 'public/')));
 
 app.use('/', require('./routes/index'));
-app.use('/kubios', require('./routes/kubios')); // TEST ENDPOINT
 app.use(verifyJWT); // Endpoints beyond this middleware require authentication
 app.use('/main', require('./routes/main'));
 app.use('/charts', require('./routes/charts'));
