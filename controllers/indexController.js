@@ -39,7 +39,6 @@ const signIn = async (req, res) => {
 
         // const match = await bcrypt.compare(password, user.password);
 
-
         // Remove if-else when system is working: redundant due to 
         // UserModel data verification!
         if (user) {
