@@ -98,4 +98,18 @@ userSchema.statics.login = async function (email, password) {
     return user;
 }
 
+// NOT IN USE: If removed, remove checkPassword from mainController, also.
+userSchema.statics.validatePassword = async function (userID, password) {
+    const user = await this.findById(userID);
+
+    const match = await bcrypt.compare(password, user.password);
+
+    if (!match) {
+        return false;
+    }
+    
+    return true;
+}
+
+
 module.exports = mongoose.model('User', userSchema);

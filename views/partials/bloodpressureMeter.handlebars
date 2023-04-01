@@ -1,19 +1,22 @@
 <div class="form-popup-bloodpressure" id="bloodpressureForm">
-    <form id="bloodpressure" action="/main/saveBloodpressure" class="form-container-bloodpressure" method="POST">
+    <form id="bloodpressure" action="/main/saveBloodpressure" class="form-container-bloodpressure" method="POST"
+        onsubmit="return validatePressureData(this)">
         <section id="popup-left-bloodpressure">
             <h2 id="pop_up_header_bloodpressure">BLOOD PRESSURE</h2>
-            <a href="https://www.aivoliitto.fi/en/bloodpressure/monitoring/" target=”_blank” id="bloodpressure_a">"How to measure?"</a>
-          <h3>Systolic pressure:</h3>
-          <input class="smallInput" type="text" name="systolicPressure" placeholder="135mmHg" maxlength="3" required>
-          <h3>Diastolic pressure:</h3>
-          <input class="smallInput" type="text" name="diastolicPressure" placeholder="85mmHg" maxlength="3" required>
-            <button form="bloodpressure" type="submit" class="bloodpressure_save_btn" >Save</button>
+            <a href="https://www.aivoliitto.fi/en/bloodpressure/monitoring/" target=”_blank” id="bloodpressure_a">"How
+                to measure?"</a>
+            <h3>Systolic pressure:</h3>
+            <input class="smallInput" type="text" name="systolicPressure" placeholder="135mmHg" maxlength="3" required>
+            <h3>Diastolic pressure:</h3>
+            <input class="smallInput" type="text" name="diastolicPressure" placeholder="85mmHg" maxlength="3" required>
+            <button form="bloodpressure" type="submit" class="bloodpressure_save_btn">Save</button>
         </section>
         <section id="popup-right-bloodpressure">
             <button type="button" class="bloodpressure_save_btn cancel" onclick="closeForm()"
                 aria-hidden="true">&times;</button>
             <h2 id="pop_up_header_add_notes_bloodpressure">Add notes</h2>
-            <input class="bigInput" type="text" name="bloodpressuretext" placeholder="Add notes. Max. 100 characters." maxlength="100">
+            <input id="bloodpressuretext" class="bigInput" type="text" name="bloodpressuretext"
+                placeholder="Add notes. Max. 100 characters." maxlength="100">
         </section>
     </form>
 </div>

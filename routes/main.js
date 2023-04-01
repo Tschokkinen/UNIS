@@ -8,7 +8,8 @@ const {
     messageToProfessional, 
     messageToSupport, 
     changeUserInfo,
-    requestUserData
+    requestUserData,
+    checkPassword
 } = require('../controllers/mainController');
 
 router.get('/', main);
@@ -21,6 +22,7 @@ router.post('/saveBloodpressure', saveBloodpressure);
 router.post('/sendMessageToProfessional', messageToProfessional);
 router.post('/sendMessageToSupport', messageToSupport);
 router.post('/changeUserInfo', changeUserInfo);
+router.post('/checkPassword', checkPassword);
 
 router.get('/logout', (req, res) => {
     res.clearCookie('cookieToken');
