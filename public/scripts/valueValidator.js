@@ -22,7 +22,7 @@ const validatePressureData = (form) => {
 
 const validatePassword = async () => {
     // console.log("clicked");
-    let password = document.getElementById('field_Password').value;
+    let password = document.getElementById('field_Password_Changeuserinfo').value;
 
     const response = await fetch('/main/validatePassword', {
         method: "POST",
