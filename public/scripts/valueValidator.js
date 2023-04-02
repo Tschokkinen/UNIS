@@ -20,25 +20,24 @@ const validatePressureData = (form) => {
     return true;
 }
 
-// const validateUserInfoChange = (form) => {
-//     const password = form.password.value;
-//     // console.log(password);
-    
-//     const response = fetch('/main/checkPassword', {
-//         method: "POST",
-//         body: JSON.stringify({
-//             password: password
-//         }),
-//         headers: {
-//             'Content-type': 'application/json; charset=UTF-8'
-//         }
-//     });
+const validatePassword = async () => {
+    // console.log("clicked");
+    let password = document.getElementById('field_Password').value;
 
-//     if (!response.match) {
-//         alert("Wrong password");
-//         form.password.focus();
-//         return false;
-//     } 
+    const response = await fetch('/main/validatePassword', {
+        method: "POST",
+        body: JSON.stringify({
+            password: password
+        }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+        }
+    })
 
-//     return true;
-// }
+    let data = await response.json(response);
+    // console.log("Response: ", data.match);
+
+    if (data.match) {
+        document.getElementById('changeUserInfo').submit();
+    }
+}

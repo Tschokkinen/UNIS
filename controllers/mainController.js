@@ -196,12 +196,14 @@ const requestUserData = async (req, res) => {
     res.status(200).json(userData);
 }
 
-// NOT IN USE: If removed, remove validatePassword from UserModel, also.
-const checkPassword = async (req, res) => {
+const validatePassword = async (req, res) => {
     console.log("checkPassword req.password: ", req.body.password);
     const match = await User.validatePassword(getUserID(req), req.body.password);
     console.log("checkPassword match value: ", match);
-    res.status(200).json({ 'match': match });
+    const obj = {
+        "match": match
+    }
+    res.status(200).json(obj);
 }
 
 module.exports = {
@@ -214,5 +216,5 @@ module.exports = {
     messageToSupport,
     changeUserInfo,
     requestUserData,
-    checkPassword
+    validatePassword
 };
