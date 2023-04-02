@@ -9,7 +9,7 @@ const {
     messageToSupport, 
     changeUserInfo,
     requestUserData,
-    checkPassword
+    validatePassword
 } = require('../controllers/mainController');
 
 router.get('/', main);
@@ -22,7 +22,7 @@ router.post('/saveBloodpressure', saveBloodpressure);
 router.post('/sendMessageToProfessional', messageToProfessional);
 router.post('/sendMessageToSupport', messageToSupport);
 router.post('/changeUserInfo', changeUserInfo);
-router.post('/checkPassword', checkPassword);
+router.post('/validatePassword', validatePassword);
 
 router.get('/logout', (req, res) => {
     res.clearCookie('cookieToken');

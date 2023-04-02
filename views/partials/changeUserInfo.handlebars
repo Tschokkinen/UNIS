@@ -17,9 +17,10 @@
             <h5 class="">Email</h5>
             <input id="field_Email" class="smallInput" type="text" name="email" placeholder="Email" maxlength="50">
             <h5 class="">Password</h5>
-            <input class="smallInput" type="text" name="password" placeholder="Password" required>
+            <input id="field_Password" class="smallInput" type="text" name="password" placeholder="Password" required>
 
-            <button form="changeUserInfo" type="submit" class="changeUserInfo_send_btn">Update</button>
+            <button type="button" onclick="validatePassword()" class="changeUserInfo_send_btn">Update</button>
+            {{!-- <button form="changeUserInfo" type="submit" class="changeUserInfo_send_btn">Update</button> --}}
         </section>
         <section id="popup-right-changeUserInfo">
             <button type="button" class="changeUserInfo_send_btn cancel" onclick="closeForm()"
