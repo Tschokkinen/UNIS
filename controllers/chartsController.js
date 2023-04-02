@@ -2,6 +2,8 @@ const SleepReview = require('../models/SleepReview');
 const MoodReview = require('../models/MoodReview');
 const Bloodpressure = require('../models/BloodPressureModel');
 
+const { getUserID } = require('../lib/generalHelpers.js');
+
 const User = require('../models/UserModel');
 const jwt = require('jsonwebtoken');
 const path = require('path');
@@ -16,12 +18,12 @@ const chart = async (req, res) => {
 }
 
 const getSleepData = async (req, res) => {
-    const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
-    // console.log(decoded._id);
-    req.body.user = decoded._id;
+    // const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
+    // // console.log(decoded._id);
+    // req.body.user = decoded._id;
     // const user = await User.findById(req.body.user);
 
-    const sleepReviews = await SleepReview.find({ 'user': req.body.user });
+    const sleepReviews = await SleepReview.find({ 'user': getUserID(req) });
     // console.log(sleepReviews);
     const sleeps = [];
     for (var i = 0; i < sleepReviews.length; i++) {
@@ -39,12 +41,12 @@ const getSleepData = async (req, res) => {
 }
 
 const getMoodData = async (req, res) => {
-    const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
-    // console.log(decoded._id);
-    req.body.user = decoded._id;
+    // const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
+    // // console.log(decoded._id);
+    // req.body.user = decoded._id;
     // const user = await User.findById(req.body.user);
 
-    const moodReviews = await MoodReview.find({ 'user': req.body.user });
+    const moodReviews = await MoodReview.find({ 'user': getUserID(req) });
     // console.log(moodReviews);
     const moods = [];
     for (var i = 0; i < moodReviews.length; i++) {
@@ -62,11 +64,11 @@ const getMoodData = async (req, res) => {
 }
 
 const getBloodpressureData = async (req, res) => {
-    const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
-    req.body.user = decoded._id;
+    // const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
+    // req.body.user = decoded._id;
     // const user = await User.findById(req.body.user);
 
-    const bloodpressure = await Bloodpressure.find({ 'user': req.body.user });
+    const bloodpressure = await Bloodpressure.find({ 'user': getUserID(req) });
     const bloodpressures = [];
     for (var i = 0; i < bloodpressure.length; i++) {
         const newBloodpressure = {

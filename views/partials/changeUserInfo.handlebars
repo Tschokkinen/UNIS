@@ -54,7 +54,8 @@
                     placeholder="Password" required>
             </div>
 
-            <button form="changeUserInfo" type="submit" class="changeUserInfo_send_btn">Update</button>
+            <button type="button" onclick="validatePassword()" class="changeUserInfo_send_btn">Update</button>
+
         </section>
         <section id="popup-right-changeUserInfo">
             <button type="button" class="changeUserInfo_send_btn cancel" onclick="closeForm()"
@@ -75,9 +76,3 @@
         </section>
     </form>
 </div>
-
-
-
-
-
-<script src="scripts/requestUserData.js"></script>
