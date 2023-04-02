@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const sleepReviewSchema = new Schema({
     sleepQuality: {
         type: Number,
-        required: false
+        required: true
     },
     comments: {
         type: String,

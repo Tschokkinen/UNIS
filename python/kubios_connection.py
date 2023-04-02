@@ -1,21 +1,9 @@
+# Log in and authentication base on solution found on Bitbucket:
+# https://bitbucket.org/kubios/workspace/snippets/4X95xd/kubioscloud-example-for-authorization-code
+# 
+# Data iteration (lines 80-98) and sys.argv (lines 11-18) are self-written.
 
-# https://www.nylas.com/blog/making-use-of-environment-variables-in-python/
-# Move sensitive data to .env when solution is working!
 import sys
-# import subprocess
-
-# import imp
-# try:
-#     imp.find_module('requests')
-#     found = True
-# except ImportError:
-#     # found = False
-#     # implement pip as a subprocess:
-#     subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'requests'])
-
-# import logging
-# import uuid
-# from pprint import pprint
 import requests
 import json
 import datetime
@@ -29,15 +17,6 @@ TOKEN_URL = sys.argv[5]
 REDIRECT_URI = sys.argv[6]
 USER_AGENT = sys.argv[7]
 csrf = sys.argv[8]
-
-
-# Logging info
-# logging.basicConfig(format="%(asctime)-15s [%(levelname)s]: %(message)s")
-
-# log = logging.getLogger(__name__)
-# log.setLevel(logging.INFO)
-
-# csrf = str(uuid.uuid4())
 
 ## Login data structure
 login_data = {
@@ -54,7 +33,6 @@ login_data = {
 session = requests.session()
 
 ## Open a session
-# log.info("Authenticating to '%r' with client_id: %r", LOGIN_URL, CLIENT_ID)
 login_response = session.post(
     LOGIN_URL,
     data=login_data,
@@ -69,10 +47,8 @@ assert (
 
 ## Get the code
 code = login_response.headers["Location"].split("=")[1]
-# log.info("Got code: %r", code)
 
 ## Exchange tokens
-# log.info("Exchanging code to tokens")
 exch_data = {
     "client_id": CLIENT_ID,
     "code": code,
@@ -83,7 +59,6 @@ exch_data = {
 exch_response = session.post(
     TOKEN_URL, data=exch_data
 )
-# log.info("Status code %r", exch_response.status_code)
 tokens = exch_response.json()
 
 d = datetime.datetime(2020,1,1,0,0)
@@ -93,20 +68,31 @@ HEADERS = {"Authorization": tokens["id_token"], "User-Agent": USER_AGENT}
 
 ## Create URLS
 BASE_URL = "https://analysis.kubioscloud.com"
-# GET_USER_INFO = BASE_URL + "/v2/user/self"
 GET_RESULT = BASE_URL + "/v2/result/self" + "?from=2020-01-01T00%3A00%3A00%2B00%3A00"
-# GET_DAILY_READINESS = BASE_URL + "/v2/result/self?types=readiness&daily=yes"
 
-## Return personal information for the currently authenticated user ##
-# log.info("Get user info")
-# response = session.get(GET_USER_INFO, headers = HEADERS)
-# user_info = response.json()
-
-# log.info("Get all results")
 response = session.get(GET_RESULT, headers = HEADERS)
 all_results = response.json()
 
-all_results_to_json_format = json.dumps(all_results)
+# print(type(all_results))
+# for key in all_results:
+#     print(key)
 
-# Send file as string to Node.JS and flush.
-print(all_results_to_json_format, flush=True)
+result_dict = all_results['results'] # Get values of "results" key.
+
+# print(result_dict)
+
+return_results = [] # Create empty list for items to be returned.
+
+for result in result_dict:
+    # print(result, '\n')
+    # print(result['create_timestamp'])
+    # print(result['result']['mean_hr_bpm'])
+    # print(result['result']['rmssd_ms'])
+    new_entry = {} # New dictionary
+    new_entry['create_timestamp'] = result['create_timestamp']
+    new_entry['mean_hr_bpm'] = result['result']['mean_hr_bpm']
+    new_entry['rmssd_ms'] = result['result']['rmssd_ms']
+    return_results.append(new_entry) # Append new entry to list
+
+return_results_to_json_format = json.dumps(return_results)
+print(return_results_to_json_format, flush=True)

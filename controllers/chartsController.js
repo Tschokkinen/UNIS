@@ -1,10 +1,10 @@
 const SleepReview = require('../models/SleepReview');
 const MoodReview = require('../models/MoodReview');
 const Bloodpressure = require('../models/BloodPressureModel');
+const User = require('../models/UserModel');
 
 const { getUserID } = require('../lib/generalHelpers.js');
 
-const User = require('../models/UserModel');
 const jwt = require('jsonwebtoken');
 const path = require('path');
 const { v4: uuid4 } = require('uuid');
@@ -12,17 +12,11 @@ const { spawn } = require('child_process');
 const bcrypt = require('bcrypt');
 
 const chart = async (req, res) => {
-
     // res.status(200).json({ 'message': 'success '});
-    res.render('test-chart', { layout: 'chart' });
+    res.render('charView', { layout: 'chart' });
 }
 
 const getSleepData = async (req, res) => {
-    // const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
-    // // console.log(decoded._id);
-    // req.body.user = decoded._id;
-    // const user = await User.findById(req.body.user);
-
     const sleepReviews = await SleepReview.find({ 'user': getUserID(req) });
     // console.log(sleepReviews);
     const sleeps = [];
@@ -41,11 +35,6 @@ const getSleepData = async (req, res) => {
 }
 
 const getMoodData = async (req, res) => {
-    // const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
-    // // console.log(decoded._id);
-    // req.body.user = decoded._id;
-    // const user = await User.findById(req.body.user);
-
     const moodReviews = await MoodReview.find({ 'user': getUserID(req) });
     // console.log(moodReviews);
     const moods = [];
@@ -64,10 +53,6 @@ const getMoodData = async (req, res) => {
 }
 
 const getBloodpressureData = async (req, res) => {
-    // const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
-    // req.body.user = decoded._id;
-    // const user = await User.findById(req.body.user);
-
     const bloodpressure = await Bloodpressure.find({ 'user': getUserID(req) });
     const bloodpressures = [];
     for (var i = 0; i < bloodpressure.length; i++) {
@@ -121,17 +106,17 @@ const getPulseAndHRV = async (req, res) => {
     // Call python script
     python.stdout.on('data', function (data) {
         rawDataFromPython = data.toString(); // Data returned from python.
-
         jsonDataFromPython = JSON.parse(rawDataFromPython); // Convert data to JSON format.
-        
-        for (var i = 0; i < jsonDataFromPython.results.length; i++) {
-            var current = jsonDataFromPython.results[i];
+        // console.log(typeof(jsonDataFromPython));
+        // console.log("jsonDataFromPython: ", jsonDataFromPython);
+        for (var i = 0; i < jsonDataFromPython.length; i++) {
+            var current = jsonDataFromPython[i];
             const newPulseAndHRV = {
-                'pulse': current.result.mean_hr_bpm,
-                'hrv': current.result.rmssd_ms,
+                'pulse': current.mean_hr_bpm,
+                'hrv': current.rmssd_ms,
                 'date': current.create_timestamp
             }
-            console.log(current.create_timestamp);
+            // console.log(current.create_timestamp);
             pulsesAndHRVs.push(newPulseAndHRV);
         }
 
