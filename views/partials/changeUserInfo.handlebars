@@ -44,15 +44,15 @@
 
             <div>
                 <label for="field_Email">Email</label>
-                <br><input id="field_Email" class="smallInput" type="text" name="email" placeholder="Email"
+                <br><input id="field_Email" class="smallInput" type="email" name="email" placeholder="Email"
                     maxlength="50">
             </div>
-</div>
 
             <div><label for="field_Password_Changeuserinfo">Password</label>
-                <br><input id="field_Password_Changeuserinfo" class="smallInput" type="text" name="password"
+                <br><input  id="field_Password_Changeuserinfo" class="smallInput input_margin" type="password" name="password"
                     placeholder="Password" required>
             </div>
+</div>
 
             <button type="button" onclick="validatePassword()" class="changeUserInfo_send_btn">Update</button>
 
@@ -65,6 +65,7 @@
             <img class="userimg" src="assets/img/user.png" alt="This is an image the user.">
             <div class="profile_details_box">
                 <ul>
+                    <li><b>Age: </b> <span id="age">{{age}}</span> years</li><br>
                     <li><b>Height: </b> <span id="height">{{height}}</span> cm</li><br>
                     <li><b>Weight: </b><span id="weight">{{weight}}</span> kg</li><br>
                     <li><b>BMI= </b><span id="bmi">{{bmi}}</span></li><br>
