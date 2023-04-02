@@ -4,16 +4,37 @@
             <h2 id="pop_up_header_mood">MOOD METER</h2>
             <p id="mood_p">"How are you feeling today??"</p>
             <div class="smiley_meter_mood">
-                <img class="smiley_img_mood" id="red_img_mood" onclick="redMarkMood('red_img_mood')"
-                    src="assets/img/moodMeterImg/red_mood.png" alt="My mood is very bad.">
-                <img class="smiley_img_mood" id="orange_img_mood" onclick="orangeMarkMood('orange_img_mood')"
-                    src="assets/img/moodMeterImg/orange_mood.png" alt="My mood is bad.">
-                <img class="smiley_img_mood" id="yellow_img_mood" onclick="yellowMarkMood('yellow_img_mood')"
-                    src="assets/img/moodMeterImg/yellow_mood.png" alt="My mood is moderate.">
-                <img class="smiley_img_mood" id="green2_img_mood" onclick="green2MarkMood('green2_img_mood')"
-                    src="assets/img/moodMeterImg/green2_mood.png" alt="My mood is good.">
-                <img class="smiley_img_mood" id="green1_img_mood" onclick="green1MarkMood('green1_img_mood')"
-                    src="assets/img/moodMeterImg/green1_mood.png" alt="My mood is very good.">
+
+                <label class="smiley_img_mood">
+                    <input type="radio" name="moodvalue" value="">
+                    <img class="smiley_img_mood" id="red_img_mood" onclick="redMarkMood('red_img_mood')"
+                        src="assets/img/moodMeterImg/red_mood.png" alt="My mood is very bad.">
+                </label>
+
+                <label class="smiley_img_mood">
+                    <input id="" type="radio" name="moodvalue" value="">
+                    <img class="smiley_img_mood" id="orange_img_mood" onclick="orangeMarkMood('orange_img_mood')"
+                        src="assets/img/moodMeterImg/orange_mood.png" alt="My mood is bad.">
+                </label>
+
+                <label class="smiley_img_mood">
+                    <input id="" type="radio" name="moodvalue" value="">
+                    <img class="smiley_img_mood" id="yellow_img_mood" onclick="yellowMarkMood('yellow_img_mood')"
+                        src="assets/img/moodMeterImg/yellow_mood.png" alt="My mood is moderate.">
+                </label>
+
+                <label class="smiley_img_mood">
+                    <input id="" type="radio" name="moodvalue" value="">
+                    <img class="smiley_img_mood" id="green2_img_mood" onclick="green2MarkMood('green2_img_mood')"
+                        src="assets/img/moodMeterImg/green2_mood.png" alt="My mood is good.">
+                </label>
+
+                <label class="smiley_img_mood">
+                    <input id="" type="radio" name="moodvalue" value="">
+                    <img class="smiley_img_mood" id="green1_img_mood" onclick="green1MarkMood('green1_img_mood')"
+                        src="assets/img/moodMeterImg/green1_mood.png" alt="My mood is very good.">
+                </label>
+
             </div>
             <button form="moodMeter" type="submit" class="mood_save_btn" onclick="closeForm()">Save</button>
         </section>
