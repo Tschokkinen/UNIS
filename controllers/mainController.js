@@ -1,7 +1,4 @@
 const { changePartial } = require('../lib/helpers.js');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
-
 const { getUserID, calculateBMI } = require('../lib/generalHelpers.js');
 
 // Models
@@ -10,15 +7,8 @@ const SleepReview = require('../models/SleepReview');
 const MoodReview = require('../models/MoodReview');
 const BloodPressure = require('../models/BloodPressureModel');
 
-// const saltRounds = 10;
-
 // Get data for the application main view.
 const main = async (req, res) => {
-    // const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
-    // console.log(decoded._id);
-
-    // req.body.user = decoded._id;
-    // const userID = decode(req);
     const user = await User.findById(getUserID(req));
     const firstName = user.firstName;
     const lastName = user.lastName;
@@ -47,15 +37,12 @@ const main = async (req, res) => {
 
 // Save sleep data to MongoDB.
 const saveSleep = async (req, res) => {
+    // console.log("saveSleep req.body: ", req.body);
     try {
-        // const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
-        // console.log(decoded._id);
-        // req.body.user = decoded._id;
-        // console.log(req.body);
         await SleepReview.create({
+            "sleepQuality": req.body.sleepvalue,
             "comments": req.body.sleepmetertext,
             "user": getUserID(req)
-            // "user": req.body.user
         });
 
         // res.redirect('/main');
@@ -71,15 +58,13 @@ const saveSleep = async (req, res) => {
 
 // Save mood data to MongoDB.
 const saveMood = async (req, res) => {
+    // console.log("saveMood req.body: ", req.body);
     try {
-        // const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
-        // console.log(decoded._id);
-        // req.body.user = decoded._id;
         // console.log(req.body);
         await MoodReview.create({
+            "moodQuality": req.body.moodvalue,
             "comments": req.body.moodmetertext,
             "user": getUserID(req)
-            // "user": req.body.user
         });
 
         res.status(200).redirect('/main');
@@ -137,21 +122,9 @@ const changeUserInfo = async (req, res) => {
         // password
     } = req.body;
 
-    console.log("POST changeUserInfo");
+    // console.log("POST changeUserInfo");
     // Get current user data.
     const user = await User.findById(getUserID(req));
-
-    // const check = await User.verifyPassword(password, getUserID(req));
-
-    // if (!check) {
-    //     res.status(500).json({ 'message': 'wrong password'});
-    //     // res.status(500);
-    // }
-    // const hashedPwd = await bcrypt.hash(password, saltRounds);
-    // console.log(req.body);
-
-    // console.log("Current user height: ", user.height);
-
     try {
         await User.updateOne(
             {
@@ -180,9 +153,6 @@ const changeUserInfo = async (req, res) => {
 };
 
 const requestUserData = async (req, res) => {
-    // const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
-    // // console.log(decoded._id);
-    // req.body.user = decoded._id;
     const user = await User.findById(getUserID(req));
     const userData = {
         "firstName": user.firstName,

@@ -98,7 +98,7 @@ userSchema.statics.login = async function (email, password) {
     return user;
 }
 
-// NOT IN USE: If removed, remove checkPassword from mainController, also.
+// Verify if entered password equals current password.
 userSchema.statics.validatePassword = async function (userID, password) {
     const user = await this.findById(userID);
 
