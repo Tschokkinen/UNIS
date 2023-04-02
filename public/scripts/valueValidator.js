@@ -17,6 +17,26 @@ const validatePressureData = (form) => {
         form.diastolicPressure.focus();
         return false;
     }
+    // closeForm();
+    return true;
+}
+
+// Validates that a selection has been made on sleep meter.
+const validateSleepData = (form) => {
+    // console.log("form.sleepValue: ", form.sleepvalue.value);
+    if (form.sleepvalue.value === '') {
+        alert("Select sleep quality.");
+        return false;
+    }
+    // closeForm();
+    return true;
+}
+
+const validateMoodData = (form) => {
+    if (form.moodvalue.value === '') {
+        alert("Select mood quality.");
+        return false;
+    }
     return true;
 }
 
@@ -39,5 +59,7 @@ const validatePassword = async () => {
 
     if (data.match) {
         document.getElementById('changeUserInfo').submit();
+    } else {
+        alert("Wrond password.");
     }
 }

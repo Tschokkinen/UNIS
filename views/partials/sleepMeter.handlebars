@@ -1,42 +1,43 @@
 <div class="form-popup-sleep" id="sleepMeterForm">
-    <form id="sleepMeter" action="/main/saveSleep" class="form-container-sleep" method="POST">
+    <form id="sleepMeter" action="/main/saveSleep" class="form-container-sleep" method="POST" onsubmit="return validateSleepData(this)">
         <section id="popup-left-sleep">
             <h2 id="pop_up_header_sleep_meter">SLEEP METER</h2>
             <p id="sleep_p">"How did you sleep?"</p>
             <div class="smiley_meter_sleep">
 
                 <label class="smiley_img_sleep">
-                    <input type="radio" name="sleepvalue" value="">
+                    <input type="radio" name="sleepvalue" value="1">
                     <img class="smiley_img_sleep" id="red_img_sleep" onclick="redMarkSleep('red_img_sleep')"
                         src="assets/img/sleepMeterImg/red_sleep.png" alt="I slept very bad.">
                 </label>
 
                 <label class="smiley_img_sleep">
-                    <input id="" type="radio" name="sleepvalue" value="">
+                    <input id="" type="radio" name="sleepvalue" value="2">
                     <img class="smiley_img_sleep" id="orange_img_sleep" onclick="orangeMarkSleep('orange_img_sleep')"
                         src="assets/img/sleepMeterImg/orange_sleep.png" alt="I slept poorly.">
                 </label>
 
                 <label class="smiley_img_sleep">
-                    <input id="" type="radio" name="sleepvalue" value="">
+                    <input id="" type="radio" name="sleepvalue" value="3">
                     <img class="smiley_img_sleep" id="yellow_img_sleep" onclick="yellowMarkSleep('yellow_img_sleep')"
                         src="assets/img/sleepMeterImg/yellow_sleep.png" alt="I slept moderately.">
                 </label>
 
                 <label class="smiley_img_sleep">
-                    <input id="" type="radio" name="sleepvalue" value="">
+                    <input id="" type="radio" name="sleepvalue" value="4">
                     <img class="smiley_img_sleep" id="green2_img_sleep" onclick="green2MarkSleep('green2_img_sleep')"
                         src="assets/img/sleepMeterImg/green2_sleep.png" alt="I slept good.">
                 </label>
 
                 <label class="smiley_img_sleep">
-                    <input id="" type="radio" name="sleepvalue" value="">
+                    <input id="" type="radio" name="sleepvalue" value="5">
                     <img class="smiley_img_sleep" id="green1_img_sleep" onclick="green1MarkSleep('green1_img_sleep')"
                         src="assets/img/sleepMeterImg/green1_sleep.png" alt="I slept very good.">
                 </label>
 
             </div>
-            <button form="sleepMeter" type="submit" class="sleep_save_btn" onclick="closeForm()">Save</button>
+            <button form="sleepMeter" type="submit" class="sleep_save_btn">Save</button>
+            {{!-- <button form="sleepMeter" type="submit" class="sleep_save_btn" onclick="closeForm()">Save</button> --}}
         </section>
         <section id="popup-right-sleep">
             <button type="button" class="sleep_save_btn cancel" onclick="closeForm()"
