@@ -1,27 +1,27 @@
-const hrvForm = document.getElementById("orange_img_mood");
-const bpForm = document.getElementById("yellow_img_mood");
-const sleepMoodForm = document.getElementById("green2_img_mood");
-const commentsForm = document.getElementById("green1_img_mood");
+const hrvChart = document.getElementById("hrvChart");
+const bpChart = document.getElementById("yellow_img_mood");
+const sleepMoodChart = document.getElementById("green2_img_mood");
+const commentsChart = document.getElementById("green1_img_mood");
 
 function openHRVpopup() {
-    hrvForm.style.display = "block";
+    hrvChart.style.display = "block";
 }
 
 function openBPpopup() {
-    bpForm.style.display = "block";
+    bpChart.style.display = "block";
 }
 
 function openSleepMoodpopup() {
-    sleepMoodForm.style.display = "block";
+    sleepMoodChart.style.display = "block";
 }
 
 function openCommentspopup() {
-    commentsForm.style.display = "block";
+    commentsChart.style.display = "block";
 }
 
 function closeForm() {
-    hrvForm.style.display = "none";
-    bpForm.style.display = "none";
-    sleepMoodForm.style.display = "none";
-    commentsForm.style.display = "none";
+    hrvChart.style.display = "none";
+    bpChart.style.display = "none";
+    sleepMoodChart.style.display = "none";
+    commentsChart.style.display = "none";
 }
