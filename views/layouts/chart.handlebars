@@ -1,20 +1,92 @@
-<!-- Styles -->
-<link rel="stylesheet" href="/stylesheets/chart_style.css">
-<!-- Resources -->
-<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Styles -->
+    <title>UNIS app - History and analysis</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="stylesheets/chart_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f2829125cd.js" crossorigin="anonymous"></script>
+
+    <!-- Resources -->
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+</head>
 
 <!-- HTML -->
-<h1>HRV and PULSE</h1>
-<div id="chartdiv3"></div>
 
-<h1>Bloodpressure</h1>
-<div id="chartdiv2"></div>
+<body>
+    <div class="wrapper">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="/main"> <i class="arrow left"></i> <span id="back-arrow-text">BACK</span></a></li>
+                    <li><h1>HISTORY & ANALYSIS</h1></li>
+                    <li><i class="fa-sharp fa-regular fa-calendar-days"></i></li>
+                    <li><a onclick=""><i class="fa-sharp fa-solid fa-circle-info"></i></a></li>
 
-<h1>Sleep and Mood</h1>
-<div id="chartdiv1"></div>
+                </ul>
+            </nav>
+        </header>
 
-<script src="scripts/amcharts_sleepAndMood.js"></script>
-<script src="scripts/amcharts_bloodpressure.js"></script>
-<script src="scripts/amcharts_hrvAndPulse.js"></script>
+        <main class="container">
+
+            <div class="charts-flex">
+                <div id="left-up">
+                    <div class="chart_headers">
+                        <h2>HRV and Pulse</h2>
+                        <a onclick="openHRVpopup()"><img class="magnifying_glass_img" src="assets/img/magnifying-glass.png"></a>
+                    </div>
+                    <div id="chartdiv3"></div>
+                </div>
+
+                <div id="right-up">
+                    <div class="chart_headers">
+                        <div class="chart_headers">
+                            <h2>Bloodpressure</h2>
+                            <a onclick="openBPpopup()"><img class="magnifying_glass_img" src="assets/img/magnifying-glass.png"></a>
+                        </div>
+                    </div>
+                    <div id="chartdiv2"></div>
+                </div>
+            </div>
+
+            <div class="charts-flex">
+
+                <div id="left-down">
+                    <div class="chart_headers">
+                        <h2>Sleep and Mood</h2>
+                        <a onclick="openSleepMoodpopup()"><img class="magnifying_glass_img" src="assets/img/magnifying-glass.png"></a>
+                    </div>
+                    <div id="chartdiv1"></div>
+                </div>
+
+                <div id="right-down">
+                    <div class="chart_headers">
+                        <h2>Comments from professional</h2>
+                        <a onclick="openCommentspopup()"><img class="magnifying_glass_img" src="assets/img/magnifying-glass.png"></a>
+                    </div>
+                    <div id="chartdiv4"></div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <footer>
+        <p class="copy">This is a footer with copyrights</p>
+    </footer>
+
+    <script src="scripts/amcharts_sleepAndMood.js"></script>
+    <script src="scripts/amcharts_bloodpressure.js"></script>
+    <script src="scripts/amcharts_hrvAndPulse.js"></script>
+    <script src="scripts/popup_charts.js"></script>
+
+</body>
+
+</html>
