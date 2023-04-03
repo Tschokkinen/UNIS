@@ -16,6 +16,21 @@ const chart = async (req, res) => {
     res.render('charView', { layout: 'chart' });
 }
 
+const bloodpressureView = async (req, res) => {
+    // res.status(200).json({ 'message': 'success '});
+    res.render('bloodpressureView', { layout: 'magnified-chart' });
+}
+
+const sleepmoodView = async (req, res) => {
+    // res.status(200).json({ 'message': 'success '});
+    res.render('sleepmoodView', { layout: 'magnified-chart' });
+}
+
+const hrvpulseView = async (req, res) => {
+    // res.status(200).json({ 'message': 'success '});
+    res.render('hrvpulseView', { layout: 'magnified-chart' });
+}
+
 const getSleepData = async (req, res) => {
     const sleepReviews = await SleepReview.find({ 'user': getUserID(req) });
     // console.log(sleepReviews);
@@ -133,6 +148,9 @@ const getPulseAndHRV = async (req, res) => {
 module.exports =
 {
     chart,
+    bloodpressureView,
+    sleepmoodView,
+    hrvpulseView,
     getSleepData,
     getMoodData,
     getBloodpressureData,

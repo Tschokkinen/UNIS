@@ -7,7 +7,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="stylesheets/chart_style.css">
-    <link rel="stylesheet" href="stylesheets/chart_popup_style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -43,29 +42,17 @@
                 <div id="left-up">
                     <div class="chart_headers">
                         <h2>HRV and Pulse</h2>
-                        <a onclick="openHRVpopup()"><img class="magnifying_glass_img"
+                        <a href="/HRV" onclick="return openHRVpopup('/HRV')"><img class="magnifying_glass_img"
                                 src="assets/img/magnifying-glass.png"></a>
                     </div>
                     <div id="chartdiv3"></div>
-                </div>
-
-                {{!-- HRV and Pulse POPUP - make handlebar! --}}
-
-                <div class="popup-chart" id="hrvChart">
-                        <section id="popup-container">
-                            <div class="pop_up_chart_header_button"><h2 id="pop_up_header_sleep_meter">HRV & Pulse</h2>
-                                 <button type="button" class="close_button" onclick="closeForm()"
-                                     aria-hidden="true">&times;</button>
-                            </div>
-                            <div id=""></div> {{!-- THIS NEEDS A NEW ID!. --}}
-                        </section>
                 </div>
 
                 <div id="right-up">
                     <div class="chart_headers">
                         <div class="chart_headers">
                             <h2>Bloodpressure</h2>
-                            <a onclick="openBPpopup()"><img class="magnifying_glass_img"
+                            <a href="/bloodpressure" onclick="return openBPpopup('/bloodpressure')"><img class="magnifying_glass_img"
                                     src="assets/img/magnifying-glass.png"></a>
                         </div>
                     </div>
@@ -78,7 +65,7 @@
                 <div id="left-down">
                     <div class="chart_headers">
                         <h2>Sleep and Mood</h2>
-                        <a onclick="openSleepMoodpopup()"><img class="magnifying_glass_img"
+                        <a href="/sleep-and-mood" onclick="return openSleepMoodpopup('/sleep-and-mood')"><img class="magnifying_glass_img"
                                 src="assets/img/magnifying-glass.png"></a>
                     </div>
                     <div id="chartdiv1"></div>

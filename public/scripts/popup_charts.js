@@ -1,27 +1,15 @@
-const hrvChart = document.getElementById("hrvChart");
-const bpChart = document.getElementById("yellow_img_mood");
-const sleepMoodChart = document.getElementById("green2_img_mood");
-const commentsChart = document.getElementById("green1_img_mood");
+function openHRVpopup(url) {
+    newwindow=window.open(url,'name','height=550,width=1000');if (window.focus) {newwindow.focus()}return false;
+}  
 
-function openHRVpopup() {
-    hrvChart.style.display = "block";
+function openBPpopup(url) {
+    newwindow=window.open(url,'name','height=600,width=1000');if (window.focus) {newwindow.focus()}return false;
 }
 
-function openBPpopup() {
-    bpChart.style.display = "block";
+function openSleepMoodpopup(url) {
+    newwindow=window.open(url,'name','height=600,width=1000');if (window.focus) {newwindow.focus()}return false;
 }
 
-function openSleepMoodpopup() {
-    sleepMoodChart.style.display = "block";
-}
-
-function openCommentspopup() {
-    commentsChart.style.display = "block";
-}
-
-function closeForm() {
-    hrvChart.style.display = "none";
-    bpChart.style.display = "none";
-    sleepMoodChart.style.display = "none";
-    commentsChart.style.display = "none";
+function openCommentspopup(url) {
+    newwindow=window.open(url,'name','height=600,width=1000');if (window.focus) {newwindow.focus()}return false;
 }
