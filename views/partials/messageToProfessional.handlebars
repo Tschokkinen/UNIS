@@ -1,13 +1,18 @@
 <div class="form-popup-messagePro" id="messageToProForm">
     <form id="messageToPro" action="/main/messageToProfessional" class="form-container-messagePro" method="POST">
+       
         <section id="popup-left-messagePro">
             <h2 id="pop_up_header_messagePro">MESSAGE YOUR PROFESSIONAL</h2>
-            <h5 id="headers_msgPro">Topic:</h5>
-            <input class="smallInput" type="text" name="messageToProHeader" placeholder="Topic of your message." maxlength="50" required><br>
-            <h5 id="headers_msgPro">Message:</h5>
-            <input class="bigInput" type="text" name="messageToProContent" placeholder="Message to your healthcare professional. Max. 500 characters." maxlength="500" required>
+            
+            <label for="messageToProHeader" id="headers_msgPro">Topic:</label>
+            <textarea class="smallInput_webform"  id="messageToProHeader" type="text" name="messageToProHeader" placeholder="Topic of your message." maxlength="50" required></textarea>
+            <br>
+            <label for="messageToProContent" id="headers_msgPro">Message:</label>
+            <textarea  class="bigInput_webform" id="messageToProContent" type="text" name="messageToProContent" placeholder="Message to your healthcare professional. Max. 500 characters." maxlength="500" required></textarea>
+            <br>
            <button form="messageToPro" type="submit" class="message_send_btn" >Send</button>
         </section>
+       
         <section id="popup-right-messagePro">
             <button type="button" class="message_send_btn cancel" onclick="closeForm()"
                 aria-hidden="true">&times;</button>

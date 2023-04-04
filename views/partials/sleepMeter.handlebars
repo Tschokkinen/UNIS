@@ -39,12 +39,13 @@
             <button form="sleepMeter" type="submit" class="sleep_save_btn">Save</button>
             {{!-- <button form="sleepMeter" type="submit" class="sleep_save_btn" onclick="closeForm()">Save</button> --}}
         </section>
+
         <section id="popup-right-sleep">
             <button type="button" class="sleep_save_btn cancel" onclick="closeForm()"
                 aria-hidden="true">&times;</button>
-            <h2 id="pop_up_header_add_notes_sleep">Add notes</h2>
-            <input class="bigInput" type="text" name="sleepmetertext" placeholder="Add notes. Max. 100 characters."
-                maxlength="100">
+            <label class="meter_notes_labels">Add notes</label>
+            <textarea class="bigInput_meters" type="text" name="sleepmetertext" placeholder="Add notes. Max. 100 characters."
+                maxlength="100"></textarea>
         </section>
     </form>
 </div>

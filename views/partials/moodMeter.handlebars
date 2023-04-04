@@ -39,11 +39,12 @@
             <button form="moodMeter" type="submit" class="mood_save_btn">Save</button>
             {{!-- <button form="moodMeter" type="submit" class="mood_save_btn" onclick="closeForm()">Save</button> --}}
         </section>
+
         <section id="popup-right-mood">
             <button type="button" class="mood_save_btn cancel" onclick="closeForm()" aria-hidden="true">&times;</button>
-            <h2 id="pop_up_header_add_notes_mood">Add notes</h2>
-            <input class="bigInput" type="text" name="moodmetertext" placeholder="Add notes. Max. 100 characters."
-                maxlength="100">
+            <label class="meter_notes_labels">Add notes</label>
+            <textarea class="bigInput_meters" type="text" name="moodmetertext" placeholder="Add notes. Max. 100 characters."
+                maxlength="100"></textarea>
         </section>
     </form>
 </div>

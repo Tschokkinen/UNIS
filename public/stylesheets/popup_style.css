@@ -10,6 +10,30 @@
     height: 0;
   }
 
+.bigInput_webform {
+    resize: none;
+    height: 50%;
+    width: 80%;
+    border-radius: 5px;
+    padding: 8px;
+ }
+
+ .smallInput_webform {
+    resize: none;
+    height: 5%;
+    width: 80%;
+    border-radius: 5px;
+    padding: 8px;
+ }
+
+ .bigInput_meters {
+    resize: none;
+    height: 70%;
+    width: 75%;
+    border-radius: 5px;
+    margin-top: 24px;
+    padding: 8px;
+ }
 
 .inputs_style {
     display: flex;
@@ -18,12 +42,18 @@
     line-height: 24px;
    }
 
-.smallInput {
-    margin-right: 24px;
-}
-
 .input_margin {
     margin-bottom: 16px;
+}
+
+.meter_notes_labels {
+    font-size: 1.5em;
+    margin-top:-16px;
+}
+
+.meter_notes_labels_bp {
+    font-size: 1.5em;
+    margin-top:-40px;
 }
 
 /*SLEEPMETER*/
@@ -82,6 +112,8 @@
     border: 3px solid black;
     border-radius: 5px;
     display: flex;
+    overscroll-behavior: contain;
+    overflow: auto;
 }
 
 /* input field */
@@ -148,8 +180,8 @@
 .smiley_img_sleep {
     width: 15%;
     min-width: 70px;
-    margin: 2%;
-    margin-top: -4%;
+    margin-top: -6%;  
+    border: 4px dotted white;
 }
 
 /*MOODMETER*/
@@ -209,6 +241,8 @@
     border: 3px solid black;
     border-radius: 5px;
     display: flex;
+    overscroll-behavior: contain;
+    overflow: auto;
 }
 
 /* input field */
@@ -275,8 +309,8 @@
 .smiley_img_mood {
     width: 15%;
     min-width: 70px;
-    margin: 2%;
-    margin-top: -4%;
+    margin-top: -6%;  
+    border: 4px dotted white;
 }
 
 /*BLOOD PRESSURE FORM*/
@@ -302,6 +336,7 @@
     border-style: ridge;
     border-radius: 5px;
     flex-direction: column;
+    justify-content: center;
 }
 
 #popup-right-bloodpressure {
@@ -336,6 +371,8 @@
     border: 3px solid black;
     border-radius: 5px;
     display: flex;
+    overscroll-behavior: contain;
+    overflow: auto;
 }
 
 /* input fields */
@@ -490,6 +527,8 @@
     border: 3px solid black;
     border-radius: 5px;
     display: flex;
+    overscroll-behavior: contain;
+    overflow: auto;
 }
 
 /* input fields */
@@ -556,7 +595,7 @@ input[type=text]:focus.smallInput {
 }
 
 /* Add some hover effects to buttons */
-.form-container-messagePro .message_send_btn .message_send_btn:hover {
+.form-container-messagePro .message_send_btn:hover {
     opacity: 1;
 }
 
@@ -652,6 +691,8 @@ input[type=text]:focus.smallInput {
     border: 3px solid black;
     border-radius: 5px;
     display: flex;
+    overscroll-behavior: contain;
+    overflow: auto;
 }
 
 /* input fields */
@@ -678,12 +719,12 @@ input[type=text]:focus.smallInput {
 }
 
 #headers_msgSupport {
-    align-self: baseline;
+    align-self: flex-start;
     margin-left: 10%;
     margin-bottom: 1%;
 }
 
-#download_manua_btn {
+#download_manual_btn {
 
 }
 
@@ -722,7 +763,7 @@ input[type=text]:focus.smallInput {
 }
 
 /* Add some hover effects to buttons */
-.form-container-messageSupport .message_send_btn .message_send_btn:hover {
+.form-container-messageSupport .message_send_btn:hover {
     opacity: 1;
 }
 
@@ -781,6 +822,8 @@ input[type=text]:focus.smallInput {
     border: 3px solid black;
     border-radius: 5px;
     display: flex;
+    overscroll-behavior: contain;
+    overflow: auto;
 }
 
 /* input fields */
