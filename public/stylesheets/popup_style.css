@@ -15,11 +15,15 @@
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-    line-height: 30px;
+    line-height: 24px;
    }
 
 .smallInput {
-    margin-right: 20px;
+    margin-right: 24px;
+}
+
+.input_margin {
+    margin-bottom: 16px;
 }
 
 /*SLEEPMETER*/
@@ -757,14 +761,15 @@ input[type=text]:focus.smallInput {
     background-color: rgb(151, 150, 150);
     border-radius: 5px;
     flex-direction: column;
+    line-height: 1;
 }
 
 #pop_up_header_changeUserInfo {
-    margin-top: 40px;
+    
 }
 
 .fl_name {
-    margin-top: -40px;
+    margin-top: -44px;
     line-height: 2;
 }
 
@@ -778,21 +783,20 @@ input[type=text]:focus.smallInput {
     display: flex;
 }
 
-.changeUserInfoAttr{
-}
-
 /* input fields */
 
-.form-container-changeUserInfo input[type=text].smallInput  {
+.form-container-changeUserInfo input[type=text].smallInput, 
+input[type=email].smallInput, input[type=password].smallInput  {
     padding: 5px;
-    background: #f1f1f1;
+    background: #e3e3e3;
     border-radius: 5px;
     border-width: 2px;
     border-color: black;
 }
 
 /* When the inputs get focus, do something */
-.form-container-changeUserInfo input[type=text]:focus.smallInput {
+.form-container-changeUserInfo input[type=text]:focus.smallInput,
+input[type=email]:focus.smallInput, input[type=password]:focus.smallInput {
     background-color: white;
     outline: none;
     border-radius: 8px;
@@ -810,6 +814,8 @@ input[type=text]:focus.smallInput {
     margin-bottom: 10%;
     opacity: 0.8;
 }
+
+
 
 /* Add a red background color to the cancel button */
 .form-container-changeUserInfo .cancel {
@@ -872,6 +878,15 @@ input[type=text]:focus.smallInput {
     }
 
     .form-popup-messageSupport {
+        height: 95%;
+        margin-right: 18%;
+    }
+
+    .form-container-changeUserInfo {
+        flex-direction: column;
+    }
+
+    .form-popup-changeUserInfo {
         height: 95%;
         margin-right: 18%;
     }

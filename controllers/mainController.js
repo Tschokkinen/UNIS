@@ -14,6 +14,7 @@ const main = async (req, res) => {
     const lastName = user.lastName;
     const height = user.height ?? 0;
     const weight = user.weight ?? 0;
+    const age = user.age ?? 0;
     const bmi = calculateBMI(height, weight);
 
     console.log("User: ", user);
@@ -21,6 +22,7 @@ const main = async (req, res) => {
         'mainView',
         {
             layout: 'main-page',
+            age,
             firstName,
             lastName,
             height,

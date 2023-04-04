@@ -55,6 +55,9 @@ app.use('/', require('./routes/index'));
 app.use(verifyJWT); // Endpoints beyond this middleware require authentication
 app.use('/main', require('./routes/main'));
 app.use('/charts', require('./routes/charts'));
+app.use('/sleep-and-mood', require('./routes/sleepmood'));
+app.use('/bloodpressure', require('./routes/bloodpressure'));
+app.use('/HRV', require('./routes/hrvpulse'));
 
 mongoose.connection.once('open', () => {
     console.log("Connected to MongoDB");
