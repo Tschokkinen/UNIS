@@ -1,13 +1,19 @@
 <div class="form-popup-messageSupport" id="messageSupportForm">
     <form id="messageSupport" action="/main/messageSupport" class="form-container-messageSupport" method="POST">
+       
         <section id="popup-left-messageSupport">
             <h2 id="pop_up_header_messageSupport">MESSAGE IT-SUPPORT</h2>
-          <h5 id="headers_msgSupport">Topic:</h5>
-          <input class="smallInput" type="text" name="headerOfMessageSupport" placeholder="Header of your message." maxlength="50" required>
-          <h5 id="headers_msgSupport">Message:</h5>
-          <input class="bigInput" type="text" name="contenOfMessageSupport" placeholder="Your message. Max 500 characters." maxlength="500" required>
+          
+          <label for="messageSupportHeader" id="headers_msgSupport">Topic: </label>
+          <textarea class="smallInput_webform" id="messageSupportHeader" type="text" name="headerOfMessageSupport" placeholder="Header of your message." maxlength="50" required></textarea>
+            <br>
+          <label for="messageSupportContent" id="headers_msgSupport">Message: </label>
+          <textarea class="bigInput_webform" id="messageSupportContent" type="text" name="contenOfMessageSupport" placeholder="Your message. Max 500 characters." maxlength="500" required></textarea>
+            <br>
+            
             <button form="messageSupport" type="submit" class="message_send_btn" >Send</button>
         </section>
+
         <section id="popup-right-messageSupport">
             <button type="button" class="message_send_btn cancel" onclick="closeForm()"
                 aria-hidden="true">&times;</button>
@@ -15,7 +21,7 @@
             
             <figure id="msgSupportFigure">
                 <figcaption><a href="www.unis.fi">www.unis.fi</a></figcaption>
-                <img class="msgSupportImg" src="assets/img/UNIS_logo.png" alt="Message to professional image. Stethoscope.">    
+                <img class="msgSupportImg" src="assets/img/UNISlogoVector.png" alt="Message to professional image. Stethoscope.">    
             </figure>
 
             <div class="support_details_box">
