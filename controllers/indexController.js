@@ -2,6 +2,7 @@ const { changePartial } = require('../lib/helpers.js');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const User = require('../models/UserModel');
+const Role = require('../models/RoleModel');
 const jwt = require('jsonwebtoken');
 
 // Display sign in page
@@ -93,6 +94,10 @@ const registerUser = async (req, res) => {
     const duplicate = await User.findOne({ email: email }).exec(); 
     if (duplicate) return res.sendStatus(409); // Render error page here!
 
+    const role = await Role.findOne({ name: "user" }).exec(); // Assign user role.
+
+    console.log(role);
+
     try {
         const hashedPwd = await bcrypt.hash(password, saltRounds);
 
@@ -104,8 +109,10 @@ const registerUser = async (req, res) => {
             "age": "",
             "phonenumber": "",
             "email": email,
-            "password": hashedPwd
+            "password": hashedPwd,
+            "roles": [role._id]
         });
+
 
         console.log(newUser);
         // res.status(201).json({ 'success': `New user ${newUser} create.` });

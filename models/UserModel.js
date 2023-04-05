@@ -50,7 +50,13 @@ const userSchema = new Schema({
         type: String,
         required: false
     },
-    refreshToken: String
+    refreshToken: String,
+    roles: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Role"
+        }
+    ]
 })
 
 // Static not in use at the moment!

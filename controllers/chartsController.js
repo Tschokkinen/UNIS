@@ -1,6 +1,7 @@
 const SleepReview = require('../models/SleepReview');
 const MoodReview = require('../models/MoodReview');
 const Bloodpressure = require('../models/BloodPressureModel');
+const Comment = require('../models/CommentModel');
 const User = require('../models/UserModel');
 
 const { getUserID } = require('../lib/generalHelpers.js');
@@ -145,6 +146,26 @@ const getPulseAndHRV = async (req, res) => {
     });
 }
 
+const getCommentsData = async (req, res) => {
+    const comment = await Comment.find({ 'user': getUserID(req) });
+    // console.log(moodReviews);
+    const comments = [];
+    for (var i = 0; i < comment.length; i++) {
+        // sleeps.push(sleepReviews[i].sleepQuality);
+        let date = comment[i].createdAt;
+        let formattedDate = date.getDate() + "." + date.getMonth() + "." + date.getFullYear() + " - " + date.getHours() + ":" + date.getMinutes();
+        const newComment = {
+            'comment': comment[i].comment,
+            'date': formattedDate
+            
+        }
+        comments.push(newComment);
+    }
+    // console.log(moods);
+    // res.status(200).json({ 'message': 'success '});
+    res.status(200).json(comments);
+}
+
 module.exports =
 {
     chart,
@@ -154,5 +175,6 @@ module.exports =
     getSleepData,
     getMoodData,
     getBloodpressureData,
-    getPulseAndHRV
+    getPulseAndHRV,
+    getCommentsData
 };

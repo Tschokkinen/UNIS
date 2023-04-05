@@ -7,13 +7,18 @@ const { engine } = require('express-handlebars');
 const { default: mongoose } = require('mongoose');
 const connectDB = require('./config/dbConnection');
 
+
 // Middleware
 const verifyJWT = require('./middleware/verifyJWT');
+const isUser = require('./middleware/roleAuth');
 const { logger } = require('./middleware/logger');
 
 // Cors
 // const cors = require('cors');
 // const corsOptions = require('./config/corsOptions');
+
+
+
 
 // Connect to database
 connectDB();
@@ -48,11 +53,20 @@ app.engine('handlebars', engine(options));
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 
+// Create test comment
+// const Comment = require('./models/CommentModel');
+//  Comment.create({
+//     comment: "Doin' great!",
+
+// })
+
+
 // Path for static files
 app.use('/', express.static(path.join(__dirname, 'public/')));
 
 app.use('/', require('./routes/index'));
-app.use(verifyJWT); // Endpoints beyond this middleware require authentication
+// Endpoints beyond this middleware require authentication and user role verification
+app.use(verifyJWT, isUser); 
 app.use('/main', require('./routes/main'));
 app.use('/charts', require('./routes/charts'));
 app.use('/sleep-and-mood', require('./routes/sleepmood'));
