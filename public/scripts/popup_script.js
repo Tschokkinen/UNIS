@@ -136,7 +136,7 @@ function orangeMarkMood() {
 
 function yellowMarkMood() {
     redSmiley_mood.style.border = "4px dotted white";
-    orangeSmiley_mood.style.border = "4px dotted white";
+    orangeSmiley_mood.style.border = "4px dotted rgba(255, 255, 255, 0)";
     yellowSmiley_mood.style.border = "4px dotted black";
     yellowSmiley_mood.style.borderRadius = "20px";
     green2Smiley_mood.style.border = "4px dotted white";

@@ -64,10 +64,46 @@ header nav li {
     margin-top: 8px;
 }
 
-#chart-BP {
-  width: 800px;
+#chart-hrv {
+  width: 100%;
   flex-wrap: wrap;
-  background-color: #cbc8ff3c;
+  background-color: #ffebeb5b;
+  display: flex;
+  justify-content: center;
+  border-style: ridge;
+  border-radius: 5px;
+  margin-bottom: 4px;
+  margin-left: 4px;
+}
+
+#chart-bp {
+  width: 100%;
+  flex-wrap: wrap;
+  background-color: #cbc8ff21;
+  display: flex;
+  justify-content: center;
+  border-style: ridge;
+  border-radius: 5px;
+  margin-bottom: 4px;
+  margin-left: 4px;
+}
+
+#chart-sleepmood {
+  width: 100%;
+  flex-wrap: wrap;
+  background-color: #cdffc634;
+  display: flex;
+  justify-content: center;
+  border-style: ridge;
+  border-radius: 5px;
+  margin-bottom: 4px;
+  margin-left: 4px;
+}
+
+#chart-comments {
+  width: 100%;
+  flex-wrap: wrap;
+  background-color: #ffebeb35;
   display: flex;
   justify-content: center;
   border-style: ridge;
