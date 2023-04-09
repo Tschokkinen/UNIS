@@ -1,5 +1,4 @@
 const jwt = require('jsonwebtoken');
-// const UserModel = require('../models/UserModel');
 
 
 const verifyJWT = (req, res, next) => {
@@ -22,5 +21,7 @@ const verifyJWT = (req, res, next) => {
         }
     )
 }
+
+
 
 module.exports = verifyJWT;

@@ -60,6 +60,6 @@ const validatePassword = async () => {
     if (data.match) {
         document.getElementById('changeUserInfo').submit();
     } else {
-        alert("Wrond password.");
+        alert("Wrong password.");
     }
 }
