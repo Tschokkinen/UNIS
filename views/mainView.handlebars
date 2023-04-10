@@ -4,7 +4,7 @@
         <h2 class="f_name">{{firstName}}</h2>
         <h2 class="l_name">{{lastName}}</h2>
         <!-- Userimage source: Pixabay, Raphael Silva. https://pixabay.com/fi/users/raphaelsilva-4702998/ -->
-        <img class="userimg" src="assets/img/user.png" alt="This is an image the user.">
+        <img title="Profile image" class="userimg" src="assets/img/user.png" alt="This is an image the user.">
         <div class="profile_details_box">
             <ul>
                 <li><b>Age: </b> <span id="age">{{age}}</span> years</li><br>
@@ -23,12 +23,12 @@
 </section>
 
 <section id="right">
-    <button id="hrv_load">
+    <button title="Download HRV measurements" id="hrv_load">
         <!-- heart_img source: Pixabay, DanXaw. https://pixabay.com/fi/users/danxaw-9189893/ -->
         <img id="heart_img" src="assets/img/heart_ekg.png" alt="Download HRV measurements">
         <br><span>HRV download</span></button>
 
-    <button id="main_function_measure" onclick="openFormSleep()">
+    <button title="Record how you slept" id="main_function_measure" onclick="openFormSleep()">
         <!-- sleep_img source: Pixabay, Pixel_perfect. https://pixabay.com/fi/users/pixel_perfect-1411206/ -->
         <!-- green_light_img source: Pixabay, OpenClipart-Vectors. https://pixabay.com/fi/users/openclipart-vectors-30363/ -->
         <img id="sleep_img" src="assets/img/sleep.png" alt="Sleep meter">
@@ -37,7 +37,7 @@
 
     {{> (sleepMeter) }}
 
-    <button id="main_function_measure" onclick="openFormMood()">
+    <button title="Record your current mood" id="main_function_measure" onclick="openFormMood()">
         <!-- mood_img source: Pixabay, Clker-Free-Vector-Images. https://pixabay.com/fi/users/clker-free-vector-images-3736/ -->
         <!-- green_light_img source: Pixabay, OpenClipart-Vectors. https://pixabay.com/fi/users/openclipart-vectors-30363/ -->
         <img id="mood_img" src="assets/img/emotions.png" alt="Mood meter.">
@@ -46,7 +46,7 @@
     
     {{> (moodMeter) }}
     
-    <button id="main_function_measure" onclick="openFormBP()">
+    <button title="Record your blood pressure measurements" id="main_function_measure" onclick="openFormBP()">
         <!-- blood_pressure_img source: Pixabay, MostafaElTurkey36. https://pixabay.com/fi/users/mostafaelturkey36-13328910/ -->
         <!-- red_light_img source: Pixabay, OpenClipart-Vectors. https://pixabay.com/fi/users/openclipart-vectors-30363/ -->
         <img id="blood_pressure_img" src="assets/img/blood_pressure.png" alt="Blood pressure measurements.">
@@ -55,18 +55,18 @@
 
     {{> (bloodpressureMeter) }}            
 
-    <button id="main_function_other">
+    <button title="Evaluate used gadgets" id="main_function_other">
         <!-- oxygen_img source: Pixabay, Clker-Free-Vector-Images. https://pixabay.com/fi/users/clker-free-vector-images-3736/ -->
         <img id="oxygen_img" src="assets/img/oxygen.png" alt="Gadgets to treat sleep apnea and their evaluation.">
         <br><span>Gadgets</span></button>
 
-    <button id="main_function_other">
+    <button title="Observe all measurement history and comments from professional" id="main_function_other">
         <a href="/charts">
             <!-- graph_img source: Pixabay, janjf93. https://pixabay.com/fi/users/janjf93-3084263/ -->
             <img id="graph_img" src="assets/img/graph.png" alt="History and analysis of measurements."></a>
         <br><span>History</span></button>
 
-    <button id="main_function_other">
+    <button title="Read more about sleep apnea, sleep and health" id="main_function_other">
         <!-- book_img source: Pixabay, Josy_Dom_Alexis. https://pixabay.com/fi/users/josy_dom_alexis-487968/ -->
         <img id="book_img" src="assets/img/book.png" alt="Infobank for people with sleep apnea.">
         <br><span>Infobank</span></button>
