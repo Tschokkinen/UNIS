@@ -157,3 +157,19 @@ form label {
     font-size: 2em;
     margin-top: 8px;
 }
+
+@media screen and (max-width:750px) {
+  
+    #container {
+        flex-direction: column;
+    }
+  
+    .left-side {
+        order: 1;
+    }
+  
+    .right-side {
+        order: 2;
+        justify-content: space-around;
+    }
+  }
