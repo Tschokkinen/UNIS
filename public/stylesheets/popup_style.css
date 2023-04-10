@@ -1082,6 +1082,10 @@ input[type=email]:focus.smallInput, input[type=password]:focus.smallInput {
         height: 200px;
     }
 
+    .support_details_box ul {
+        margin-left: -16px;
+    }
+
     .support_details_box ul .listitemsMsgSupport {
         margin-top: 0px;
     }
