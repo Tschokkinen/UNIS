@@ -92,7 +92,7 @@ const saveBloodpressure = async (req, res) => {
             "comments": req.body.bloodpressuretext,
             "user": getUserID(req)
         });
-        
+
         res.status(200);
         res.redirect('/main');
     } catch (err) {
@@ -178,6 +178,58 @@ const validatePassword = async (req, res) => {
     res.status(200).json(obj);
 }
 
+const meterValues = async (req, res) => {
+
+    let start = new Date();
+    start.setHours(0, 0, 0, 0);
+
+    let end = new Date();
+    end.setHours(23, 59, 59, 999);
+
+    const sleepReviewedToday = await SleepReview.findOne(
+        {
+            'user': getUserID(req),
+            'createdAt':
+            {
+                $gte: start,
+                $lt: end
+            }
+
+        });
+
+    // console.log("sleepReviewedToday: ", sleepReviewedToday);
+
+    const moodReviewedToday = await MoodReview.findOne(
+        {
+            'user': getUserID(req),
+            'createdAt':
+            {
+                $gte: start,
+                $lt: end
+            }
+
+        });
+
+    const bloodpressureReviewedToday = await BloodPressure.findOne(
+        {
+            'user': getUserID(req),
+            'createdAt':
+            {
+                $gte: start,
+                $lt: end
+            }
+
+        });
+
+    const meterValues = {
+        sleep: sleepReviewedToday != null ? true : false,
+        mood: moodReviewedToday != null ? true : false,
+        bloodpressure: bloodpressureReviewedToday != null ? true : false
+    }
+
+    res.status(200).json(meterValues);
+}
+
 module.exports = {
     main,
     saveSleep,
@@ -188,5 +240,6 @@ module.exports = {
     messageToSupport,
     changeUserInfo,
     requestUserData,
-    validatePassword
+    validatePassword,
+    meterValues
 };
