@@ -199,7 +199,7 @@ main {
     transform: translateY(2px);
 }
 
-#main_function_measure {
+.main_function_measure {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -221,27 +221,26 @@ main {
     font-weight: 600;
 }
 
-#main_function_measure:focus {
+.main_function_measure:focus {
     box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
 }
 
-#main_function_measure:hover {
+.main_function_measure:hover {
     box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
     transform: translateY(-2px);
     color: rgb(85, 0, 255);
 }
 
-#main_function_measure:active {
+.main_function_measure:active {
     box-shadow: #D6D6E7 0 3px 7px inset;
     transform: translateY(2px);
 }
 
-#main_function_other {
+.main_function_other {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    display: flex;
     width: 25%;
     min-width: 4em;
     height: 35%;
@@ -258,20 +257,26 @@ main {
     font-size: 14pt;
     font-weight: 600;
 }
-#main_function_other:focus {
+.main_function_other:focus {
     box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
 }
 
-#main_function_other:hover {
+.main_function_other:hover {
     box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
     transform: translateY(-2px);
     color: rgb(85, 0, 255);
 }
 
-#main_function_other:active {
+.main_function_other:active {
     box-shadow: #D6D6E7 0 3px 7px inset;
     transform: translateY(2px);
 }
+
+button a {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
 
 #heart_img {
     height: 2.2em;
@@ -295,8 +300,8 @@ main {
 }
 
 #oxygen_img {
-    height: 5.6em;
-    margin: 10px;
+    height: 5.8em;
+    margin: 8px;
 }
 
 #graph_img {
