@@ -66,8 +66,11 @@
             <img id="graph_img" src="assets/img/graph.png" alt="History and analysis of measurements."></a>
         <br><span>History</span></button>
 
-    <button title="Read more about sleep apnea, sleep and health" id="main_function_other">
+    <button title="Read more about sleep apnea, sleep and health" id="main_function_other" onclick="openinfoBank()">
         <!-- book_img source: Pixabay, Josy_Dom_Alexis. https://pixabay.com/fi/users/josy_dom_alexis-487968/ -->
         <img id="book_img" src="assets/img/book.png" alt="Infobank for people with sleep apnea.">
         <br><span>Infobank</span></button>
+
+    {{> (infoBank) }}
+        
 </section>

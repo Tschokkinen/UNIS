@@ -5,6 +5,7 @@ const bloodpressureForm = document.getElementById("bloodpressureForm");
 const sendMsgToPro = document.getElementById("messageToProForm");
 const sendMsgToSupport = document.getElementById("messageSupportForm");
 const changeUserInfo = document.getElementById("changeUserInfoForm");
+const infoBank = document.getElementById("infoBankForm");
 
 const redSmiley_sleep = document.getElementById("red_img_sleep");
 const orangeSmiley_sleep = document.getElementById("orange_img_sleep");
@@ -23,6 +24,12 @@ const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
 
 function openFormSleep() {
     sleepForm.style.display = "block";
+    body.style.position = 'fixed';
+    body.style.top = `-${scrollY}`;
+}
+
+function openinfoBank() {
+    infoBank.style.display = "block";
     body.style.position = 'fixed';
     body.style.top = `-${scrollY}`;
 }
