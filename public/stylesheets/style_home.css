@@ -42,7 +42,7 @@ header {
 header nav ul {
     display: flex;
     list-style-type: none;
-    padding-left: 0;
+    padding-left: 10%;
     align-items: center;
     flex-direction: row;
 }
@@ -58,58 +58,48 @@ header nav a {
 .fa-circle-info {
     color: rgb(0, 0, 0);
     font-size: 3em;
-    text-shadow: 2px 2px 6px #3b3b3b;
     margin-top: 2vh;
 }
 
 .fa-circle-info:hover {
     color: rgb(85, 0, 255);
     text-shadow: 2px 2px 6px #3b3b3b;
+    cursor: pointer;
 }
 
 .fa-envelope {
     color: rgb(0, 0, 0);
     font-size: 3em;
-    text-shadow: 2px 2px 6px #3b3b3b;
     margin-top: 2vh;
 }
 
 .fa-envelope:hover {
     color: rgb(85, 0, 255);
     text-shadow: 2px 2px 6px #3b3b3b;
+    cursor: pointer;
 }
 
 .logOutButton {
     align-items: center;
     appearance: none;
     background-color: #FCFCFD;
-    border-radius: 4px;
-    border-width: 3px;
+    border-radius: 3px;
+    border-width: 1px;
     box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
     box-sizing: border-box;
     color: #36395A;
     cursor: pointer;
     display: inline-flex;
-    font-family: "JetBrains Mono", monospace;
-    height: 2.5em;
-    width: 4.5em;
+    height: 48px;
+    width: 48px;
     justify-content: center;
-    line-height: 1;
     list-style: none;
-    overflow: hidden;
-    position: relative;
-    text-align: left;
-    text-decoration: none;
     transition: box-shadow .15s, transform .15s;
-    user-select: none;
-    -webkit-user-select: none;
     touch-action: manipulation;
-    white-space: nowrap;
     will-change: box-shadow, transform;
-    font-size: 0.9em;
+    font-size: 12pt;
     font-weight: 600;
     margin-top: 10px;
-    padding: 2px;
 }
 
 .logOutButton:focus {
@@ -154,16 +144,21 @@ main {
     box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.fl_name {
+    line-height: 1;
+}
+
 #right {
     display: flex;
     flex: 4;
     flex-wrap: wrap;
     background-color: white;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-left: 7%;
     padding-right: 7%;
     padding-bottom: 5%;
 }
+
 
 #hrv_load {
     display: flex;
@@ -180,14 +175,27 @@ main {
     border-radius: 10px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
-    background: #fffcfc;
-    background-image: linear-gradient(to bottom, #fffcfc, #a5a5a5);
+    color: #36395A;
+    transition: box-shadow .15s, transform .15s;
+    touch-action: manipulation;
+    will-change: box-shadow, transform;
+    font-size: 14pt;
+    font-weight: 600;
+}
+
+#hrv_load:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
 }
 
 #hrv_load:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
     color: rgb(85, 0, 255);
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-    border-color: rgb(85, 0, 255);
+}
+
+#mhrv_load:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
 }
 
 #main_function_measure {
@@ -196,26 +204,35 @@ main {
     justify-content: center;
     align-items: center;
     display: flex;
-    width: 24vh;
-    min-width: 4em;
-    height: 10vw;
+    width: 25%;
+    height: 35%;
     min-height: 125px;
-    margin-left: 3vw;
-    margin-right: 3vw;
-    margin-bottom: 1em;
+    margin: 2vw;
     text-align: left;
-    font-size: 0.9em;
     border-radius: 10px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
-    background: #fffcfc;
-    background-image: linear-gradient(to bottom, #fffcfc, #a5a5a5);
+    color: #36395A;
+    transition: box-shadow .15s, transform .15s;
+    touch-action: manipulation;
+    will-change: box-shadow, transform;
+    font-size: 14pt;
+    font-weight: 600;
+}
+
+#main_function_measure:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
 }
 
 #main_function_measure:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
     color: rgb(85, 0, 255);
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-    border-color: rgb(85, 0, 255);
+}
+
+#main_function_measure:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
 }
 
 #main_function_other {
@@ -224,28 +241,35 @@ main {
     justify-content: center;
     align-items: center;
     display: flex;
-    width: 24vh;
+    width: 25%;
     min-width: 4em;
-    height: 10vw;
+    height: 35%;
     min-height: 125px;
-    margin-left: 3vw;
-    margin-right: 3vw;
-    margin-bottom: 1.2em;
+    margin: 2vw;
     text-align: left;
-    font-size: 0.9em;
-    justify-content: center;
-    align-items: center;
     border-radius: 50px;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
-    background: #fffcfc;
-    background-image: linear-gradient(to bottom, #fffcfc, #a5a5a5);
+    color: #36395A;
+    transition: box-shadow .15s, transform .15s;
+    touch-action: manipulation;
+    will-change: box-shadow, transform;
+    font-size: 14pt;
+    font-weight: 600;
+}
+#main_function_other:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
 }
 
 #main_function_other:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
     color: rgb(85, 0, 255);
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-    border-color: rgb(85, 0, 255);
+}
+
+#main_function_other:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
 }
 
 #heart_img {
@@ -255,44 +279,42 @@ main {
 }
 
 #sleep_img {
-    height: 4.5em;
-    margin: 5px;
+    height: 5.5em;
+    margin: 8px;
 }
 
 #mood_img {
     height: 5.5em;
-    margin: 5px;
+    margin: 8px;
 }
 
 #blood_pressure_img {
     height: 5.5em;
-    margin: 5px;
+    margin: 8px;
 }
 
 #oxygen_img {
-    height: 5.8em;
+    height: 5.6em;
     margin: 10px;
 }
 
 #graph_img {
     height: 5.5em;
-    margin: 5px;
+    margin: 8px;
 }
 
 #book_img {
     height: 4em;
-    margin: 5px;
+    margin: 16px;
 }
 
 #green_light_img {
-    height: 18px;
+    height: 16px;
     margin-left: 10px;
 }
-
-h4 {
-    margin-top: -8px;
-    font-size: 1.4em;
-    line-height: 8px;
+#red_light_img {
+    height: 16px;
+    margin-left: 10px;
 }
 
 .patient_info_list {
@@ -319,6 +341,7 @@ h4 {
     border-radius: 7px;
     border-style: solid;
     border-width: 2px;
+    width: 100%;
 }
 
 .edit_profile_button {
@@ -332,24 +355,21 @@ h4 {
     color: #36395A;
     cursor: pointer;
     display: inline-flex;
-    font-family: "JetBrains Mono", monospace;
     height: 48px;
+    width: 100%;
     justify-content: center;
     line-height: 1;
     list-style: none;
     overflow: hidden;
     padding-left: 16px;
     padding-right: 16px;
-    position: relative;
     text-align: left;
     text-decoration: none;
     transition: box-shadow .15s, transform .15s;
-    user-select: none;
-    -webkit-user-select: none;
     touch-action: manipulation;
-    white-space: nowrap;
     will-change: box-shadow, transform;
-    font-size: 1rem;
+    font-size: 14pt;
+    font-weight: 600;
     margin-top: 24px;
     margin-bottom: 24px;
 }
@@ -397,7 +417,7 @@ footer {
   }
 
   .unislogo {
-      height: 8vh;
+      height: 80px;
       margin-right: auto;
   }
 
@@ -406,9 +426,11 @@ footer {
   }
 
   .logOutButton {
+      width: 32px;
+      height: 32px;
       font-size: 0.7em;
-      border-width: 4px;
       border-color: black;
+      margin-right: 16px;
   }
 
   #left {
@@ -417,6 +439,15 @@ footer {
 
   #right {
       order: 1;
+      justify-content: space-around;
+  }
+
+  #main_function_measure {
+        width:70%;
+  }
+
+  #main_function_other {
+    width:70%;
   }
 
   .userimg {

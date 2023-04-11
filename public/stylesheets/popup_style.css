@@ -37,9 +37,11 @@
 
 .inputs_style {
     display: flex;
-    width: 100%;
+    width: 80%;
     flex-wrap: wrap;
     line-height: 24px;
+    overflow: auto;
+    justify-content: space-between;
    }
 
 .input_margin {
@@ -93,7 +95,7 @@
     color: black;
     font-size: 1.5em;
     font-style: italic;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 #pop_up_header_sleep_meter {
@@ -116,37 +118,33 @@
     overflow: auto;
 }
 
-/* input field */
-.form-container-sleep input[type=text].bigInput {
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    background: #f1f1f1;
-    float: right;
-    border-radius: 5px;
-    border-width: 2px;
-    border-color: black;
-    width: 60%;
-    height: 65%;
-}
-
-/* When the inputs get focus, do something */
-.form-container-sleep input[type=text]:focus.bigInput {
-    background-color: white;
-    outline: none;
-    border-radius: 8px;
-}
-
 /* Set a style for the submit/login button */
 .form-container-sleep .sleep_save_btn {
-    background-color: #04AA6D;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 20%;
-    margin-bottom: 10px;
-    opacity: 0.8;
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px 20px;
+        align-self: center;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 20%;
+        margin-bottom: 5%;
+        border-width: 2px;
+        align-items: center;
+        appearance: none;
+        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+        box-sizing: border-box;
+        display: inline-flex;
+        justify-content: center;
+        list-style: none;
+        overflow: hidden;
+        text-align: left;
+        text-decoration: none;
+        transition: box-shadow .15s, transform .15s;
+        touch-action: manipulation;
+        will-change: box-shadow, transform;
+        font-size: 14pt;
+        font-weight: 600;
 }
 
 /* Add a red background color to the cancel button */
@@ -162,8 +160,19 @@
 }
 
 /* Add some hover effects to buttons */
+.form-container-sleep .sleep_save_btn:focus {
+    box-shadow: #515152 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+    
 .form-container-sleep .sleep_save_btn:hover {
-    opacity: 1;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+    color: rgb(85, 0, 255);
+}
+    
+.form-container-sleep .sleep_save_btn:active {
+    box-shadow: #515152 0 3px 7px inset;
+    transform: translateY(2px);
 }
 
 .smiley_meter_sleep {
@@ -180,8 +189,8 @@
 .smiley_img_sleep {
     width: 15%;
     min-width: 70px;
-    margin-top: -6%;  
-    border: 4px dotted white;
+    margin-top: -6%; 
+    border: 4px dotted rgba(255, 255, 255, 0);
 }
 
 /*MOODMETER*/
@@ -222,7 +231,8 @@
     color: black;
     font-size: 1.5em;
     font-style: italic;
-    margin-top: 10%;
+    margin-top: 5%;
+    justify-self: center;
 }
 
 #pop_up_header_mood {
@@ -245,37 +255,34 @@
     overflow: auto;
 }
 
-/* input field */
-.form-container-mood input[type=text].bigInput {
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    background: #f1f1f1;
-    float: right;
-    border-radius: 5px;
-    border-width: 2px;
-    border-color: black;
-    width: 60%;
-    height: 65%;
-}
-
-/* When the inputs get focus, do something */
-.form-container-mood input[type=text]:focus.bigInput {
-    background-color: white;
-    outline: none;
-    border-radius: 8px;
-}
-
 /* Set a style for the submit/login button */
 .form-container-mood .mood_save_btn {
-    background-color: #04AA6D;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 20%;
-    margin-bottom: 10px;
-    opacity: 0.8;
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px 20px;
+        align-self: center;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 20%;
+        margin-bottom: 5%;
+        border-width: 2px;
+        align-items: center;
+        appearance: none;
+        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+        box-sizing: border-box;
+        display: inline-flex;
+        justify-content: center;
+        line-height: 1;
+        list-style: none;
+        overflow: hidden;
+        text-align: left;
+        text-decoration: none;
+        transition: box-shadow .15s, transform .15s;
+        touch-action: manipulation;
+        will-change: box-shadow, transform;
+        font-size: 14pt;
+        font-weight: 600;
 }
 
 /* Add a red background color to the cancel button */
@@ -291,8 +298,19 @@
 }
 
 /* Add some hover effects to buttons */
+.form-container-mood .mood_save_btn:focus {
+    box-shadow: #515152 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+    
 .form-container-mood .mood_save_btn:hover {
-    opacity: 1;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+    color: rgb(85, 0, 255);
+}
+    
+.form-container-mood .mood_save_btn:active {
+    box-shadow: #515152 0 3px 7px inset;
+    transform: translateY(2px);
 }
 
 .smiley_meter_mood {
@@ -310,7 +328,7 @@
     width: 15%;
     min-width: 70px;
     margin-top: -6%;  
-    border: 4px dotted white;
+    border: 4px dotted rgba(255, 255, 255, 0);
 }
 
 /*BLOOD PRESSURE FORM*/
@@ -359,8 +377,8 @@
     margin-top: 40px;
 }
 
-#pop_up_header_add_notes_bloodpressure {
-    margin-top: -40px;
+.meter_notes_labels_bp {
+    margin-top: -15px;
 }
 
 /* Add styles to the form container */
@@ -386,21 +404,8 @@
     margin-bottom: 5%;
 }
 
-
-.form-container-bloodpressure input[type=text].bigInput {
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    background: #f1f1f1;
-    float: right;
-    border-radius: 5px;
-    border-width: 2px;
-    border-color: black;
-    width: 60%;
-    height: 65%;
-}
-
 /* When the inputs get focus, do something */
-.form-container-bloodpressure input[type=text]:focus.smallInput.bigInput {
+.form-container-bloodpressure input[type=text]:focus.smallInput {
     background-color: white;
     outline: none;
     border-radius: 8px;
@@ -408,15 +413,32 @@
 
 /* Set a style for the submit/login button */
 .form-container-bloodpressure .bloodpressure_save_btn {
-    background-color: #04AA6D;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 20%;
-    margin-bottom: 10%;
-    opacity: 0.8;
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px 20px;
+        align-self: center;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 20%;
+        margin-bottom: 5%;
+        border-width: 2px;
+        align-items: center;
+        appearance: none;
+        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+        box-sizing: border-box;
+        display: inline-flex;
+        justify-content: center;
+        line-height: 1;
+        list-style: none;
+        overflow: hidden;
+        text-align: left;
+        text-decoration: none;
+        transition: box-shadow .15s, transform .15s;
+        touch-action: manipulation;
+        will-change: box-shadow, transform;
+        font-size: 14pt;
+        font-weight: 600;
 }
 
 /* Add a red background color to the cancel button */
@@ -427,13 +449,24 @@
     padding: 0px 0px;
     border-radius: 5px;
     width: 40px;
-    height: 40px;
+    height: 40px !important;
     font-size: 2em;
 }
 
 /* Add some hover effects to buttons */
+.form-container-bloodpressure .bloodpressure_save_btn:focus {
+    box-shadow: #515152 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+    
 .form-container-bloodpressure .bloodpressure_save_btn:hover {
-    opacity: 1;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+    color: rgb(85, 0, 255);
+}
+    
+.form-container-bloodpressure .bloodpressure_save_btn:active {
+    box-shadow: #515152 0 3px 7px inset;
+    transform: translateY(2px);
 }
 
 /*SEND MESSAGE TO PROFESSIONAL*/
@@ -504,6 +537,8 @@
     border-width: 2px;
     width: 80%;
     margin: 28px;
+    height: 300px;
+    padding-top: 24px;
 }
 
 .YTHS_details_box ul {
@@ -517,6 +552,7 @@
 
 .YTHS_details_box ul .listitemsMsgPro {
     margin-top: -24px;
+    margin-left: -16px;
 }
 
 /* Add styles to the form container */
@@ -531,55 +567,40 @@
     overflow: auto;
 }
 
-/* input fields */
-
-.form-container-messagePro input[type=text].smallInput  {
-    border-radius: 5px;
-    border-width: 2px;
-    border-color: black;
-    background: #f1f1f1;
-    padding: 2%;
-    width: 75%;
-}
-
-.form-container-messagePro input[type=text].bigInput {
-    padding: 15px;
-    background: #f1f1f1;
-    float: right;
-    border-radius: 5px;
-    border-width: 2px;
-    border-color: black;
-    width: 75%;
-    height: 50%;
-    margin-bottom: 5%;
-}
-
 #headers_msgPro {
     align-self: baseline;
     margin-left: 10%;
     margin-bottom: 1%;
 }
 
-/* When the inputs get focus, do something */
-.form-container-messagePro input[type=text]:focus.bigInput,
-input[type=text]:focus.smallInput {
-    background-color: white;
-    outline: none;
-    border-radius: 8px;
-}
-
 /* Set a style for the submit/login button */
 .form-container-messagePro .message_send_btn {
-    background-color: #04AA6D;
-    color: white;
-    padding: 16px 20px;
-    align-self: center;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 20%;
-    margin-bottom: 5%;
-    opacity: 0.8;
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px 20px;
+        align-self: center;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 20%;
+        margin-bottom: 5%;
+        border-width: 2px;
+        align-items: center;
+        appearance: none;
+        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+        box-sizing: border-box;
+        display: inline-flex;
+        justify-content: center;
+        line-height: 1;
+        list-style: none;
+        overflow: hidden;
+        text-align: left;
+        text-decoration: none;
+        transition: box-shadow .15s, transform .15s;
+        touch-action: manipulation;
+        will-change: box-shadow, transform;
+        font-size: 14pt;
+        font-weight: 600;
 }
 
 /* Add a red background color to the cancel button */
@@ -590,18 +611,27 @@ input[type=text]:focus.smallInput {
     padding: 0px 0px;
     border-radius: 5px;
     width: 40px;
-    height: 40px;
+    min-height: 40px;
     font-size: 2em;
 }
 
 /* Add some hover effects to buttons */
+.form-container-messagePro .message_send_btn:focus {
+    box-shadow: #515152 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+    
 .form-container-messagePro .message_send_btn:hover {
-    opacity: 1;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+    color: rgb(85, 0, 255);
+}
+    
+.form-container-messagePro .message_send_btn:active {
+    box-shadow: #515152 0 3px 7px inset;
+    transform: translateY(2px);
 }
 
 /*MESSAGE TO SUPPORT*/
-
-
 .form-popup-messageSupport {
     display: none;
     position: fixed;
@@ -667,20 +697,22 @@ input[type=text]:focus.smallInput {
     border-style: solid;
     border-width: 2px;
     width: 80%;
-    margin: 28px;
+    margin: 24px;
+    height: 176px;
+    padding-top: 24px;
 }
 
 .support_details_box ul {
-    list-style-type:circle;
-    font-size: 1em;
-    margin-left: 2em;
+    list-style-type:none;
+    font-size: 0.9em;
+    margin-left: -32px;
     flex-direction: column;
     align-items: flex-start;
-    line-height: 1.2em;
+    line-height: 1.1;
 }
 
 .support_details_box ul .listitemsMsgSupport {
-    margin-top: -24px;
+    margin-top: -32px;
 }
 
 /* Add styles to the form container */
@@ -695,29 +727,6 @@ input[type=text]:focus.smallInput {
     overflow: auto;
 }
 
-/* input fields */
-
-.form-container-messageSupport input[type=text].smallInput  {
-    border-radius: 5px;
-    border-width: 2px;
-    border-color: black;
-    background: #f1f1f1;
-    padding: 2%;
-    width: 75%;
-}
-
-.form-container-messageSupport input[type=text].bigInput {
-    padding: 15px;
-    background: #f1f1f1;
-    float: right;
-    border-radius: 5px;
-    border-width: 2px;
-    border-color: black;
-    width: 75%;
-    height: 50%;
-    margin-bottom: 5%;
-}
-
 #headers_msgSupport {
     align-self: flex-start;
     margin-left: 10%;
@@ -725,15 +734,47 @@ input[type=text]:focus.smallInput {
 }
 
 #download_manual_btn {
-
+    width: 80%;
+    height: 48px;
+    margin-bottom: 24px;
+    align-items: center;
+    appearance: none;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border-width: 2px;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    touch-action: manipulation;
+    will-change: box-shadow, transform;
+    font-size: 12pt;
+    font-weight: 600;
 }
 
-/* When the inputs get focus, do something */
-.form-container-messageSupport input[type=text]:focus.bigInput,
-input[type=text]:focus.smallInput {
-    background-color: white;
-    outline: none;
-    border-radius: 8px;
+#download_manual_btn:focus {
+    box-shadow: #b0b0e4 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+#download_manual_btn:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+    color: rgb(85, 0, 255);
+}
+
+#download_manual_btn:active {
+    box-shadow: #b0b0e4 0 3px 7px inset;
+    transform: translateY(2px);
 }
 
 /* Set a style for the submit/login button */
@@ -747,7 +788,38 @@ input[type=text]:focus.smallInput {
     cursor: pointer;
     width: 20%;
     margin-bottom: 5%;
-    opacity: 0.8;
+    border-width: 2px;
+    align-items: center;
+    appearance: none;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    touch-action: manipulation;
+    will-change: box-shadow, transform;
+    font-size: 14pt;
+    font-weight: 600;
+}
+
+.form-container-messageSupport .message_send_btn:focus {
+    box-shadow: #515152 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.form-container-messageSupport .message_send_btn:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+    color: rgb(85, 0, 255);
+}
+
+.form-container-messageSupport .message_send_btn:active {
+    box-shadow: #515152 0 3px 7px inset;
+    transform: translateY(2px);
 }
 
 /* Add a red background color to the cancel button */
@@ -760,11 +832,6 @@ input[type=text]:focus.smallInput {
     width: 40px;
     height: 40px;
     font-size: 2em;
-}
-
-/* Add some hover effects to buttons */
-.form-container-messageSupport .message_send_btn:hover {
-    opacity: 1;
 }
 
 /*CHANGE USER INFO*/
@@ -793,6 +860,7 @@ input[type=text]:focus.smallInput {
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 24px;
+    padding-left: 32px;
 }
 
 #popup-right-changeUserInfo {
@@ -806,12 +874,12 @@ input[type=text]:focus.smallInput {
 }
 
 #pop_up_header_changeUserInfo {
-    
+    margin-bottom: 26px;
 }
 
 .fl_name {
-    margin-top: -44px;
-    line-height: 2;
+    margin-top: -24px;
+    line-height: 1.5;
 }
 
 /* Add styles to the form container */
@@ -824,6 +892,27 @@ input[type=text]:focus.smallInput {
     display: flex;
     overscroll-behavior: contain;
     overflow: auto;
+}
+
+.profile_details_box_popup {
+    background-color: rgb(241, 241, 241);
+    padding-bottom: 8px;
+    border-radius: 7px;
+    border-style: solid;
+    border-width: 2px;
+    width: 80%;
+    margin-bottom: 28px;
+    height: 300px;
+    padding-top: 8px;
+}
+
+.profile_details_box_popup ul {
+    list-style-type:circle;
+    font-size: 10pt;
+    margin-left: 1em;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1em;
 }
 
 /* input fields */
@@ -847,18 +936,33 @@ input[type=email]:focus.smallInput, input[type=password]:focus.smallInput {
 
 /* Set a style for the submit/login button */
 .form-container-changeUserInfo .changeUserInfo_send_btn {
-    background-color: #04AA6D;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 20%;
-    margin-bottom: 10%;
-    opacity: 0.8;
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px 20px;
+        align-self: center;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 20%;
+        margin-bottom: 5%;
+        border-width: 2px;
+        align-items: center;
+        appearance: none;
+        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+        box-sizing: border-box;
+        display: inline-flex;
+        justify-content: center;
+        line-height: 1;
+        list-style: none;
+        overflow: hidden;
+        text-align: left;
+        text-decoration: none;
+        transition: box-shadow .15s, transform .15s;
+        touch-action: manipulation;
+        will-change: box-shadow, transform;
+        font-size: 14pt;
+        font-weight: 600;
 }
-
-
 
 /* Add a red background color to the cancel button */
 .form-container-changeUserInfo .cancel {
@@ -868,17 +972,44 @@ input[type=email]:focus.smallInput, input[type=password]:focus.smallInput {
     padding: 0px 0px;
     border-radius: 5px;
     width: 40px;
-    height: 40px;
+    min-height: 40px;
     font-size: 2em;
 }
 
 /* Add some hover effects to buttons */
-.form-container-mchangeUserInfo .changeUserInfo_send_btn:hover {
-    opacity: 1;
+.form-container-changeUserInfo .changeUserInfo_send_btn:focus {
+    box-shadow: #515152 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+    
+.form-container-changeUserInfo .changeUserInfo_send_btn:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+    color: rgb(85, 0, 255);
+}
+    
+.form-container-changeUserInfo .changeUserInfo_send_btn:active {
+    box-shadow: #515152 0 3px 7px inset;
+    transform: translateY(2px);
 }
 
 
 @media screen and (max-width:750px) {
+
+   /*GENERAL STYLES*/          
+
+    .bigInput_webform {
+        height: 300px;
+     }
+    
+     .smallInput_webform {
+        height: 16px;
+     }
+     .bigInput_meters {
+        height: 300px;
+        margin-bottom: 24px;
+     }
+
+    /*SLEEP METER*/
 
     .form-container-sleep {
         flex-direction: column;
@@ -889,6 +1020,8 @@ input[type=email]:focus.smallInput, input[type=password]:focus.smallInput {
         margin-right: 18%;
     }
 
+    /*MOOD METER*/
+
     .form-container-mood {
         flex-direction: column;
     }
@@ -898,6 +1031,8 @@ input[type=email]:focus.smallInput, input[type=password]:focus.smallInput {
         margin-right: 18%;
     }
 
+    /*BLOOD PRESSURE METER*/
+
     .form-container-bloodpressure {
         flex-direction: column;
     }
@@ -906,6 +1041,9 @@ input[type=email]:focus.smallInput, input[type=password]:focus.smallInput {
         height: 95%;
         margin-right: 18%;
     }
+    
+
+    /*MESSAGE TO PROFESSIONAL POPUP*/
 
     .form-container-messagePro {
         flex-direction: column;
@@ -915,6 +1053,21 @@ input[type=email]:focus.smallInput, input[type=password]:focus.smallInput {
         height: 95%;
         margin-right: 18%;
     }
+    
+    #pop_up_header_messagePro {
+    margin-left: 24px;
+    }
+
+    .YTHS_details_box {
+        padding-top: 24px;
+        height: 200px;
+    }
+
+    .YTHS_details_box ul .listitemsMsgPro {
+        margin-top: 0px;
+    }
+
+    /*MESSAGE TO SUPPORT POPUP*/
 
     .form-container-messageSupport {
         flex-direction: column;
@@ -924,6 +1077,20 @@ input[type=email]:focus.smallInput, input[type=password]:focus.smallInput {
         height: 95%;
         margin-right: 18%;
     }
+    .support_details_box {
+        padding-top: 24px;
+        height: 200px;
+    }
+
+    .support_details_box ul {
+        margin-left: -16px;
+    }
+
+    .support_details_box ul .listitemsMsgSupport {
+        margin-top: 0px;
+    }
+
+    /*EDIT PROFILE/CHANGE USER INFO POPUP*/
 
     .form-container-changeUserInfo {
         flex-direction: column;
@@ -932,5 +1099,11 @@ input[type=email]:focus.smallInput, input[type=password]:focus.smallInput {
     .form-popup-changeUserInfo {
         height: 95%;
         margin-right: 18%;
+    }
+    .form-container-changeUserInfo .changeUserInfo_send_btn {
+        width: 100px;
+    }
+    .form-container-changeUserInfo .cancel {
+        width: 40px;
     }
 }

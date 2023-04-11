@@ -1,7 +1,7 @@
 <div class="form-popup-changeUserInfo" id="changeUserInfoForm">
     <form id="changeUserInfo" action="/main/changeUserInfo" class="form-container-changeUserInfo" method="POST">
         <section id="popup-left-changeUserInfo">
-            <h2 id="pop_up_header_changeUserInfo">CHANGE USER INFO</h2>
+            <h2 id="pop_up_header_changeUserInfo">EDIT PROFILE</h2>
 
             <div class="inputs_style">
                 <div><label for="field_FirstName">Firstname</label>
@@ -34,14 +34,12 @@
                     maxlength="3">
             </div>
 </div>
-
 <div class="inputs_style">
             <div>
                 <label for="field_Phonenumber">Phonenumber</label>
                 <br><input id="field_Phonenumber" class="smallInput" type="text" name="phonenumber"
                     placeholder="Phonenumber" maxlength="40">
             </div>
-
             <div>
                 <label for="field_Email">Email</label>
                 <br><input id="field_Email" class="smallInput" type="email" name="email" placeholder="Email"
@@ -62,8 +60,9 @@
                 aria-hidden="true">&times;</button>
             <h2 class="fl_name">{{firstName}}</h2>
             <h2 class="fl_name">{{lastName}}</h2>
-            <img class="userimg" src="assets/img/user.png" alt="This is an image the user.">
-            <div class="profile_details_box">
+            <img title="Profile image" class="userimg" src="assets/img/user.png" alt="This is an image the user."> 
+            <!-- Userimage source: Pixabay, Raphael Silva. https://pixabay.com/fi/users/raphaelsilva-4702998/ -->
+            <div class="profile_details_box_popup">
                 <ul>
                     <li><b>Age: </b> <span id="age">{{age}}</span> years</li><br>
                     <li><b>Height: </b> <span id="height">{{height}}</span> cm</li><br>
