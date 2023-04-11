@@ -2,6 +2,8 @@
     <form id="bloodpressure" action="/main/saveBloodpressure" class="form-container-bloodpressure" method="POST"
         onsubmit="return validatePressureData(this)">
         <section id="popup-left-bloodpressure">
+            <button type="button" class="bloodpressure_save_btn cancel" id="closeBtn_left_bp" onclick="closeForm()"
+                aria-hidden="true">&times;</button>
             <h2 id="pop_up_header_bloodpressure">BLOOD PRESSURE</h2>
             <a href="https://www.aivoliitto.fi/en/bloodpressure/monitoring/" target=”_blank” id="bloodpressure_a">"How
                 to measure?"</a><br><br>
@@ -14,11 +16,11 @@
         </section>
 
         <section id="popup-right-bloodpressure">
-            <button type="button" class="bloodpressure_save_btn cancel" onclick="closeForm()"
+            <button type="button" class="bloodpressure_save_btn cancel" id="closeBtn_right_bp" onclick="closeForm()"
                 aria-hidden="true">&times;</button>
             <label class="meter_notes_labels_bp">Add notes</label>
             <textarea id="bloodpressuretext" class="bigInput_meters" type="text" name="bloodpressuretext"
-                placeholder="Add notes. Max. 100 characters." maxlength="100"></textarea>
+                placeholder="Add notes. Max. 500 characters." maxlength="500"></textarea>
         </section>
     </form>
 </div>

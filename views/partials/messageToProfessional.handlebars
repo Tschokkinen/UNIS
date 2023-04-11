@@ -2,19 +2,21 @@
     <form id="messageToPro" action="/main/messageToProfessional" class="form-container-messagePro" method="POST">
        
         <section id="popup-left-messagePro">
+            <button type="button" class="message_send_btn cancel" id="closeBtn_left_msgPro" onclick="closeForm()"
+                aria-hidden="true">&times;</button>
             <h2 id="pop_up_header_messagePro">MESSAGE YOUR PROFESSIONAL</h2>
             
             <label for="messageToProHeader" id="headers_msgPro">Topic:</label>
-            <textarea class="smallInput_webform"  id="messageToProHeader" type="text" name="messageToProHeader" placeholder="Topic of your message." maxlength="50" required></textarea>
+            <textarea class="smallInput_webform"  id="messageToProHeader" type="text" name="messageToProHeader" placeholder="Topic of your message." maxlength="100" required></textarea>
             <br>
             <label for="messageToProContent" id="headers_msgPro">Message:</label>
-            <textarea  class="bigInput_webform" id="messageToProContent" type="text" name="messageToProContent" placeholder="Message to your healthcare professional. Max. 500 characters." maxlength="500" required></textarea>
+            <textarea  class="bigInput_webform" id="messageToProContent" type="text" name="messageToProContent" placeholder="Message to your healthcare professional. Max. 2000 characters." maxlength="2000" required></textarea>
             <br>
            <button form="messageToPro" type="submit" class="message_send_btn" >Send</button>
         </section>
        
         <section id="popup-right-messagePro">
-            <button type="button" class="message_send_btn cancel" onclick="closeForm()"
+            <button type="button" class="message_send_btn cancel" id="closeBtn_right_msgPro" onclick="closeForm()"
                 aria-hidden="true">&times;</button>
             <h2 id="header_messagePro">YTHS Contact</h2>
             

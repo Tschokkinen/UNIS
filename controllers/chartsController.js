@@ -32,6 +32,11 @@ const hrvpulseView = async (req, res) => {
     res.render('hrvpulseView', { layout: 'magnified-chart' });
 }
 
+const commentsView = async (req, res) => {
+    // res.status(200).json({ 'message': 'success '});
+    res.render('commentsView', { layout: 'magnified-chart' });
+}
+
 const getSleepData = async (req, res) => {
     const sleepReviews = await SleepReview.find({ 'user': getUserID(req) });
     // console.log(sleepReviews);
@@ -172,6 +177,7 @@ module.exports =
     bloodpressureView,
     sleepmoodView,
     hrvpulseView,
+    commentsView,
     getSleepData,
     getMoodData,
     getBloodpressureData,

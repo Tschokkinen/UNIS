@@ -72,6 +72,7 @@ app.use('/charts', require('./routes/charts'));
 app.use('/sleep-and-mood', require('./routes/sleepmood'));
 app.use('/bloodpressure', require('./routes/bloodpressure'));
 app.use('/HRV', require('./routes/hrvpulse'));
+app.use('/comments-from-professional', require('./routes/comments'));
 
 mongoose.connection.once('open', () => {
     console.log("Connected to MongoDB");

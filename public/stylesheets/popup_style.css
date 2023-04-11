@@ -4,11 +4,11 @@
 /*GENERAL STYLES*/
 
 /*Hide radio buttons*/
-[type=radio] { 
+[type=radio] {
     opacity: 0;
     width: 0;
     height: 0;
-  }
+}
 
 .bigInput_webform {
     resize: none;
@@ -16,24 +16,27 @@
     width: 80%;
     border-radius: 5px;
     padding: 8px;
- }
+    font-size: 1.2em;
+}
 
- .smallInput_webform {
+.smallInput_webform {
     resize: none;
     height: 5%;
     width: 80%;
     border-radius: 5px;
     padding: 8px;
- }
+    font-size: 1.2em;
+}
 
- .bigInput_meters {
+.bigInput_meters {
     resize: none;
     height: 70%;
     width: 75%;
     border-radius: 5px;
     margin-top: 24px;
     padding: 8px;
- }
+    font-size: 1.2em;
+}
 
 .inputs_style {
     display: flex;
@@ -42,7 +45,7 @@
     line-height: 24px;
     overflow: auto;
     justify-content: space-between;
-   }
+}
 
 .input_margin {
     margin-bottom: 16px;
@@ -50,25 +53,27 @@
 
 .meter_notes_labels {
     font-size: 1.5em;
-    margin-top:-16px;
+    margin-top: -16px;
 }
 
 .meter_notes_labels_bp {
     font-size: 1.5em;
-    margin-top:-40px;
+    margin-top: -40px;
 }
 
 /*SLEEPMETER*/
 .form-popup-sleep {
     display: none;
     position: fixed;
-    bottom: 0;
-    right: 0;
     margin-right: 15%;
     margin-bottom: 5%;
+    bottom: 0;
+    right: 0;
     z-index: 3;
     height: 80%;
     width: 70%;
+    max-width: 900px;
+    max-height: 500px;
     box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
 }
 
@@ -99,11 +104,17 @@
 }
 
 #pop_up_header_sleep_meter {
-    margin-top: 40px;
+    margin-top: -15px;
 }
 
 #pop_up_header_add_notes_sleep {
     margin-top: -15px;
+}
+
+#closeBtn_left_sleep {
+    opacity: 0;
+    cursor: default;
+    pointer-events: none;
 }
 
 /* Add styles to the form container */
@@ -120,31 +131,31 @@
 
 /* Set a style for the submit/login button */
 .form-container-sleep .sleep_save_btn {
-        background-color: #04AA6D;
-        color: white;
-        padding: 16px 20px;
-        align-self: center;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        width: 20%;
-        margin-bottom: 5%;
-        border-width: 2px;
-        align-items: center;
-        appearance: none;
-        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-        box-sizing: border-box;
-        display: inline-flex;
-        justify-content: center;
-        list-style: none;
-        overflow: hidden;
-        text-align: left;
-        text-decoration: none;
-        transition: box-shadow .15s, transform .15s;
-        touch-action: manipulation;
-        will-change: box-shadow, transform;
-        font-size: 14pt;
-        font-weight: 600;
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    align-self: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 20%;
+    margin-bottom: 5%;
+    border-width: 2px;
+    align-items: center;
+    appearance: none;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: center;
+    list-style: none;
+    overflow: hidden;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    touch-action: manipulation;
+    will-change: box-shadow, transform;
+    font-size: 14pt;
+    font-weight: 600;
 }
 
 /* Add a red background color to the cancel button */
@@ -163,13 +174,13 @@
 .form-container-sleep .sleep_save_btn:focus {
     box-shadow: #515152 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
 }
-    
+
 .form-container-sleep .sleep_save_btn:hover {
     box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
     transform: translateY(-2px);
     color: rgb(85, 0, 255);
 }
-    
+
 .form-container-sleep .sleep_save_btn:active {
     box-shadow: #515152 0 3px 7px inset;
     transform: translateY(2px);
@@ -189,7 +200,7 @@
 .smiley_img_sleep {
     width: 15%;
     min-width: 70px;
-    margin-top: -6%; 
+    margin-top: -6%;
     border: 4px dotted rgba(255, 255, 255, 0);
 }
 
@@ -198,13 +209,15 @@
 .form-popup-mood {
     display: none;
     position: fixed;
-    bottom: 0;
-    right: 0;
     margin-right: 15%;
     margin-bottom: 5%;
+    bottom: 0;
+    right: 0;
     z-index: 3;
     height: 80%;
     width: 70%;
+    max-width: 900px;
+    max-height: 500px;
     box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
 }
 
@@ -236,11 +249,17 @@
 }
 
 #pop_up_header_mood {
-    margin-top: 40px;
+    margin-top: -15px;
 }
 
 #pop_up_header_add_notes_mood {
     margin-top: -15px;
+}
+
+#closeBtn_left_mood {
+    opacity: 0;
+    cursor: default;
+    pointer-events: none;
 }
 
 /* Add styles to the form container */
@@ -257,32 +276,32 @@
 
 /* Set a style for the submit/login button */
 .form-container-mood .mood_save_btn {
-        background-color: #04AA6D;
-        color: white;
-        padding: 16px 20px;
-        align-self: center;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        width: 20%;
-        margin-bottom: 5%;
-        border-width: 2px;
-        align-items: center;
-        appearance: none;
-        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-        box-sizing: border-box;
-        display: inline-flex;
-        justify-content: center;
-        line-height: 1;
-        list-style: none;
-        overflow: hidden;
-        text-align: left;
-        text-decoration: none;
-        transition: box-shadow .15s, transform .15s;
-        touch-action: manipulation;
-        will-change: box-shadow, transform;
-        font-size: 14pt;
-        font-weight: 600;
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    align-self: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 20%;
+    margin-bottom: 5%;
+    border-width: 2px;
+    align-items: center;
+    appearance: none;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    touch-action: manipulation;
+    will-change: box-shadow, transform;
+    font-size: 14pt;
+    font-weight: 600;
 }
 
 /* Add a red background color to the cancel button */
@@ -293,7 +312,7 @@
     padding: 0px 0px;
     border-radius: 5px;
     width: 40px;
-    height: 40px;
+    height: 40px !important;
     font-size: 2em;
 }
 
@@ -301,13 +320,13 @@
 .form-container-mood .mood_save_btn:focus {
     box-shadow: #515152 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
 }
-    
+
 .form-container-mood .mood_save_btn:hover {
     box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
     transform: translateY(-2px);
     color: rgb(85, 0, 255);
 }
-    
+
 .form-container-mood .mood_save_btn:active {
     box-shadow: #515152 0 3px 7px inset;
     transform: translateY(2px);
@@ -327,7 +346,7 @@
 .smiley_img_mood {
     width: 15%;
     min-width: 70px;
-    margin-top: -6%;  
+    margin-top: -6%;
     border: 4px dotted rgba(255, 255, 255, 0);
 }
 
@@ -336,13 +355,15 @@
 .form-popup-bloodpressure {
     display: none;
     position: fixed;
-    bottom: 0;
-    right: 0;
     margin-right: 15%;
     margin-bottom: 5%;
+    bottom: 0;
+    right: 0;
     z-index: 3;
     height: 80%;
     width: 70%;
+    max-width: 900px;
+    max-height: 500px;
     box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
 }
 
@@ -374,11 +395,17 @@
 }
 
 #pop_up_header_bloodpressure {
-    margin-top: 40px;
+    margin-top: -40px;
 }
 
 .meter_notes_labels_bp {
     margin-top: -15px;
+}
+
+#closeBtn_left_bp {
+    opacity: 0;
+    cursor: default;
+    pointer-events: none;
 }
 
 /* Add styles to the form container */
@@ -413,32 +440,32 @@
 
 /* Set a style for the submit/login button */
 .form-container-bloodpressure .bloodpressure_save_btn {
-        background-color: #04AA6D;
-        color: white;
-        padding: 16px 20px;
-        align-self: center;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        width: 20%;
-        margin-bottom: 5%;
-        border-width: 2px;
-        align-items: center;
-        appearance: none;
-        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-        box-sizing: border-box;
-        display: inline-flex;
-        justify-content: center;
-        line-height: 1;
-        list-style: none;
-        overflow: hidden;
-        text-align: left;
-        text-decoration: none;
-        transition: box-shadow .15s, transform .15s;
-        touch-action: manipulation;
-        will-change: box-shadow, transform;
-        font-size: 14pt;
-        font-weight: 600;
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    align-self: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 20%;
+    margin-bottom: 5%;
+    border-width: 2px;
+    align-items: center;
+    appearance: none;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    touch-action: manipulation;
+    will-change: box-shadow, transform;
+    font-size: 14pt;
+    font-weight: 600;
 }
 
 /* Add a red background color to the cancel button */
@@ -457,13 +484,13 @@
 .form-container-bloodpressure .bloodpressure_save_btn:focus {
     box-shadow: #515152 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
 }
-    
+
 .form-container-bloodpressure .bloodpressure_save_btn:hover {
     box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
     transform: translateY(-2px);
     color: rgb(85, 0, 255);
 }
-    
+
 .form-container-bloodpressure .bloodpressure_save_btn:active {
     box-shadow: #515152 0 3px 7px inset;
     transform: translateY(2px);
@@ -474,13 +501,15 @@
 .form-popup-messagePro {
     display: none;
     position: fixed;
-    bottom: 0;
-    right: 0;
     margin-right: 15%;
     margin-bottom: 5%;
+    bottom: 0;
+    right: 0;
     z-index: 3;
     height: 80%;
     width: 70%;
+    max-width: 900px;
+    max-height: 500px;
     box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
 }
 
@@ -510,6 +539,12 @@
 #header_messagePro {
     margin-top: -15px;
     margin-bottom: 8px;
+}
+
+#closeBtn_left_msgPro {
+    opacity: 0;
+    cursor: default;
+    pointer-events: none;
 }
 
 #msgProFigure {
@@ -542,7 +577,7 @@
 }
 
 .YTHS_details_box ul {
-    list-style-type:circle;
+    list-style-type: circle;
     font-size: 1em;
     margin-left: 2em;
     flex-direction: column;
@@ -575,32 +610,32 @@
 
 /* Set a style for the submit/login button */
 .form-container-messagePro .message_send_btn {
-        background-color: #04AA6D;
-        color: white;
-        padding: 16px 20px;
-        align-self: center;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        width: 20%;
-        margin-bottom: 5%;
-        border-width: 2px;
-        align-items: center;
-        appearance: none;
-        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-        box-sizing: border-box;
-        display: inline-flex;
-        justify-content: center;
-        line-height: 1;
-        list-style: none;
-        overflow: hidden;
-        text-align: left;
-        text-decoration: none;
-        transition: box-shadow .15s, transform .15s;
-        touch-action: manipulation;
-        will-change: box-shadow, transform;
-        font-size: 14pt;
-        font-weight: 600;
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    align-self: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 20%;
+    margin-bottom: 5%;
+    border-width: 2px;
+    align-items: center;
+    appearance: none;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    touch-action: manipulation;
+    will-change: box-shadow, transform;
+    font-size: 14pt;
+    font-weight: 600;
 }
 
 /* Add a red background color to the cancel button */
@@ -619,13 +654,13 @@
 .form-container-messagePro .message_send_btn:focus {
     box-shadow: #515152 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
 }
-    
+
 .form-container-messagePro .message_send_btn:hover {
     box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
     transform: translateY(-2px);
     color: rgb(85, 0, 255);
 }
-    
+
 .form-container-messagePro .message_send_btn:active {
     box-shadow: #515152 0 3px 7px inset;
     transform: translateY(2px);
@@ -635,13 +670,15 @@
 .form-popup-messageSupport {
     display: none;
     position: fixed;
-    bottom: 0;
-    right: 0;
     margin-right: 15%;
     margin-bottom: 5%;
+    bottom: 0;
+    right: 0;
     z-index: 3;
     height: 80%;
     width: 70%;
+    max-width: 900px;
+    max-height: 500px;
     box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
 }
 
@@ -671,6 +708,12 @@
 #header_messageSupport {
     margin-top: -15px;
     margin-bottom: 8px;
+}
+
+#closeBtn_left_msgSupport {
+    opacity: 0;
+    cursor: default;
+    pointer-events: none;
 }
 
 #msgSupportFigure {
@@ -703,7 +746,7 @@
 }
 
 .support_details_box ul {
-    list-style-type:none;
+    list-style-type: none;
     font-size: 0.9em;
     margin-left: -32px;
     flex-direction: column;
@@ -839,13 +882,15 @@
 .form-popup-changeUserInfo {
     display: none;
     position: fixed;
-    bottom: 0;
-    right: 0;
     margin-right: 15%;
     margin-bottom: 5%;
+    bottom: 0;
+    right: 0;
     z-index: 3;
     height: 80%;
     width: 70%;
+    max-width: 900px;
+    max-height: 500px;
     box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
 }
 
@@ -859,7 +904,6 @@
     flex-direction: column;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 24px;
     padding-left: 32px;
 }
 
@@ -874,7 +918,14 @@
 }
 
 #pop_up_header_changeUserInfo {
+    margin-top: -40px;
     margin-bottom: 26px;
+}
+
+#closeBtn_left_changeUserInfo {
+    opacity: 0;
+    cursor: default;
+    pointer-events: none;
 }
 
 .fl_name {
@@ -907,7 +958,7 @@
 }
 
 .profile_details_box_popup ul {
-    list-style-type:circle;
+    list-style-type: circle;
     font-size: 10pt;
     margin-left: 1em;
     flex-direction: column;
@@ -917,8 +968,9 @@
 
 /* input fields */
 
-.form-container-changeUserInfo input[type=text].smallInput, 
-input[type=email].smallInput, input[type=password].smallInput  {
+.form-container-changeUserInfo input[type=text].smallInput,
+input[type=email].smallInput,
+input[type=password].smallInput {
     padding: 5px;
     background: #e3e3e3;
     border-radius: 5px;
@@ -928,7 +980,8 @@ input[type=email].smallInput, input[type=password].smallInput  {
 
 /* When the inputs get focus, do something */
 .form-container-changeUserInfo input[type=text]:focus.smallInput,
-input[type=email]:focus.smallInput, input[type=password]:focus.smallInput {
+input[type=email]:focus.smallInput,
+input[type=password]:focus.smallInput {
     background-color: white;
     outline: none;
     border-radius: 8px;
@@ -936,32 +989,32 @@ input[type=email]:focus.smallInput, input[type=password]:focus.smallInput {
 
 /* Set a style for the submit/login button */
 .form-container-changeUserInfo .changeUserInfo_send_btn {
-        background-color: #04AA6D;
-        color: white;
-        padding: 16px 20px;
-        align-self: center;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        width: 20%;
-        margin-bottom: 5%;
-        border-width: 2px;
-        align-items: center;
-        appearance: none;
-        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-        box-sizing: border-box;
-        display: inline-flex;
-        justify-content: center;
-        line-height: 1;
-        list-style: none;
-        overflow: hidden;
-        text-align: left;
-        text-decoration: none;
-        transition: box-shadow .15s, transform .15s;
-        touch-action: manipulation;
-        will-change: box-shadow, transform;
-        font-size: 14pt;
-        font-weight: 600;
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    align-self: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 20%;
+    margin-bottom: 5%;
+    border-width: 2px;
+    align-items: center;
+    appearance: none;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    touch-action: manipulation;
+    will-change: box-shadow, transform;
+    font-size: 14pt;
+    font-weight: 600;
 }
 
 /* Add a red background color to the cancel button */
@@ -980,13 +1033,13 @@ input[type=email]:focus.smallInput, input[type=password]:focus.smallInput {
 .form-container-changeUserInfo .changeUserInfo_send_btn:focus {
     box-shadow: #515152 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
 }
-    
+
 .form-container-changeUserInfo .changeUserInfo_send_btn:hover {
     box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
     transform: translateY(-2px);
     color: rgb(85, 0, 255);
 }
-    
+
 .form-container-changeUserInfo .changeUserInfo_send_btn:active {
     box-shadow: #515152 0 3px 7px inset;
     transform: translateY(2px);
@@ -995,19 +1048,20 @@ input[type=email]:focus.smallInput, input[type=password]:focus.smallInput {
 
 @media screen and (max-width:750px) {
 
-   /*GENERAL STYLES*/          
+    /*GENERAL STYLES*/
 
     .bigInput_webform {
         height: 300px;
-     }
-    
-     .smallInput_webform {
+    }
+
+    .smallInput_webform {
         height: 16px;
-     }
-     .bigInput_meters {
+    }
+
+    .bigInput_meters {
         height: 300px;
         margin-bottom: 24px;
-     }
+    }
 
     /*SLEEP METER*/
 
@@ -1016,8 +1070,28 @@ input[type=email]:focus.smallInput, input[type=password]:focus.smallInput {
     }
 
     .form-popup-sleep {
-        height: 95%;
-        margin-right: 18%;
+        margin-bottom: 25%;
+        max-height: 800px;
+    }
+
+    #popup-left-sleep {
+        padding-left: 4px;
+    }
+
+    #closeBtn_left_sleep {
+        opacity: 1;
+        cursor: pointer;
+        pointer-events: initial;
+    }
+
+    #closeBtn_right_sleep {
+        opacity: 0;
+        cursor: default;
+        pointer-events: none;
+    }
+
+    #pop_up_header_sleep {
+        margin-top: 0px;
     }
 
     /*MOOD METER*/
@@ -1027,8 +1101,28 @@ input[type=email]:focus.smallInput, input[type=password]:focus.smallInput {
     }
 
     .form-popup-mood {
-        height: 95%;
-        margin-right: 18%;
+        margin-bottom: 25%;
+        max-height: 800px;
+    }
+
+    #popup-left-mood {
+        padding-left: 4px;
+    }
+
+    #closeBtn_left_mood {
+        opacity: 1;
+        cursor: pointer;
+        pointer-events: initial;
+    }
+
+    #closeBtn_right_mood {
+        opacity: 0;
+        cursor: default;
+        pointer-events: none;
+    }
+
+    #pop_up_header_mood {
+        margin-top: 0px;
     }
 
     /*BLOOD PRESSURE METER*/
@@ -1038,10 +1132,25 @@ input[type=email]:focus.smallInput, input[type=password]:focus.smallInput {
     }
 
     .form-popup-bloodpressure {
-        height: 95%;
-        margin-right: 18%;
+        margin-bottom: 25%;
+        max-height: 800px;
     }
-    
+
+    #closeBtn_left_bp {
+        opacity: 1;
+        cursor: pointer;
+        pointer-events: initial;
+    }
+
+    #closeBtn_right_bp {
+        opacity: 0;
+        cursor: default;
+        pointer-events: none;
+    }
+
+    #pop_up_header_bloodpressure {
+        margin-top: 0px;
+    }
 
     /*MESSAGE TO PROFESSIONAL POPUP*/
 
@@ -1050,12 +1159,13 @@ input[type=email]:focus.smallInput, input[type=password]:focus.smallInput {
     }
 
     .form-popup-messagePro {
-        height: 95%;
-        margin-right: 18%;
+        margin-bottom: 25%;
+        max-height: 800px;
     }
-    
+
     #pop_up_header_messagePro {
-    margin-left: 24px;
+        margin-left: 24px;
+        margin-top: -4px;
     }
 
     .YTHS_details_box {
@@ -1067,6 +1177,18 @@ input[type=email]:focus.smallInput, input[type=password]:focus.smallInput {
         margin-top: 0px;
     }
 
+    #closeBtn_left_msgPro {
+        opacity: 1;
+        cursor: pointer;
+        pointer-events: initial;
+    }
+
+    #closeBtn_right_msgPro {
+        opacity: 0;
+        cursor: default;
+        pointer-events: none;
+    }
+
     /*MESSAGE TO SUPPORT POPUP*/
 
     .form-container-messageSupport {
@@ -1074,9 +1196,10 @@ input[type=email]:focus.smallInput, input[type=password]:focus.smallInput {
     }
 
     .form-popup-messageSupport {
-        height: 95%;
-        margin-right: 18%;
+        margin-bottom: 25%;
+        max-height: 800px;
     }
+
     .support_details_box {
         padding-top: 24px;
         height: 200px;
@@ -1090,6 +1213,23 @@ input[type=email]:focus.smallInput, input[type=password]:focus.smallInput {
         margin-top: 0px;
     }
 
+    #pop_up_header_messageSupport {
+        margin-left: 16px;
+        margin-top: -4px;
+    }
+
+    #closeBtn_left_msgSupport {
+        opacity: 1;
+        cursor: pointer;
+        pointer-events: initial;
+    }
+
+    #closeBtn_right_msgSupport {
+        opacity: 0;
+        cursor: default;
+        pointer-events: none;
+    }
+
     /*EDIT PROFILE/CHANGE USER INFO POPUP*/
 
     .form-container-changeUserInfo {
@@ -1097,13 +1237,37 @@ input[type=email]:focus.smallInput, input[type=password]:focus.smallInput {
     }
 
     .form-popup-changeUserInfo {
-        height: 95%;
-        margin-right: 18%;
+        margin-bottom: 25%;
+        max-height: 800px;
     }
+
     .form-container-changeUserInfo .changeUserInfo_send_btn {
         width: 100px;
     }
+
     .form-container-changeUserInfo .cancel {
         width: 40px;
+    }
+
+    #closeBtn_left_changeUserInfo {
+        opacity: 1;
+        cursor: pointer;
+        pointer-events: initial;
+    }
+
+    #closeBtn_right_changeUserInfo {
+        opacity: 0;
+        cursor: default;
+        pointer-events: none;
+    }
+
+    #pop_up_header_changeUserInfo {
+        margin-top: 0px;
+    }
+
+    .form-container-changeUserInfo input[type=text].smallInput,
+    input[type=email].smallInput,
+    input[type=password].smallInput {
+        width: 90%;
     }
 }
