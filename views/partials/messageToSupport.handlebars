@@ -1,39 +1,44 @@
 <div class="form-popup-messageSupport" id="messageSupportForm">
     <form id="messageSupport" action="/main/messageSupport" class="form-container-messageSupport" method="POST">
-       
+
         <section id="popup-left-messageSupport">
             <button type="button" class="message_send_btn cancel" id="closeBtn_left_msgSupport" onclick="closeForm()"
                 aria-hidden="true">&times;</button>
             <h2 id="pop_up_header_messageSupport">MESSAGE IT-SUPPORT</h2>
-          
-          <label for="messageSupportHeader" id="headers_msgSupport">Topic: </label>
-          <textarea class="smallInput_webform" id="messageSupportHeader" type="text" name="headerOfMessageSupport" placeholder="Header of your message." maxlength="100" required></textarea>
+
+            <label for="messageSupportHeader" id="headers_msgSupport">Topic: </label>
+            <textarea class="smallInput_webform" id="messageSupportHeader" type="text" name="headerOfMessageSupport"
+                placeholder="Header of your message." maxlength="100" required></textarea>
             <br>
-          <label for="messageSupportContent" id="headers_msgSupport">Message: </label>
-          <textarea class="bigInput_webform" id="messageSupportContent" type="text" name="contenOfMessageSupport" placeholder="Your message. Max. 2000 characters." maxlength="2000" required></textarea>
+            <label for="messageSupportContent" id="headers_msgSupport">Message: </label>
+            <textarea class="bigInput_webform" id="messageSupportContent" type="text" name="contenOfMessageSupport"
+                placeholder="Your message. Max. 2000 characters." maxlength="2000" required></textarea>
             <br>
-            
-            <button form="messageSupport" type="submit" class="message_send_btn" >Send</button>
+
+            <button form="messageSupport" type="submit" class="message_send_btn">Send</button>
         </section>
 
         <section id="popup-right-messageSupport">
             <button type="button" class="message_send_btn cancel" id="closeBtn_right_msgSupport" onclick="closeForm()"
                 aria-hidden="true">&times;</button>
             <h2 id="header_messageSupport">IT support - Contact</h2>
-            
+
             <figure id="msgSupportFigure">
                 <figcaption><a href="www.unis.fi">www.unis.fi</a></figcaption>
-                <img title="UNIS IT support" class="msgSupportImg" src="assets/img/UNISlogoVector.png" alt="Message to support UNIS logo.">    
+                <img title="UNIS IT support" class="msgSupportImg" src="assets/img/UNISlogoVector.png"
+                    alt="Message to support UNIS logo.">
             </figure>
 
             <div class="support_details_box">
-            <ul>
-                <li class="listitemsMsgSupport"><span style="color: rgb(223, 3, 3);"><b>IMPORTANT: </b></span>Contact UNIS support in case of technical problems. Do <b>NOT</b> attach your personal information such as social security number or health related information!</li>
-                <li class="listitemsMsgSupport"><b>E-mail: </b> suppport@unis.fi</li>
-                <li class="listitemsMsgSupport"><b>Tel: </b> 010 123 1234 (Weekdays,9-15)</li>
-            </ul>
-        </div>
-        <button id="download_manual_btn"> Download UNIS manual (.PDF)</button>
+                <ul>
+                    <li class="listitemsMsgSupport"><span style="color: rgb(223, 3, 3);"><b>IMPORTANT:
+                            </b></span>Contact UNIS support in case of technical problems. Do <b>NOT</b> attach your
+                        personal information such as social security number or health related information!</li>
+                    <li class="listitemsMsgSupport"><b>E-mail: </b> suppport@unis.fi</li>
+                    <li class="listitemsMsgSupport"><b>Tel: </b> 010 123 1234 (Weekdays,9-15)</li>
+                </ul>
+            </div>
+            <button id="download_manual_btn"> Download UNIS manual (.PDF)</button>
         </section>
     </form>
 </div>
