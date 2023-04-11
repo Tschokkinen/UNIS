@@ -14,11 +14,6 @@ const signInPage = async (req, res) => {
     )
 };
 
-// Related to UserModel based sign in
-// const createToken = (_id) => {
-//     return jwt.sign({ _id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '3d' })
-// }
-
 // Verify user and sign in if valid
 const signIn = async (req, res) => {
     // Sign in used from UserModel
@@ -26,30 +21,18 @@ const signIn = async (req, res) => {
     const { email, password } = req.body;
     console.log(email, password);
     try {
-        // UserModel based sign in
-        // const user = await User.login(email, password);
-        // // create a token
-        //   const token = createToken(user._id);
+        if (!email || !password) return res.status(400).json({ 'message': 'Email and password required. ' });
+        
+        const user = await User.findOne({ email: email }).exec();
+        if (!user) return res.status(401);
 
-        // if (!email || !password) return res.status(400).json({ 'message': 'Email and password required. ' });
-        // Render error page/notification here!
+        const match = await bcrypt.compare(password, user.password);
 
-        // const findUser = await User.findOne({ email: email }).exec();
-        const user = await User.login(email, password);
-        // if (!user) return res.status(401);
-
-        // const match = await bcrypt.compare(password, user.password);
-
-        // Remove if-else when system is working: redundant due to 
-        // UserModel data verification!
-        if (user) {
+        if (match) {
             const _id = user._id;
             // console.log("ID: ", _id);
             const accessToken = jwt.sign(
                 {
-                    // "UserInfo": {
-                    //     "email": findUser.email
-                    // }
                     _id
                 },
                 process.env.ACCESS_TOKEN_SECRET,
@@ -65,8 +48,6 @@ const signIn = async (req, res) => {
 
     } catch (error) {
         res.status(400).json({ error: error.message });
-        // res.status(400).redirect('/');
-        // res.status(400);
     }
 }
 
@@ -82,7 +63,7 @@ const registerPage = (req, res) => {
 // Verify registering form data
 const registerUser = async (req, res) => {
     const { firstName, lastName, email, password } = req.body;
-    console.log("Form data: ", req.body);
+    // console.log("Form data: ", req.body);
 
     if (!email || !password) {
         res.status(400).json({ 'message': 'email and password required ' }); 

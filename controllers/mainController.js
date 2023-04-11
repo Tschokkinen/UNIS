@@ -89,7 +89,7 @@ const saveBloodpressure = async (req, res) => {
         await BloodPressure.create({
             "systolicPressure": req.body.systolicPressure,
             "diastolicPressure": req.body.diastolicPressure,
-            "comments": req.body.bloodpressureText,
+            "comments": req.body.bloodpressuretext,
             "user": getUserID(req)
         });
         
