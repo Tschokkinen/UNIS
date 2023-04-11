@@ -62,13 +62,15 @@
 .form-popup-sleep {
     display: none;
     position: fixed;
+    transform:translateX(-25%);
+    margin-bottom: 5%;
     bottom: 0;
     right: 0;
-    margin-right: 15%;
-    margin-bottom: 5%;
     z-index: 3;
     height: 80%;
     width: 70%;
+    max-width: 900px;
+    max-height: 500px;
     box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
 }
 
@@ -198,13 +200,15 @@
 .form-popup-mood {
     display: none;
     position: fixed;
+    transform:translateX(-25%);
+    margin-bottom: 5%;
     bottom: 0;
     right: 0;
-    margin-right: 15%;
-    margin-bottom: 5%;
     z-index: 3;
     height: 80%;
     width: 70%;
+    max-width: 900px;
+    max-height: 500px;
     box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
 }
 
@@ -336,13 +340,15 @@
 .form-popup-bloodpressure {
     display: none;
     position: fixed;
+    transform:translateX(-25%);
+    margin-bottom: 5%;
     bottom: 0;
     right: 0;
-    margin-right: 15%;
-    margin-bottom: 5%;
     z-index: 3;
     height: 80%;
     width: 70%;
+    max-width: 900px;
+    max-height: 500px;
     box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
 }
 
@@ -474,13 +480,15 @@
 .form-popup-messagePro {
     display: none;
     position: fixed;
+    transform:translateX(-25%);
+    margin-bottom: 5%;
     bottom: 0;
     right: 0;
-    margin-right: 15%;
-    margin-bottom: 5%;
     z-index: 3;
     height: 80%;
     width: 70%;
+    max-width: 900px;
+    max-height: 500px;
     box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
 }
 
@@ -635,13 +643,15 @@
 .form-popup-messageSupport {
     display: none;
     position: fixed;
+    transform:translateX(-25%);
+    margin-bottom: 5%;
     bottom: 0;
     right: 0;
-    margin-right: 15%;
-    margin-bottom: 5%;
     z-index: 3;
     height: 80%;
     width: 70%;
+    max-width: 900px;
+    max-height: 500px;
     box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
 }
 
@@ -839,13 +849,15 @@
 .form-popup-changeUserInfo {
     display: none;
     position: fixed;
+    transform:translateX(-25%);
+    margin-bottom: 5%;
     bottom: 0;
     right: 0;
-    margin-right: 15%;
-    margin-bottom: 5%;
     z-index: 3;
     height: 80%;
     width: 70%;
+    max-width: 900px;
+    max-height: 500px;
     box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
 }
 
