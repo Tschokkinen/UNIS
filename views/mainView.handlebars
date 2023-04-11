@@ -17,8 +17,9 @@
         {{!-- <a href=""><button class="edit_profile_button" onclick="openForm">Edit profile</button></a> --}}
 
         <button class="edit_profile_button" onclick="openFormChangeUserInfo()">Edit profile</button>
-        {{!-- <button class="edit_profile_button" onclick="openFormWithParams('editProfileForm')">Edit profile</button> --}}
-            {{> (changeUserInfo) }}
+        {{!-- <button class="edit_profile_button" onclick="openFormWithParams('editProfileForm')">Edit profile</button>
+        --}}
+        {{> (changeUserInfo) }}
     </div>
 </section>
 
@@ -32,8 +33,8 @@
         <!-- sleep_img source: Pixabay, Pixel_perfect. https://pixabay.com/fi/users/pixel_perfect-1411206/ -->
         <!-- green_light_img source: Pixabay, OpenClipart-Vectors. https://pixabay.com/fi/users/openclipart-vectors-30363/ -->
         <img id="sleep_img" src="assets/img/sleep.png" alt="Sleep meter">
-        <br><span>Sleep meter<img title="You have saved results for today." id="green_light_img" src="assets/img/green_light.png"
-                alt="Sleep meter. Green light. Measured today."></span></button>
+        <br><span>Sleep meter<img title="You have saved results for today." class="light_img" id="sleep_meter_light"
+                src="assets/img/red_light.png" alt="Sleep meter. Green light. Measured today."></span></button>
 
     {{> (sleepMeter) }}
 
@@ -41,19 +42,19 @@
         <!-- mood_img source: Pixabay, Clker-Free-Vector-Images. https://pixabay.com/fi/users/clker-free-vector-images-3736/ -->
         <!-- green_light_img source: Pixabay, OpenClipart-Vectors. https://pixabay.com/fi/users/openclipart-vectors-30363/ -->
         <img id="mood_img" src="assets/img/emotions.png" alt="Mood meter.">
-        <br><span>Mood meter<img title="You have saved results for today." id="green_light_img" src="assets/img/green_light.png"
-                alt="Mood meter. Green light. Measured today."></span></button>
-    
+        <br><span>Mood meter<img title="You have saved results for today." class="light_img" id="mood_meter_light"
+                src="assets/img/red_light.png" alt="Mood meter. Green light. Measured today."></span></button>
+
     {{> (moodMeter) }}
-    
+
     <button title="Record your blood pressure measurements" id="main_function_measure" onclick="openFormBP()">
         <!-- blood_pressure_img source: Pixabay, MostafaElTurkey36. https://pixabay.com/fi/users/mostafaelturkey36-13328910/ -->
         <!-- red_light_img source: Pixabay, OpenClipart-Vectors. https://pixabay.com/fi/users/openclipart-vectors-30363/ -->
         <img id="blood_pressure_img" src="assets/img/blood_pressure.png" alt="Blood pressure measurements.">
-        <br><span>Blood pressure<img title="No saved results for today." id="red_light_img" src="assets/img/red_light.png"
-                alt="Blood pressure. red light. Not measured today."></span></button>
+        <br><span>Blood pressure<img title="No saved results for today." class="light_img" id="bloodpressure_meter_light"
+                src="assets/img/red_light.png" alt="Blood pressure. red light. Not measured today."></span></button>
 
-    {{> (bloodpressureMeter) }}            
+    {{> (bloodpressureMeter) }}
 
     <button title="Evaluate used gadgets" id="main_function_other">
         <!-- oxygen_img source: Pixabay, Clker-Free-Vector-Images. https://pixabay.com/fi/users/clker-free-vector-images-3736/ -->

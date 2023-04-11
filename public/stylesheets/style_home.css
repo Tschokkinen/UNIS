@@ -308,14 +308,19 @@ main {
     margin: 16px;
 }
 
-#green_light_img {
+.light_img {
+    height: 16px;
+    margin-left: 10px;
+}
+
+/* #green_light_img {
     height: 16px;
     margin-left: 10px;
 }
 #red_light_img {
     height: 16px;
     margin-left: 10px;
-}
+} */
 
 .patient_info_list {
     display: flex;

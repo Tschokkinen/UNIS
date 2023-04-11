@@ -9,11 +9,13 @@ const {
     messageToSupport, 
     changeUserInfo,
     requestUserData,
-    validatePassword
+    validatePassword,
+    meterValues
 } = require('../controllers/mainController');
 
 router.get('/', main);
 router.get('/requestUserData', requestUserData);
+router.get('/meterValues', meterValues);
 
 router.post('/saveSleep', saveSleep);
 router.post('/saveMood', saveMood);
