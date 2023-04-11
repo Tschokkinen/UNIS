@@ -448,16 +448,20 @@ footer {
       justify-content: space-around;
   }
 
-  #main_function_measure {
+  .main_function_measure {
         width:70%;
   }
 
-  #main_function_other {
+  .main_function_other {
     width:70%;
   }
 
   .userimg {
       height: 25vh;
       width: 25vh;
+  }
+
+  #bp_btn_text {
+    font-size: 12pt;
   }
 }

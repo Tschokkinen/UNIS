@@ -2,6 +2,8 @@
     <form id="messageSupport" action="/main/messageSupport" class="form-container-messageSupport" method="POST">
        
         <section id="popup-left-messageSupport">
+            <button type="button" class="message_send_btn cancel" id="closeBtn_left_msgSupport" onclick="closeForm()"
+                aria-hidden="true">&times;</button>
             <h2 id="pop_up_header_messageSupport">MESSAGE IT-SUPPORT</h2>
           
           <label for="messageSupportHeader" id="headers_msgSupport">Topic: </label>
@@ -15,7 +17,7 @@
         </section>
 
         <section id="popup-right-messageSupport">
-            <button type="button" class="message_send_btn cancel" onclick="closeForm()"
+            <button type="button" class="message_send_btn cancel" id="closeBtn_right_msgSupport" onclick="closeForm()"
                 aria-hidden="true">&times;</button>
             <h2 id="header_messageSupport">IT support - Contact</h2>
             

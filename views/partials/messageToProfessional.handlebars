@@ -2,6 +2,8 @@
     <form id="messageToPro" action="/main/messageToProfessional" class="form-container-messagePro" method="POST">
        
         <section id="popup-left-messagePro">
+            <button type="button" class="message_send_btn cancel" id="closeBtn_left_msgPro" onclick="closeForm()"
+                aria-hidden="true">&times;</button>
             <h2 id="pop_up_header_messagePro">MESSAGE YOUR PROFESSIONAL</h2>
             
             <label for="messageToProHeader" id="headers_msgPro">Topic:</label>
@@ -14,7 +16,7 @@
         </section>
        
         <section id="popup-right-messagePro">
-            <button type="button" class="message_send_btn cancel" onclick="closeForm()"
+            <button type="button" class="message_send_btn cancel" id="closeBtn_right_msgPro" onclick="closeForm()"
                 aria-hidden="true">&times;</button>
             <h2 id="header_messagePro">YTHS Contact</h2>
             
