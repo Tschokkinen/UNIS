@@ -34,7 +34,8 @@ const main = async (req, res) => {
         changePartial('bloodpressureMeter', 'bloodpressureMeter'),
         changePartial('messageToProfessional', 'messageToProfessional'),
         changePartial('messageToSupport', 'messageToSupport'),
-        changePartial('changeUserInfo', 'changeUserInfo')
+        changePartial('changeUserInfo', 'changeUserInfo'),
+        changePartial('infoBank', 'infoBank')
 };
 
 // Save sleep data to MongoDB.
