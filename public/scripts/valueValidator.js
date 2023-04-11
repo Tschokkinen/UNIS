@@ -12,8 +12,16 @@ const validatePressureData = (form) => {
         alert("Entered systolic pressure over 180.\nPlease check value or contact health services."); 7
         form.systolicPressure.focus();
         return false;
+    } else if (form.systolicPressure.value < 1) { // Check if values are within a reasonable range.
+        alert("Entered systolic pressure under 1.\nPlease check value or contact health services."); 7
+        form.systolicPressure.focus();
+        return false;
     } else if (form.diastolicPressure.value > 120) { // Check if values are within a reasonable range.
         alert("Entered diastolic pressure over 120.\nPlease check value or contact health services.");
+        form.diastolicPressure.focus();
+        return false;
+    } else if (form.diastolicPressure.value < 1) { // Check if values are within a reasonable range.
+        alert("Entered diastolic pressure under 1.\nPlease check value or contact health services.");
         form.diastolicPressure.focus();
         return false;
     }
