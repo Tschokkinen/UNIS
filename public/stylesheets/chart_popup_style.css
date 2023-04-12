@@ -103,13 +103,27 @@ header nav li {
 #chart-comments {
   width: 100%;
   flex-wrap: wrap;
-  background-color: #ffebeb35;
+  background-color: #ffff0343;
   display: flex;
   justify-content: center;
   border-style: ridge;
   border-radius: 5px;
-  margin-bottom: 4px;
-  margin-left: 4px;
+  margin-top: 32px;
+  margin-bottom: 24px;
+  padding: 8px;
+}
+
+th {
+  text-align: left;
+}
+
+#comment_table {
+  width: 100%;
+  overflow: auto;
+  border: 1px solid black;
+  padding: 8px;
+  background-color: #ffffffb7;
+  border-radius: 5px;
 }
 
 #chartdiv1 {
