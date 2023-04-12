@@ -256,6 +256,7 @@ main {
     font-size: 14pt;
     font-weight: 600;
 }
+
 .main_function_other:focus {
     box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
 }
@@ -272,10 +273,10 @@ main {
 }
 
 button a {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
 
 #heart_img {
     height: 2.2em;
@@ -421,7 +422,7 @@ footer {
 /*NARROW SCREENS 1*/
 
 @media screen and (max-width:1175px) {
-    
+
     .main_function_measure {
         width: 150px;
         height: 150px;
@@ -439,7 +440,7 @@ footer {
 /*NARROW SCREENS 2*/
 
 @media screen and (max-width:995px) {
-    
+
     .main_function_measure {
         width: 130px;
         height: 130px;
@@ -452,13 +453,13 @@ footer {
         font-size: 10pt;
     }
 
-    #right{
+    #right {
         justify-content: space-around;
     }
 
     #bp_btn_text {
         font-size: 8pt;
-      }
+    }
 
 }
 
@@ -466,58 +467,58 @@ footer {
 
 @media screen and (max-width:750px) {
 
-  .wrapper {
-      min-width: 200px;
-  }
+    .wrapper {
+        min-width: 200px;
+    }
 
-  .container {
-      flex-direction: column;
-  }
+    .container {
+        flex-direction: column;
+    }
 
-  .unislogo {
-      height: 80px;
-      margin-right: auto;
-  }
+    .unislogo {
+        height: 80px;
+        margin-right: auto;
+    }
 
-  header nav li {
-      padding: 1vw;
-  }
+    header nav li {
+        padding: 1vw;
+    }
 
-  .logOutButton {
-      width: 32px;
-      height: 32px;
-      font-size: 0.7em;
-      border-color: black;
-      margin-right: 16px;
-  }
+    .logOutButton {
+        width: 32px;
+        height: 32px;
+        font-size: 0.7em;
+        border-color: black;
+        margin-right: 16px;
+    }
 
-  #left {
-      order: 2;
-  }
+    #left {
+        order: 2;
+    }
 
-  #right {
-      order: 1;
-      justify-content: space-around;
-  }
+    #right {
+        order: 1;
+        justify-content: space-around;
+    }
 
-  .main_function_measure {
-        width:70%;
+    .main_function_measure {
+        width: 70%;
         min-width: 130px;
         min-height: 130px;
-  }
+    }
 
-  .main_function_other {
-    width:70%;
-    min-width: 130px;
-    min-height: 130px;
-  }
+    .main_function_other {
+        width: 70%;
+        min-width: 130px;
+        min-height: 130px;
+    }
 
-  .userimg {
-      height: 25vh;
-      width: 25vh;
-  }
+    .userimg {
+        height: 25vh;
+        width: 25vh;
+    }
 
-  #bp_btn_text {
-    font-size: 10pt;
-  }
+    #bp_btn_text {
+        font-size: 10pt;
+    }
 }
