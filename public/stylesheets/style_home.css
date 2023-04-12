@@ -1,8 +1,10 @@
-* {}
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: auto;
-    max-width: 1600px;
+    max-width: 1400px;
 }
 
 html {
@@ -133,7 +135,7 @@ main {
     justify-content: center;
     border-style: ridge;
     border-radius: 5px;
-    padding-top: 10px;
+    padding-top: 32px;
 }
 
 .userimg {
@@ -205,9 +207,8 @@ main {
     justify-content: center;
     align-items: center;
     display: flex;
-    width: 25%;
-    height: 35%;
-    min-height: 125px;
+    width: 180px;
+    height: 180px;
     margin: 2vw;
     text-align: left;
     border-radius: 10px;
@@ -241,10 +242,8 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 25%;
-    min-width: 4em;
-    height: 35%;
-    min-height: 125px;
+    width: 180px;
+    height: 180px;
     margin: 2vw;
     text-align: left;
     border-radius: 50px;
@@ -417,6 +416,54 @@ footer {
     font-style: italic;
 }
 
+/*MEDIA SCREENS*/
+
+/*NARROW SCREENS 1*/
+
+@media screen and (max-width:1175px) {
+    
+    .main_function_measure {
+        width: 150px;
+        height: 150px;
+        font-size: 11pt;
+    }
+
+    .main_function_other {
+        width: 150px;
+        height: 150px;
+        font-size: 11pt;
+    }
+
+}
+
+/*NARROW SCREENS 2*/
+
+@media screen and (max-width:995px) {
+    
+    .main_function_measure {
+        width: 130px;
+        height: 130px;
+        font-size: 10pt;
+    }
+
+    .main_function_other {
+        width: 130px;
+        height: 130px;
+        font-size: 10pt;
+    }
+
+    #right{
+        justify-content: space-around;
+    }
+
+    #bp_btn_text {
+        font-size: 8pt;
+      }
+
+}
+
+/*MOBILE*/
+
 @media screen and (max-width:750px) {
 
   .wrapper {
@@ -455,10 +502,14 @@ footer {
 
   .main_function_measure {
         width:70%;
+        min-width: 130px;
+        min-height: 130px;
   }
 
   .main_function_other {
     width:70%;
+    min-width: 130px;
+    min-height: 130px;
   }
 
   .userimg {
@@ -467,6 +518,6 @@ footer {
   }
 
   #bp_btn_text {
-    font-size: 12pt;
+    font-size: 10pt;
   }
 }
