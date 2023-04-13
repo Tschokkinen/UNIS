@@ -1107,3 +1107,14 @@ input[type=email]:focus.smallInput, input[type=password]:focus.smallInput {
         width: 40px;
     }
 }
+
+.linkkikuvat{
+    display: flex;
+    flex-wrap: wrap;
+}
+.linkkikuvat div{
+    background-color: yellow;
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+}
