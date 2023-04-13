@@ -1,10 +1,13 @@
 <div class="form-popup-messagePro" id="messageToProForm">
-    <form id="messageToPro" action="/main/messageToProfessional" class="form-container-messagePro" method="POST">
+    <!-- Email API service at https://web3forms.com/-->
+    <form id="messageToPro" target="_blank" action="https://api.web3forms.com/submit" method="POST" class="form-container-messagePro" method="POST">
        
         <section id="popup-left-messagePro">
             <button type="button" class="message_send_btn cancel" id="closeBtn_left_msgPro" onclick="closeForm()"
                 aria-hidden="true">&times;</button>
             <h2 id="pop_up_header_messagePro">MESSAGE YOUR PROFESSIONAL</h2>
+
+            <input type="hidden" name="access_key" value="b00fece0-aacf-47f5-80d9-451392f497a8">
             
             <label for="messageToProHeader" id="headers_msgPro">Topic:</label>
             <textarea class="smallInput_webform"  id="messageToProHeader" type="text" name="messageToProHeader" placeholder="Topic of message" maxlength="100" required></textarea>
@@ -12,7 +15,7 @@
             <label for="messageToProContent" id="headers_msgPro">Message:</label>
             <textarea  class="bigInput_webform" id="messageToProContent" type="text" name="messageToProContent" placeholder="Message to your healthcare professional. Max. 2000 characters." maxlength="2000" required></textarea>
             <br>
-           <button form="messageToPro" type="submit" class="message_send_btn" >Send</button>
+           <button form="messageToPro" type="submit" class="message_send_btn" onclick="closeForm()">Send</button>
         </section>
        
         <section id="popup-right-messagePro">
