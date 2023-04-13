@@ -2,36 +2,37 @@
 
 
 body {
-    margin: 0;
+  margin: auto;
+  max-width: 1400px;
 }
 
 html {
-    background-color: rgb(233, 233, 233);
-    font-family: 'Roboto', sans-serif;
+  background-color: rgb(233, 233, 233);
+  font-family: 'Roboto', sans-serif;
 }
 
 .clear {
-    clear: both;
+  clear: both;
 }
 
 .wrapper {
-    height: 100%;
-    background-color: white;
-    padding: 24px;
-    margin-left: 1vw;
-    margin-right: 1vw;
-    z-index: 1;
+  height: 100%;
+  background-color: white;
+  padding: 24px;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  z-index: 1;
 }
 
 header {
-    display: flex;
-    height: 1em;
-    padding-bottom: 40px;
-    padding-top: 16px;
-    border-bottom: 2px solid black;
-    align-items: center;
-    background: #fffcfc;
-    justify-content: space-around;
+  display: flex;
+  height: 1em;
+  padding-bottom: 40px;
+  padding-top: 16px;
+  border-bottom: 2px solid black;
+  align-items: center;
+  background: #fffcfc;
+  justify-content: space-around;
 }
 
 .arrow {
@@ -59,39 +60,39 @@ header {
 }
 
 header nav ul {
-    display: flex;
-    list-style-type: none;
-    padding-left: 0;
-    align-items: center;
-    flex-direction: row;
+  display: flex;
+  list-style-type: none;
+  padding-left: 0;
+  align-items: center;
+  flex-direction: row;
 }
 
 header nav li {
-    padding: 4vw;
+  padding: 4vw;
 }
 
 header nav a {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
 }
 
 header nav a:hover {
   color: rgb(85, 0, 255);
-  text-decoration:underline;
+  text-decoration: underline;
 }
 
 .fa-circle-info {
-    color: rgb(0, 0, 0);
-    font-size: 3em;   
+  color: rgb(0, 0, 0);
+  font-size: 3em;
 }
 
 .fa-circle-info:hover {
-    color: rgb(85, 0, 255);  
+  color: rgb(85, 0, 255);
 }
 
 .fa-calendar-days {
   color: rgb(0, 0, 0);
-  font-size: 3em; 
+  font-size: 3em;
 }
 
 .fa-calendar-days:hover {
@@ -99,12 +100,12 @@ header nav a:hover {
 }
 
 .container {
-    display: flex;
-    background-color: white;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    margin-top: 8px;
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  margin-top: 8px;
 }
 
 .charts-flex {
@@ -113,16 +114,18 @@ header nav a:hover {
 }
 
 #left-up {
-    width: 800px;
-    flex-wrap: wrap;
-    background-color: #ffebeb86;
-    display: flex;
-    justify-content: center;
-    border-style: ridge;
-    border-radius: 5px;
-    margin-bottom: 4px;
-    margin-right: 4px;
+  width: 800px;
+  flex-wrap: wrap;
+  background-color: #ffebeb86;
+  display: flex;
+  justify-content: center;
+  border-style: ridge;
+  border-radius: 5px;
+  margin-bottom: 4px;
+  margin-right: 4px;
+  padding-bottom: 8px;
 }
+
 #right-up {
   width: 800px;
   flex-wrap: wrap;
@@ -133,6 +136,7 @@ header nav a:hover {
   border-radius: 5px;
   margin-bottom: 4px;
   margin-left: 4px;
+  padding-bottom: 8px;
 }
 
 #left-down {
@@ -145,55 +149,70 @@ header nav a:hover {
   border-radius: 5px;
   margin-top: 4px;
   margin-right: 4px;
+  padding-bottom: 8px;
 }
+
 #right-down {
-width: 800px;
-flex-wrap: wrap;
-background-color: #feffbcb7;
-display: flex;
-justify-content: center;
-border-style: ridge;
-border-radius: 5px;
-margin-top: 4px;
-margin-left: 4px;
+  width: 800px;
+  flex-wrap: wrap;
+  background-color: #feffbcb7;
+  display: flex;
+  justify-content: center;
+  border-style: ridge;
+  border-radius: 5px;
+  margin-top: 4px;
+  margin-left: 4px;
+  padding-bottom: 8px;
 }
 
 #chartdiv1 {
   width: 90%;
-  height: 250px;
-  border: 1px solid black;;
+  height: 300px;
+  border: 1px solid black;
+  ;
   background-color: #ffffffb7;
   border-radius: 5px;
 }
 
 #chartdiv2 {
   width: 90%;
-  height: 250px;
-  border: 1px solid black;;
+  height: 300px;
+  border: 1px solid black;
+  ;
   background-color: #ffffffb7;
   border-radius: 5px;
 }
 
 #chartdiv3 {
   width: 90%;
-  height: 250px;
-  border: 1px solid black;;
+  height: 300px;
+  border: 1px solid black;
+  ;
   background-color: #ffffffb7;
   border-radius: 5px;
 }
 
 #chartdiv4 {
   width: 90%;
-  height: 250px;
+  height: 300px;
 }
 
 #comment_table {
   width: 100%;
+  height: 100%;
   overflow: auto;
   border: 1px solid black;
-  padding: 8px;
+  padding: 16px;
   background-color: #ffffffb7;
   border-radius: 5px;
+  display: inline-block;
+  overflow: auto;
+  line-height: 1.5;
+}
+
+th {
+  text-align: left;
+  font-size: 14pt;
 }
 
 .chart_headers {
@@ -216,26 +235,26 @@ margin-left: 4px;
 }
 
 footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(180, 180, 180);
-    height: fit-content;
-    margin-left: 1vw;
-    margin-right: 1vw;
-    border-top: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(180, 180, 180);
+  height: fit-content;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  border-top: 2px solid black;
 }
 
 .copy {
-    text-align: center;
-    color: black;
-    font-style: italic;
+  text-align: center;
+  color: black;
+  font-style: italic;
 }
 
 @media screen and (max-width:750px) {
 
   .wrapper {
-      min-width: 200px;
+    min-width: 200px;
   }
 
   .charts-flex {

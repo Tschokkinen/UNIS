@@ -1,6 +1,8 @@
 <div class="form-popup-changeUserInfo" id="changeUserInfoForm">
     <form id="changeUserInfo" action="/main/changeUserInfo" class="form-container-changeUserInfo" method="POST">
         <section id="popup-left-changeUserInfo">
+            <button type="button" class="changeUserInfo_send_btn cancel" id="closeBtn_left_changeUserInfo" onclick="closeForm()"
+                aria-hidden="true">&times;</button>
             <h2 id="pop_up_header_changeUserInfo">EDIT PROFILE</h2>
 
             <div class="inputs_style">
@@ -56,7 +58,7 @@
 
         </section>
         <section id="popup-right-changeUserInfo">
-            <button type="button" class="changeUserInfo_send_btn cancel" onclick="closeForm()"
+            <button type="button" class="changeUserInfo_send_btn cancel" id="closeBtn_right_changeUserInfo" onclick="closeForm()"
                 aria-hidden="true">&times;</button>
             <h2 class="fl_name">{{firstName}}</h2>
             <h2 class="fl_name">{{lastName}}</h2>
@@ -67,7 +69,7 @@
                     <li><b>Age: </b> <span id="age">{{age}}</span> years</li><br>
                     <li><b>Height: </b> <span id="height">{{height}}</span> cm</li><br>
                     <li><b>Weight: </b><span id="weight">{{weight}}</span> kg</li><br>
-                    <li><b>BMI= </b><span id="bmi">{{bmi}}</span></li><br>
+                    <li><b>BMI: </b><span id="bmi">{{bmi}}</span></li><br>
                     <li><b>General health: </b><span id="general_health">Not available</span></li><br>
                     <li><b>Medications: </b><span id="medications">Not available</span></li><br>
                     <li><b>Sleep apnea: </b><span id="bmi">Not available</span></li>

@@ -1,6 +1,8 @@
 <div class="form-popup-sleep" id="sleepMeterForm">
     <form id="sleepMeter" action="/main/saveSleep" class="form-container-sleep" method="POST" onsubmit="return validateSleepData(this)">
         <section id="popup-left-sleep">
+            <button type="button" class="sleep_save_btn cancel" id="closeBtn_left_sleep" onclick="closeForm()"
+                aria-hidden="true">&times;</button>
             <h2 id="pop_up_header_sleep_meter">SLEEP METER</h2>
             <p id="sleep_p">"How did you sleep?"</p>
             <!-- Smiley meter image source: Adobe Stock. -->
@@ -42,11 +44,11 @@
         </section>
 
         <section id="popup-right-sleep">
-            <button type="button" class="sleep_save_btn cancel" onclick="closeForm()"
+            <button type="button" class="sleep_save_btn cancel" id="closeBtn_right_sleep" onclick="closeForm()"
                 aria-hidden="true">&times;</button>
             <label class="meter_notes_labels">Add notes</label>
-            <textarea class="bigInput_meters" type="text" name="sleepmetertext" placeholder="Add notes. Max. 100 characters."
-                maxlength="100"></textarea>
+            <textarea class="bigInput_meters" type="text" name="sleepmetertext" placeholder="Add notes. Max. 500 characters."
+                maxlength="500"></textarea>
         </section>
     </form>
 </div>

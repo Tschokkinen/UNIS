@@ -1,0 +1,69 @@
+<div class="wrapper">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/main"> <i class="arrow left"></i> <span id="back-arrow-text">BACK</span></a></li>
+                <li>
+                    <h1>HISTORY & ANALYSIS</h1>
+                </li>
+                <li><i title="Calendar" class="fa-sharp fa-regular fa-calendar-days"></i></li>
+                <li><a onclick=""><i title="How to read your results?" class="fa-sharp fa-solid fa-circle-info"></i></a>
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <div class="charts-flex">
+            <div id="left-up">
+                <div class="chart_headers">
+                    <h2>HRV and Pulse</h2>
+                    <a href="/HRV" onclick="return openHRVpopup('/HRV')"><img title="Enlarge HRV and Pulse results."
+                            class="magnifying_glass_img" src="assets/img/magnifying-glass.png"></a>
+                </div>
+                <div id="chartdiv3"></div>
+            </div>
+
+            <div id="right-up">
+                <div class="chart_headers">
+                    <div class="chart_headers">
+                        <h2>Blood pressure</h2>
+                        <a href="/bloodpressure" onclick="return openBPpopup('/bloodpressure')"><img
+                                title="Enlarge blood pressure results." class="magnifying_glass_img"
+                                src="assets/img/magnifying-glass.png"></a>
+                    </div>
+                </div>
+                <div id="chartdiv2"></div>
+            </div>
+        </div>
+
+        <div class="charts-flex">
+
+            <div id="left-down">
+                <div class="chart_headers">
+                    <h2>Sleep and Mood</h2>
+                    <a href="/sleep-and-mood" onclick="return openSleepMoodpopup('/sleep-and-mood')"><img
+                            title="Enlarge Sleep and Mood meter results." class="magnifying_glass_img"
+                            src="assets/img/magnifying-glass.png"></a>
+                </div>
+                <div id="chartdiv1"></div>
+            </div>
+
+            <div id="right-down">
+                <div class="chart_headers">
+                    <h2>Comments from professional</h2>
+                    <a href="/comments-from-professional"
+                        onclick="return openCommentspopup('/comments-from-professional')"><img
+                            title="Enlarge Professional comments list." class="magnifying_glass_img"
+                            src="assets/img/magnifying-glass.png"></a>
+                </div>
+                <div id="chartdiv4">
+                    <table id="comment_table"></table>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</div>
