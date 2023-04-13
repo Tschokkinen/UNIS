@@ -1263,6 +1263,16 @@ input[type=password]:focus.smallInput {
         width: 40px;
     }
 
+.linkkikuvat{
+    display: flex;
+    flex-wrap: wrap;
+}
+.linkkikuvat div{
+    background-color: yellow;
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+
     #closeBtn_left_changeUserInfo {
         opacity: 1;
         cursor: pointer;

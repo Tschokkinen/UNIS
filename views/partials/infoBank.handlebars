@@ -1,39 +1,63 @@
 <div class="form-popup-bloodpressure" id="infoBankForm">
     <form id="bloodpressure" action="/main/saveBloodpressure" class="form-container-bloodpressure" method="POST">
-        <section id="popup-left-bloodpressure">
+        <section id="popup-left-bloodpressure" style="flex: 2; gap: 50px;" >
+            <div style="flex: 1;">
             <h2 id="pop_up_header_bloodpressure">Ammattilaisesi</h2>
-            <img src="yths.jpeg" alt="YTHS">
+            <img src="assets/img//Infobank/yths.jpg" alt="YTHS" style="display: block; margin: auto;">
+            </div>
 
-            <button form="bloodpressure" type="submit" class="bloodpressure_save_btn" >Save</button>
+            <div class="ammattiteksti" style="flex: 2;">moi moi</div>
         </section>
-        <section id="popup-right-bloodpressure">
+        <section id="popup-right-bloodpressure" style="flex: 4;">
             <button type="button" class="bloodpressure_save_btn cancel" onclick="closeForm()"
                 aria-hidden="true">&times;</button>
             <h2 id="pop_up_header_add_notes_bloodpressure">Uniapnea ja Hoito</h2>
 
-            <img src=".jpeg" alt="ohjekuva_1">
+            <div class="linkkikuvat">
+            <div>
+            <img src="assets/img//Infobank/aivo.png" alt="ohjekuva_1">
             <h3>Aivoliitto</h3>
             <a href="https://www.aivoliitto.fi/en/bloodpressure/monitoring/" target=”_blank” id="bloodpressure_a">"Link"</a>
+            </div>
 
-            <img src=".jpeg" alt="ohjekuva_2">
+            <div>
+            <img src="assets/img//Infobank/yths.jpg" alt="ohjekuva_2">
             <h3>YTHS</h3>
             <a href="https://www.yths.fi/en/frontpage/" target=”_blank” id="bloodpressure_a">"Link"</a>
+            </div>
 
-            <img src=".jpeg" alt="ohjekuva_3">
+            <div>
+            <div class="kuva">
+            <img src="assets/img//Infobank/kaypa.png" alt="ohjekuva_3">
+            </div>
             <h3>Käypähoito</h3>
             <a href="https://www.kaypahoito.fi" target=”_blank” id="bloodpressure_a">"Link"</a>
+            </div>
 
-            <img src=".jpeg" alt="ohjekuva_4">
+            <div>
+            <img src="assets/img//Infobank/kirjasto.png" alt="ohjekuva_4">
             <h3>Terveyskirjasto</h3>
             <a href="https://www.terveyskirjasto.fi/" target=”_blank” id="bloodpressure_a">"Link"</a>
+            </div>
 
-            <img src=".jpeg" alt="ohjekuva_5">
+            <div>
+            <img src="assets/img//Infobank/sydan.png" alt="ohjekuva_5">
             <h3>Sydänliitto</h3>
             <a href="https://sydan.fi/" target=”_blank” id="bloodpressure_a">"Link"</a>
+            </div>
 
-            <img src=".jpeg" alt="ohjekuva_6">
+            <div>
+            <img src="assets/img//Infobank/duo.png" alt="ohjekuva_6">
             <h3>Duodecim</h3>
             <a href="https://www.duodecim.fi/2017/06/15/uniapneaan-liittyy-vakavia-terveysriskeja-varhainen-hoito-tarkeaa/" target=”_blank” id="bloodpressure_a">"Link"</a>
+            </div>
+
+            </div>
+        </section>
+
+        <section>
+            <button type="button" class="sleep_save_btn cancel" onclick="closeForm()"
+                aria-hidden="true">&times;</button>
         </section>
     </form>
 </div>
