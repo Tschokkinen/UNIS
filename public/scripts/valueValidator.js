@@ -1,50 +1,66 @@
 // Validates bloodpressure data.
 const validatePressureData = (form) => {
-    const bpAlertSaved = document.getElementById("snackbar_bpMeter");
+    let bpAlertSaved = document.getElementById("snackbar_bpMeter");
+    let bpAlertError1 = document.getElementById("snackbar_bpMeterError1");
+    let bpAlertError2 = document.getElementById("snackbar_bpMeterError2");
+    let bpAlertError3 = document.getElementById("snackbar_bpMeterError3");
+    let bpAlertError4 = document.getElementById("snackbar_bpMeterError4");
+    let bpAlertError5 = document.getElementById("snackbar_bpMeterError5");
+    let bpAlertError6 = document.getElementById("snackbar_bpMeterError6");
 
     if (isNaN(form.systolicPressure.value)) { // Check if entered values are numbers.
-        alert("Systolic value must be a number.");
         form.systolicPressure.focus();
         bpAlertSaved.className = "hidden";
+        bpAlertError1.className = "show";
+        setTimeout(function () { bpAlertError1.className = bpAlertError1.className.replace("show", ""); }, 4000);
         return false;
     } else if (isNaN(form.diastolicPressure.value)) { // Check if entered values are numbers.
-        alert("Diastolic value must be a number.");
         form.diastolicPressure.focus();
         bpAlertSaved.className = "hidden";
+        bpAlertError2.className = "show";
+        setTimeout(function () { bpAlertError2.className = bpAlertError2.className.replace("show", ""); }, 4000);
         return false;
     } else if (form.systolicPressure.value > 180) { // Check if values are within a reasonable range.
-        alert("Entered systolic pressure over 180.\nPlease check value or contact health services."); 7
         form.systolicPressure.focus();
         bpAlertSaved.className = "hidden";
+        bpAlertError3.className = "show";
+        setTimeout(function () { bpAlertError3.className = bpAlertError3.className.replace("show", ""); }, 4000);
         return false;
-    } else if (form.systolicPressure.value < 1) { // Check if values are within a reasonable range.
-        alert("Entered systolic pressure under 1.\nPlease check value or contact health services."); 7
+    } else if (form.systolicPressure.value < 80) { // Check if values are within a reasonable range.
         form.systolicPressure.focus();
         bpAlertSaved.className = "hidden";
+        bpAlertError4.className = "show";
+        setTimeout(function () { bpAlertError4.className = bpAlertError4.className.replace("show", ""); }, 4000);
         return false;
     } else if (form.diastolicPressure.value > 120) { // Check if values are within a reasonable range.
-        alert("Entered diastolic pressure over 120.\nPlease check value or contact health services.");
         form.diastolicPressure.focus();
         bpAlertSaved.className = "hidden";
+        bpAlertError5.className = "show";
+        setTimeout(function () { bpAlertError5.className = bpAlertError5.className.replace("show", ""); }, 4000);
         return false;
-    } else if (form.diastolicPressure.value < 1) { // Check if values are within a reasonable range.
-        alert("Entered diastolic pressure under 1.\nPlease check value or contact health services.");
+    } else if (form.diastolicPressure.value < 50) { // Check if values are within a reasonable range.
         form.diastolicPressure.focus();
         bpAlertSaved.className = "hidden";
+        bpAlertError6.className = "show";
+        setTimeout(function () { bpAlertError6.className = bpAlertError6.className.replace("show", ""); }, 4000);
         return false;
     }
     // closeForm();
     bpAlertSaved.className = "show";
+    setTimeout(function () { bpAlertSaved.className = bpAlertSaved.className.replace("show", ""); }, 4000);
     return true;
 }
 
 // Validates that a selection has been made on sleep meter.
 const validateSleepData = (form) => {
-    const sleepAlertSaved = document.getElementById("snackbar_sleepMeter");
+    let sleepAlertSaved = document.getElementById("snackbar_sleepMeter");
+    let sleepAlertError = document.getElementById("snackbar_sleepMeterError");
+    
     // console.log("form.sleepValue: ", form.sleepvalue.value);
     if (form.sleepvalue.value === '') {
-        alert("Select sleep quality.");
+        sleepAlertError.className = "show";
         sleepAlertSaved.className = "hidden";
+        setTimeout(function () { sleepAlertError.className = sleepAlertError.className.replace("show", ""); }, 4000);
         return false;
     }
     // closeForm();
@@ -54,10 +70,13 @@ const validateSleepData = (form) => {
 }
 
 const validateMoodData = (form) => {
-    const moodAlertSaved = document.getElementById("snackbar_moodMeter");
+    let moodAlertSaved = document.getElementById("snackbar_moodMeter");
+    let moodAlertError = document.getElementById("snackbar_moodMeterError");
+    
     if (form.moodvalue.value === '') {
-        alert("Select mood quality.");
+        moodAlertError.className = "show";
         moodAlertSaved.className = "hidden";
+        setTimeout(function () { moodAlertError.className = moodAlertError.className.replace("show", ""); }, 4000);
         return false;
     }
     moodAlertSaved.className = "show";
@@ -69,7 +88,7 @@ const validatePassword = async () => {
     // console.log("clicked");
     let password = document.getElementById('field_Password_Changeuserinfo').value;
     let profileEdited = document.getElementById("snackbar_changeUserInfo");
-
+    let profileEditError = document.getElementById("snackbar_changeUserInfoError");
 
     const response = await fetch('/main/validatePassword', {
         method: "POST",
@@ -87,12 +106,14 @@ const validatePassword = async () => {
     if (data.match) {
         document.getElementById('changeUserInfo').submit();
         profileEdited.className = "show";
+        profileEditError.className = "hidden";
         setTimeout(function () { profileEdited.className = profileEdited.className.replace("show", ""); }, 4000);
     } else {
-        alert("Wrong password.");
+        profileEditError.className = "show";
+        setTimeout(function () { profileEditError.className = profileEditError.className.replace("show", ""); }, 4000);
+    
     }
 }
-
 
 /*Show alert/snackbar at Message To Professional view*/
 

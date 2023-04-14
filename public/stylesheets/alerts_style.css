@@ -1,81 +1,278 @@
 /*SLEEP METER*/
 
-/* Snackbar / alert */
+/* Saved - Snackbar / alert */
 #snackbar_sleepMeter {
   visibility: hidden;
-  min-width: 250px;
-  margin-left: -125px; 
-  background-color: #333; 
+  width: 40%;
+  min-width: 200px;
+  margin-left: -25%;
+  background-color: #009e47bc; 
   color: #fff; 
+  font-size: 2em;
   text-align: center; 
-  border-radius: 2px; 
+  border-radius: 5px; 
   padding: 16px; 
   position: fixed; 
   z-index: 1; 
-  left: 50%; 
-  bottom: 30px; 
+  left: 50%;
+  bottom: 50%;
 }
 
-/* Show the snackbar when clicking on a button */
 #snackbar_sleepMeter.show {
   visibility: visible; /* Show the snackbar */
   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
-/*MOOD METER*/
-
-/* Snackbar / alert */
-#snackbar_moodMeter {
+/* Error - Snackbar / alert */
+#snackbar_sleepMeterError {
   visibility: hidden;
-  min-width: 250px;
-  margin-left: -125px; 
-  background-color: #333; 
+  width: 40%;
+  min-width: 200px;
+  margin-left: -25%;
+  background-color: #9e0000bc; 
   color: #fff; 
+  font-size: 2em;
   text-align: center; 
-  border-radius: 2px; 
+  border-radius: 5px; 
   padding: 16px; 
   position: fixed; 
   z-index: 1; 
-  left: 50%; 
-  bottom: 30px; 
+  left: 50%;
+  bottom: 50%;
+}
+
+#snackbar_sleepMeterError.show {
+  visibility: visible; /* Show the snackbar */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 3.5s;
+  animation: fadein 0.5s, fadeout 0.5s 3.5s;
+}
+
+/*MOOD METER*/
+
+/* Saved - Snackbar / alert */
+#snackbar_moodMeter {
+  visibility: hidden;
+  width: 40%;
+  min-width: 200px;
+  margin-left: -25%;
+  background-color: #009e47bc; 
+  color: #fff; 
+  font-size: 2em;
+  text-align: center; 
+  border-radius: 5px; 
+  padding: 16px; 
+  position: fixed; 
+  z-index: 1; 
+  left: 50%;
+  bottom: 50%; 
 }
 
 /* Show the snackbar when clicking on a button */
 #snackbar_moodMeter.show {
   visibility: visible; /* Show the snackbar */
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 3.5s;
+  animation: fadein 0.5s, fadeout 0.5s 3.5s;
+}
+
+/* Error - Snackbar / alert */
+#snackbar_moodMeterError {
+  visibility: hidden;
+  width: 40%;
+  min-width: 200px;
+  margin-left: -25%;
+  background-color: #9e0000bc; 
+  color: #fff; 
+  font-size: 2em;
+  text-align: center; 
+  border-radius: 5px; 
+  padding: 16px; 
+  position: fixed; 
+  z-index: 1; 
+  left: 50%;
+  bottom: 50%;
+}
+
+#snackbar_moodMeterError.show {
+  visibility: visible; /* Show the snackbar */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 3.5s;
+  animation: fadein 0.5s, fadeout 0.5s 3.5s;
 }
 
 /*BLOOD PRESSURE METER*/
 
-/* Snackbar / alert */
+/* Saved - snackbar / alert */
 #snackbar_bpMeter {
   visibility: hidden;
-  min-width: 250px;
-  margin-left: -125px; 
-  background-color: #333; 
+  width: 40%;
+  min-width: 200px;
+  margin-left: -25%;
+  background-color: #009e47bc; 
   color: #fff; 
+  font-size: 2em;
   text-align: center; 
-  border-radius: 2px; 
+  border-radius: 5px; 
   padding: 16px; 
   position: fixed; 
   z-index: 1; 
-  left: 50%; 
-  bottom: 30px; 
+  left: 50%;
+  bottom: 50%;
 }
 
 /* Show the snackbar when clicking on a button */
 #snackbar_bpMeter.show {
   visibility: visible; /* Show the snackbar */
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 3.5s;
+  animation: fadein 0.5s, fadeout 0.5s 3.5s;
+}
+
+/* Error1 - Snackbar / alert */
+#snackbar_bpMeterError1.show {
+  visibility: visible; /* Show the snackbar */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 5.5s;
+  animation: fadein 0.5s, fadeout 0.5s 5.5s;
+}
+
+#snackbar_bpMeterError1 {
+  visibility: hidden;
+  width: 40%;
+  min-width: 200px;
+  margin-left: -25%;
+  background-color: #9e0000bc; 
+  color: #fff; 
+  font-size: 2em;
+  text-align: center; 
+  border-radius: 5px; 
+  padding: 16px; 
+  position: fixed; 
+  z-index: 1; 
+  left: 50%;
+  bottom: 50%;
+}
+
+/* Error2 - Snackbar / alert */
+#snackbar_bpMeterError2.show {
+  visibility: visible; /* Show the snackbar */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 5.5s;
+  animation: fadein 0.5s, fadeout 0.5s 5.5s;
+}
+
+#snackbar_bpMeterError2 {
+  visibility: hidden;
+  width: 40%;
+  min-width: 200px;
+  margin-left: -25%;
+  background-color: #9e0000bc; 
+  color: #fff; 
+  font-size: 2em;
+  text-align: center; 
+  border-radius: 5px; 
+  padding: 16px; 
+  position: fixed; 
+  z-index: 1; 
+  left: 50%;
+  bottom: 50%;
+}
+
+/* Error3 - Snackbar / alert */
+#snackbar_bpMeterError3.show {
+  visibility: visible; /* Show the snackbar */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 5.5s;
+  animation: fadein 0.5s, fadeout 0.5s 5.5s;
+}
+
+#snackbar_bpMeterError3 {
+  visibility: hidden;
+  width: 40%;
+  min-width: 200px;
+  margin-left: -25%;
+  background-color: #9e0000bc; 
+  color: #fff; 
+  font-size: 2em;
+  text-align: center; 
+  border-radius: 5px; 
+  padding: 16px; 
+  position: fixed; 
+  z-index: 1; 
+  left: 50%;
+  bottom: 50%;
+}
+
+/* Error4 - Snackbar / alert */
+#snackbar_bpMeterError4.show {
+  visibility: visible; /* Show the snackbar */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 5.5s;
+  animation: fadein 0.5s, fadeout 0.5s 5.5s;
+}
+
+#snackbar_bpMeterError4 {
+  visibility: hidden;
+  width: 40%;
+  min-width: 200px;
+  margin-left: -25%;
+  background-color: #9e0000bc; 
+  color: #fff; 
+  font-size: 2em;
+  text-align: center; 
+  border-radius: 5px; 
+  padding: 16px; 
+  position: fixed; 
+  z-index: 1; 
+  left: 50%;
+  bottom: 50%;
+}
+
+/* Error5 - Snackbar / alert */
+#snackbar_bpMeterError5.show {
+  visibility: visible; /* Show the snackbar */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 5.5s;
+  animation: fadein 0.5s, fadeout 0.5s 5.5s;
+}
+
+#snackbar_bpMeterError5 {
+  visibility: hidden;
+  width: 40%;
+  min-width: 200px;
+  margin-left: -25%;
+  background-color: #9e0000bc; 
+  color: #fff; 
+  font-size: 2em;
+  text-align: center; 
+  border-radius: 5px; 
+  padding: 16px; 
+  position: fixed; 
+  z-index: 1; 
+  left: 50%;
+  bottom: 50%;
+}
+
+/* Error6 - Snackbar / alert */
+#snackbar_bpMeterError6.show {
+  visibility: visible; /* Show the snackbar */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 5.5s;
+  animation: fadein 0.5s, fadeout 0.5s 5.5s;
+}
+
+#snackbar_bpMeterError6 {
+  visibility: hidden;
+  width: 40%;
+  min-width: 200px;
+  margin-left: -25%;
+  background-color: #9e0000bc; 
+  color: #fff; 
+  font-size: 2em;
+  text-align: center; 
+  border-radius: 5px; 
+  padding: 16px; 
+  position: fixed; 
+  z-index: 1; 
+  left: 50%;
+  bottom: 50%;
 }
 
 /*MESSAGE SUPPORT*/
 
-/* Snackbar / alert */
+/* Saved - snackbar / alert */
 #snackbar_emailToSup {
   visibility: hidden;
   width: 40%;
@@ -96,20 +293,20 @@
 /* Show the snackbar when clicking on a button */
 #snackbar_emailToSup.show {
   visibility: visible; /* Show the snackbar */
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 3.5s;
+  animation: fadein 0.5s, fadeout 0.5s 3.5s;
 }
 
 
 /*MESSAGE PROFESSIONAL*/
 
-/* Snackbar / alert */
+/* Saved - snackbar / alert */
 #snackbar_emailToPro {
   visibility: hidden;
   width: 40%;
   min-width: 200px;
   margin-left: -25%;
-  background-color: #009e47bc; 
+  background-color: #9e0000bc; 
   color: #fff; 
   font-size: 2em;
   text-align: center; 
@@ -124,13 +321,13 @@
   /* Show the snackbar when clicking on a button */
   #snackbar_emailToPro.show {
     visibility: visible; /* Show the snackbar */
-    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 3.5s;
+    animation: fadein 0.5s, fadeout 0.5s 3.5s;
   }
 
   /*CHANGE USER INFO /EDIT PROFILE*/
 
-/* Snackbar / alert */
+/* Saved - snackbar / alert */
 #snackbar_changeUserInfo {
   visibility: hidden;
   width: 40%;
@@ -151,8 +348,33 @@
 /* Show the snackbar when clicking on a button */
 #snackbar_changeUserInfo.show {
   visibility: visible; /* Show the snackbar */
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 3.5s;
+  animation: fadein 0.5s, fadeout 0.5s 3.5s;
+}
+
+
+#snackbar_changeUserInfoError {
+  visibility: hidden;
+  width: 40%;
+  min-width: 200px;
+  margin-left: -25%;
+  background-color: #9e0000bc; 
+  color: #fff; 
+  font-size: 2em;
+  text-align: center; 
+  border-radius: 5px; 
+  padding: 16px; 
+  position: fixed; 
+  z-index: 1; 
+  left: 50%;
+  bottom: 50%;
+}
+
+/* Show the snackbar when clicking on a button */
+#snackbar_changeUserInfoError.show {
+  visibility: visible; /* Show the snackbar */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 3.5s;
+  animation: fadein 0.5s, fadeout 0.5s 4.5s;
 }
   
   /* Animations to fade the snackbar in and out */
