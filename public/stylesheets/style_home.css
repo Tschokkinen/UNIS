@@ -4,12 +4,15 @@
 
 body {
     margin: auto;
+    margin-top: 16px;
     max-width: 1400px;
+    background-color: #7494AC;
 }
 
 html {
     background-color: rgb(233, 233, 233);
     font-family: 'Roboto', sans-serif;
+    background-color: #7494AC;
 }
 
 .clear {
@@ -23,6 +26,7 @@ html {
     margin-left: 5vw;
     margin-right: 5vw;
     z-index: 1;
+    border-radius: 5px;
 }
 
 header {
@@ -39,7 +43,16 @@ header {
     height: 6em;
     margin-right: auto;
     margin-left: 3.5em;
-    margin-top: 1.7em;
+    margin-top: 2.6em;
+}
+
+#UNIS_main_header{
+    font-size: 1.8vw;
+    margin-right: auto;
+    margin-left: 3.5em;
+    margin-top: 1.5em;
+    font-style: italic;
+    color: #0D3D64;
 }
 
 header nav ul {
@@ -59,7 +72,7 @@ header nav a {
 }
 
 .fa-circle-info {
-    color: rgb(0, 0, 0);
+    color: #0D3D64;
     font-size: 3em;
     margin-top: 2vh;
 }
@@ -71,7 +84,7 @@ header nav a {
 }
 
 .fa-envelope {
-    color: rgb(0, 0, 0);
+    color: #0D3D64;
     font-size: 3em;
     margin-top: 2vh;
 }
@@ -84,13 +97,12 @@ header nav a {
 
 .logOutButton {
     align-items: center;
-    appearance: none;
-    background-color: #FCFCFD;
+    background-color: #c543470f;
     border-radius: 3px;
     border-width: 1px;
     box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
     box-sizing: border-box;
-    color: #36395A;
+    color: #C54347;
     cursor: pointer;
     display: inline-flex;
     height: 48px;
@@ -100,7 +112,7 @@ header nav a {
     transition: box-shadow .15s, transform .15s;
     touch-action: manipulation;
     will-change: box-shadow, transform;
-    font-size: 1em;
+    font-size: 0.8em;
     font-weight: 600;
     margin-top: 10px;
 }
@@ -130,7 +142,7 @@ main {
 
 #left {
     flex: 1;
-    background-color: #828282;
+    background-color: #7494ac57;
     display: flex;
     justify-content: center;
     border-style: ridge;
@@ -143,7 +155,7 @@ main {
     width: 6em;
     border-radius: 50%;
     margin: 3px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -176,9 +188,10 @@ main {
     margin-left: 2vw;
     margin-right: 2vw;
     border-radius: 10px;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.751), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
-    color: #36395A;
+    color: #0D3D64;
+    background-color: #7494ac10;
     transition: box-shadow .15s, transform .15s;
     touch-action: manipulation;
     will-change: box-shadow, transform;
@@ -212,9 +225,10 @@ main {
     margin: 2vw;
     text-align: left;
     border-radius: 10px;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.751), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
-    color: #36395A;
+    color: #0D3D64;
+    background-color: #7494ac10;
     transition: box-shadow .15s, transform .15s;
     touch-action: manipulation;
     will-change: box-shadow, transform;
@@ -247,9 +261,10 @@ main {
     margin: 2vw;
     text-align: left;
     border-radius: 50px;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.751), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
     color: #36395A;
+    background-color: #7494ac10;
     transition: box-shadow .15s, transform .15s;
     touch-action: manipulation;
     will-change: box-shadow, transform;
@@ -354,7 +369,7 @@ button a {
     border-width: 2px;
     box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
     box-sizing: border-box;
-    color: #36395A;
+    color: #0D3D64;
     cursor: pointer;
     display: inline-flex;
     height: 48px;
@@ -395,7 +410,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(180, 180, 180);
+    background-color: #7494AC;
     height: fit-content;
     margin-left: 5vw;
     margin-right: 5vw;
@@ -472,8 +487,13 @@ footer {
         margin-right: auto;
     }
 
+    #UNIS_main_header{
+       visibility: hidden;
+       margin-left: -8px;
+    }
+
     header nav li {
-        padding: 1vw;
+        padding: 0.5vw;
     }
 
     .logOutButton {
