@@ -78,17 +78,19 @@
 /* Snackbar / alert */
 #snackbar_emailToSup {
   visibility: hidden;
-  min-width: 250px;
-  margin-left: -125px; 
-  background-color: #333; 
+  width: 40%;
+  min-width: 200px;
+  margin-left: -25%;
+  background-color: #009e47bc; 
   color: #fff; 
+  font-size: 2em;
   text-align: center; 
-  border-radius: 2px; 
+  border-radius: 5px; 
   padding: 16px; 
   position: fixed; 
   z-index: 1; 
-  left: 50%; 
-  bottom: 30px; 
+  left: 50%;
+  bottom: 50%; 
 }
 
 /* Show the snackbar when clicking on a button */
@@ -103,18 +105,20 @@
 
 /* Snackbar / alert */
 #snackbar_emailToPro {
-    visibility: hidden;
-    min-width: 250px;
-    margin-left: -125px; 
-    background-color: #333; 
-    color: #fff; 
-    text-align: center; 
-    border-radius: 2px; 
-    padding: 16px; 
-    position: fixed; 
-    z-index: 1; 
-    left: 50%; 
-    bottom: 30px; 
+  visibility: hidden;
+  width: 40%;
+  min-width: 200px;
+  margin-left: -25%;
+  background-color: #009e47bc; 
+  color: #fff; 
+  font-size: 2em;
+  text-align: center; 
+  border-radius: 5px; 
+  padding: 16px; 
+  position: fixed; 
+  z-index: 1; 
+  left: 50%;
+  bottom: 50%;
   }
   
   /* Show the snackbar when clicking on a button */
@@ -129,17 +133,19 @@
 /* Snackbar / alert */
 #snackbar_changeUserInfo {
   visibility: hidden;
-  min-width: 250px;
-  margin-left: -125px; 
-  background-color: #333; 
+  width: 40%;
+  min-width: 200px;
+  margin-left: -25%;
+  background-color: #009e47bc; 
   color: #fff; 
+  font-size: 2em;
   text-align: center; 
-  border-radius: 2px; 
+  border-radius: 5px; 
   padding: 16px; 
   position: fixed; 
   z-index: 1; 
-  left: 50%; 
-  bottom: 30px; 
+  left: 50%;
+  bottom: 50%;
 }
 
 /* Show the snackbar when clicking on a button */
