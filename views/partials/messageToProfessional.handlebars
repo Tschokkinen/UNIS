@@ -1,6 +1,6 @@
 <div class="form-popup-messagePro" id="messageToProForm">
     <!-- Email API service at https://web3forms.com/-->
-    <form id="messageToPro" target="_blank" action="https://api.web3forms.com/submit" method="POST"
+    <form id="messageToPro" action="https://api.web3forms.com/submit" method="POST"
         class="form-container-messagePro" method="POST">
 
         <section id="popup-left-messagePro">
@@ -9,6 +9,7 @@
             <h2 id="pop_up_header_messagePro">MESSAGE YOUR PROFESSIONAL</h2>
 
             <input type="hidden" name="access_key" value="b00fece0-aacf-47f5-80d9-451392f497a8">
+            <input type="hidden" name="redirect" value="http://localhost:3000/main">
             <input type="hidden" id="field_FirstName_msgPro" name="firstName">
             <input type="hidden" id="field_LastName_msgPro" name="lastName">
             <input type="hidden" id="field_Email_msgPro" name="email">
