@@ -55,7 +55,7 @@ header {
 }
 
 #back-arrow-text {
-  font-size: 16pt;
+  font-size: 1.2em;
   font-weight: 700;
 }
 
@@ -212,7 +212,7 @@ header nav a:hover {
 
 th {
   text-align: left;
-  font-size: 14pt;
+  font-size: 1.1em;
 }
 
 .chart_headers {
@@ -273,7 +273,7 @@ footer {
   }
 
   #back-arrow-text {
-    font-size: 12pt;
+    font-size: 1em;
     font-weight: 700;
   }
 
