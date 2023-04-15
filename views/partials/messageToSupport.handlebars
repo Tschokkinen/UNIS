@@ -1,6 +1,6 @@
 <div class="form-popup-messageSupport" id="messageSupportForm">
     <!-- Email API service at https://web3forms.com/-->
-    <form id="messageSupport" target="_blank" action="https://api.web3forms.com/submit" class="form-container-messageSupport" method="POST">
+    <form id="messageSupport" action="https://api.web3forms.com/submit" class="form-container-messageSupport" method="POST">
        
         <section id="popup-left-messageSupport">
             <button type="button" class="message_send_btn cancel" id="closeBtn_left_msgSupport" onclick="closeForm()"
@@ -8,6 +8,10 @@
             <h2 id="pop_up_header_messageSupport">MESSAGE IT-SUPPORT</h2>
 
             <input type="hidden" name="access_key" value="b00fece0-aacf-47f5-80d9-451392f497a8">
+            <input type="hidden" name="redirect" value="http://localhost:3000/main">
+            <input type="hidden" id="field_FirstName_msgSupport" name="firstName">
+            <input type="hidden" id="field_LastName_msgSupport" name="lastName">   
+            <input type="hidden" id="field_Email_msgSupport" name="email">        
 
             <label for="messageSupportHeader" id="headers_msgSupport">Topic: </label>
             <textarea class="smallInput_webform" id="messageSupportHeader" type="text" name="headerOfMessageSupport"
@@ -18,7 +22,8 @@
                 placeholder="Your message. Max. 2000 characters." maxlength="2000" required></textarea>
             <br>
 
-            <button form="messageSupport" type="submit" class="message_send_btn" onclick="closeForm()">Send</button>
+            <button form="messageSupport" type="submit" class="message_send_btn" onclick="emailSentSup()">Send</button>
+            <div id="snackbar_emailToSup">Email sent!</div>
         </section>
 
         <section id="popup-right-messageSupport">

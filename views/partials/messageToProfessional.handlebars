@@ -1,41 +1,51 @@
 <div class="form-popup-messagePro" id="messageToProForm">
     <!-- Email API service at https://web3forms.com/-->
-    <form id="messageToPro" target="_blank" action="https://api.web3forms.com/submit" method="POST" class="form-container-messagePro" method="POST">
-       
+    <form id="messageToPro" action="https://api.web3forms.com/submit" method="POST"
+        class="form-container-messagePro" method="POST">
+
         <section id="popup-left-messagePro">
             <button type="button" class="message_send_btn cancel" id="closeBtn_left_msgPro" onclick="closeForm()"
                 aria-hidden="true">&times;</button>
             <h2 id="pop_up_header_messagePro">MESSAGE YOUR PROFESSIONAL</h2>
 
             <input type="hidden" name="access_key" value="b00fece0-aacf-47f5-80d9-451392f497a8">
-            
+            <input type="hidden" name="redirect" value="http://localhost:3000/main">
+            <input type="hidden" id="field_FirstName_msgPro" name="firstName">
+            <input type="hidden" id="field_LastName_msgPro" name="lastName">
+            <input type="hidden" id="field_Email_msgPro" name="email">
+
             <label for="messageToProHeader" id="headers_msgPro">Topic:</label>
-            <textarea class="smallInput_webform"  id="messageToProHeader" type="text" name="messageToProHeader" placeholder="Topic of message" maxlength="100" required></textarea>
+            <textarea class="smallInput_webform" id="messageToProHeader" type="text" name="messageToProHeader"
+                placeholder="Topic of message" maxlength="100" required></textarea>
             <br>
             <label for="messageToProContent" id="headers_msgPro">Message:</label>
-            <textarea  class="bigInput_webform" id="messageToProContent" type="text" name="messageToProContent" placeholder="Message to your healthcare professional. Max. 2000 characters." maxlength="2000" required></textarea>
+            <textarea class="bigInput_webform" id="messageToProContent" type="text" name="messageToProContent"
+                placeholder="Message to your healthcare professional. Max. 2000 characters." maxlength="2000"
+                required></textarea>
             <br>
-           <button form="messageToPro" type="submit" class="message_send_btn" onclick="closeForm()">Send</button>
+            <button form="messageToPro" type="submit" class="message_send_btn" onclick="emailSentPro()">Send</button>
+            <div id="snackbar_emailToPro">Email sent!</div>
         </section>
-       
+
         <section id="popup-right-messagePro">
             <button type="button" class="message_send_btn cancel" id="closeBtn_right_msgPro" onclick="closeForm()"
                 aria-hidden="true">&times;</button>
             <h2 id="header_messagePro">YTHS Contact</h2>
-            
+
             <figure id="msgProFigure">
                 <figcaption><a href="www.yths.fi">www.yths.fi</a></figcaption>
                 <!-- Image source: Pixabay, Memed_Nurrohmad. https://pixabay.com/fi/users/memed_nurrohmad-3307648/ -->
-                <img title="Your professional" class="msgProImg" src="assets/img/msgPro_img.png" alt="Message to professional image. Stethoscope.">    
+                <img title="Your professional" class="msgProImg" src="assets/img/msgPro_img.png"
+                    alt="Message to professional image. Stethoscope.">
             </figure>
 
             <div class="YTHS_details_box">
-            <ul>
-                <li class="listitemsMsgPro"><b>Your professional: </b>Teija Terkka, th</li>
-                <li class="listitemsMsgPro"><b>E-mail: </b> teija.terkka@yths.fi</li>
-                <li class="listitemsMsgPro"><b>Tel: </b> 010 123 1234 (Weekdays, 9-15)</li>
-            </ul>
-        </div>
-             </section>
+                <ul>
+                    <li class="listitemsMsgPro"><b>Your professional: </b>Teija Terkka, th</li>
+                    <li class="listitemsMsgPro"><b>E-mail: </b> teija.terkka@yths.fi</li>
+                    <li class="listitemsMsgPro"><b>Tel: </b> 010 123 1234 (Weekdays, 9-15)</li>
+                </ul>
+            </div>
+        </section>
     </form>
 </div>
