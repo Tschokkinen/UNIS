@@ -1272,7 +1272,7 @@ input[type=password]:focus.smallInput {
     width: 50%;
     padding: 10px;
     box-sizing: border-box;
-
+}
     #closeBtn_left_changeUserInfo {
         opacity: 1;
         cursor: pointer;
