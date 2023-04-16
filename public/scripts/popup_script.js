@@ -72,6 +72,7 @@ function closeForm() {
     sendMsgToPro.style.display = "none";
     sendMsgToSupport.style.display = "none";
     changeUserInfo.style.display = "none";
+    infoBank.style.display = "none";
 
     body.style.position = 'initial';
     body.style.overflow = 'auto';
