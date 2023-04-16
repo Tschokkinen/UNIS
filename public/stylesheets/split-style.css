@@ -1,5 +1,5 @@
 html {
-    background-color: rgb(233, 233, 233);
+    background-color: #7494AC;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -8,13 +8,14 @@ html {
 }
 
 body {
-    background-color: rgb(245, 245, 245);
+    background-color: #7494AC;
     margin: auto;
     max-width: 1300px;
 }
 
 #container {
     margin: auto;
+    background-color: #ffffff;
     height: 100%;
     width: 70%;
     box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
@@ -42,7 +43,7 @@ body {
     display: flex;
     align-items: center;
     flex: 1;
-    background-color: rgb(151, 150, 150);
+    background-color: #7494AC;
     border-style: ridge;
     border-radius: 5px;
     flex-direction: column;

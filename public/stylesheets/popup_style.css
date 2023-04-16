@@ -97,7 +97,7 @@
     display: flex;
     align-items: center;
     flex: 1;
-    background-color: rgb(151, 150, 150);
+    background-color: #7494ac57;
     border-radius: 5px;
     flex-direction: column;
 }
@@ -245,7 +245,7 @@
     display: flex;
     align-items: center;
     flex: 1;
-    background-color: rgb(151, 150, 150);
+    background-color: #7494ac57;
     border-radius: 5px;
     flex-direction: column;
 }
@@ -395,7 +395,7 @@
     display: flex;
     align-items: center;
     flex: 1;
-    background-color: rgb(151, 150, 150);
+    background-color: #7494ac57;
     border-radius: 5px;
     flex-direction: column;
 }
@@ -543,7 +543,7 @@
     display: flex;
     align-items: center;
     flex: 1;
-    background-color: rgb(151, 150, 150);
+    background-color: #7494ac57;
     border-radius: 5px;
     flex-direction: column;
 }
@@ -716,7 +716,7 @@
     display: flex;
     align-items: center;
     flex: 1;
-    background-color: rgb(151, 150, 150);
+    background-color: #7494ac57;
     border-radius: 5px;
     flex-direction: column;
 }
@@ -934,7 +934,7 @@
     display: flex;
     align-items: center;
     flex: 1;
-    background-color: rgb(151, 150, 150);
+    background-color: #7494ac57;
     border-radius: 5px;
     flex-direction: column;
     line-height: 1;
