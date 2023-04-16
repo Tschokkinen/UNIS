@@ -1,12 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>UNIS app</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#093C66"/>
+    <meta name="description" content="UNIS is an application for both sleep apnea patients and their healthcare professionals. UNIS focuses on supporting communication and effective physiological observation between patients and their healthcare team. The mainn view of the application has plenty of useful tools for the patient and their professional to observe and manage sleep apnea related health parameters.">
+    <meta name="keywords" content="UNIS, sleep apnea, heart rate variability and sleep apnea, sleep apnea application, sleep measurement, mood measurement, medical application for sleep apnea">
+    <meta name="author" content="UNIS team">
     <link rel="stylesheet" href="stylesheets/style_home.css">
     <link rel="stylesheet" href="stylesheets/popup_style.css">
+    <link rel="stylesheet" href="stylesheets/alerts_style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -17,6 +22,7 @@
     <div class="wrapper">
         <header>
             <img class="unislogo" src="/assets/img/UNIS_logo.svg" alt="UNIS sleep apnea application logo.">
+            <h1 id="UNIS_main_header">UNIS - Sleep Apnea Application</h1>
             <nav>
                 <ul>
                     <li><a onclick="openFormSendMsgSupport()"><i title="IT support & info" class="fa-sharp fa-solid fa-circle-info"></i></a></li>
@@ -43,7 +49,7 @@
     <script src="scripts/popup.js"></script>
     <script src="scripts/valueValidator.js"></script>
     <script src="scripts/requestUserData.js"></script>
-    <script src="scripts/meter_lights.js"></script>"
+    <script src="scripts/meter_lights.js"></script>
 </body>
 
 </html>

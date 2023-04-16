@@ -1,5 +1,5 @@
 html {
-    background-color: rgb(233, 233, 233);
+    background-color: #7494AC;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -8,13 +8,14 @@ html {
 }
 
 body {
-    background-color: rgb(245, 245, 245);
+    background-color: #7494AC;
     margin: auto;
     max-width: 1300px;
 }
 
 #container {
     margin: auto;
+    background-color: #ffffff;
     height: 100%;
     width: 70%;
     box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
@@ -42,7 +43,7 @@ body {
     display: flex;
     align-items: center;
     flex: 1;
-    background-color: rgb(151, 150, 150);
+    background-color: #7494AC;
     border-style: ridge;
     border-radius: 5px;
     flex-direction: column;
@@ -69,7 +70,7 @@ body {
   }
   
   #backSignin-arrow-text {
-    font-size: 14pt;
+    font-size: 1.1em;
     font-weight: 700;
     color: black;
   }
@@ -138,7 +139,7 @@ form label {
     transition: box-shadow .15s, transform .15s;
     touch-action: manipulation;
     will-change: box-shadow, transform;
-    font-size: 14pt;
+    font-size: 1.2em;
     font-weight: 600;
 }
 
@@ -158,6 +159,7 @@ form label {
 }
 
 .narrow-button {
+    margin-top: 8px;
     width: 50%;
 }
 
@@ -183,7 +185,7 @@ form label {
     border: 2px solid black;
     border-radius: 5px;
     display: flex;
-    font-size: 10pt;
+    font-size: 0.9em;
     overscroll-behavior: contain;
     overflow: auto;
 }

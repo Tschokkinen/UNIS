@@ -77,8 +77,10 @@
     height: 80%;
     width: 70%;
     max-width: 900px;
-    max-height: 500px;
+    max-height: 550px;
     box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
+    overscroll-behavior: contain;
+    overflow: auto;
 }
 
 #popup-left-sleep {
@@ -95,7 +97,7 @@
     display: flex;
     align-items: center;
     flex: 1;
-    background-color: rgb(151, 150, 150);
+    background-color: #7494ac57;
     border-radius: 5px;
     flex-direction: column;
 }
@@ -159,7 +161,7 @@
     transition: box-shadow .15s, transform .15s;
     touch-action: manipulation;
     will-change: box-shadow, transform;
-    font-size: 14pt;
+    font-size: 1.1em;
     font-weight: 600;
 }
 
@@ -222,9 +224,11 @@
     height: 80%;
     width: 70%;
     max-width: 900px;
-    max-height: 500px;
-    min-height: 400px;
+    max-height: 550px;
+    min-height: 380px;
     box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
+    overscroll-behavior: contain;
+    overflow: auto;
 }
 
 #popup-left-mood {
@@ -241,7 +245,7 @@
     display: flex;
     align-items: center;
     flex: 1;
-    background-color: rgb(151, 150, 150);
+    background-color: #7494ac57;
     border-radius: 5px;
     flex-direction: column;
 }
@@ -306,7 +310,7 @@
     transition: box-shadow .15s, transform .15s;
     touch-action: manipulation;
     will-change: box-shadow, transform;
-    font-size: 14pt;
+    font-size: 1.1em;
     font-weight: 600;
 }
 
@@ -369,9 +373,11 @@
     height: 80%;
     width: 70%;
     max-width: 900px;
-    max-height: 500px;
-    min-height: 350px;
+    max-height: 550px;
+    min-height: 380px;
     box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
+    overscroll-behavior: contain;
+    overflow: auto;
 }
 
 #popup-left-bloodpressure {
@@ -389,7 +395,7 @@
     display: flex;
     align-items: center;
     flex: 1;
-    background-color: rgb(151, 150, 150);
+    background-color: #7494ac57;
     border-radius: 5px;
     flex-direction: column;
 }
@@ -471,7 +477,7 @@
     transition: box-shadow .15s, transform .15s;
     touch-action: manipulation;
     will-change: box-shadow, transform;
-    font-size: 14pt;
+    font-size: 1.1em;
     font-weight: 600;
 }
 
@@ -516,9 +522,11 @@
     height: 80%;
     width: 70%;
     max-width: 900px;
-    max-height: 500px;
-    min-height: 390px;
+    max-height: 550px;
+    min-height: 380px;
     box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
+    overscroll-behavior: contain;
+    overflow: auto;
 }
 
 #popup-left-messagePro {
@@ -535,7 +543,7 @@
     display: flex;
     align-items: center;
     flex: 1;
-    background-color: rgb(151, 150, 150);
+    background-color: #7494ac57;
     border-radius: 5px;
     flex-direction: column;
 }
@@ -643,7 +651,7 @@
     transition: box-shadow .15s, transform .15s;
     touch-action: manipulation;
     will-change: box-shadow, transform;
-    font-size: 14pt;
+    font-size: 1.1em;
     font-weight: 600;
 }
 
@@ -686,10 +694,12 @@
     z-index: 3;
     height: 80%;
     width: 70%;
-    max-width: 900px;
-    max-height: 500px;
-    min-height: 200px;
+  max-width: 900px;
+    max-height: 550px;
+    min-height: 380px;
     box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
+    overscroll-behavior: contain;
+    overflow: auto;
 }
 
 #popup-left-messageSupport {
@@ -706,7 +716,7 @@
     display: flex;
     align-items: center;
     flex: 1;
-    background-color: rgb(151, 150, 150);
+    background-color: #7494ac57;
     border-radius: 5px;
     flex-direction: column;
 }
@@ -811,7 +821,7 @@
     transition: box-shadow .15s, transform .15s;
     touch-action: manipulation;
     will-change: box-shadow, transform;
-    font-size: 12pt;
+    font-size: 1em;
     font-weight: 600;
 }
 
@@ -856,7 +866,7 @@
     transition: box-shadow .15s, transform .15s;
     touch-action: manipulation;
     will-change: box-shadow, transform;
-    font-size: 14pt;
+    font-size: 1.1em;
     font-weight: 600;
 }
 
@@ -899,10 +909,12 @@
     z-index: 3;
     height: 80%;
     width: 70%;
-    width: 900px;
-    max-height: 500px;
+    max-width: 900px;
+    max-height: 550px;
     min-height: 400px;
     box-shadow: 0 0 0 100000px rgba(0, 0, 0, .4);
+    overscroll-behavior: contain;
+    overflow: auto;
 }
 
 #popup-left-changeUserInfo {
@@ -922,7 +934,7 @@
     display: flex;
     align-items: center;
     flex: 1;
-    background-color: rgb(151, 150, 150);
+    background-color: #7494ac57;
     border-radius: 5px;
     flex-direction: column;
     line-height: 1;
@@ -971,7 +983,7 @@
 
 .profile_details_box_popup ul {
     list-style-type: circle;
-    font-size: 10pt;
+    font-size: 0.8em;
     margin-left: 1em;
     flex-direction: column;
     align-items: flex-start;
@@ -1025,7 +1037,7 @@ input[type=password]:focus.smallInput {
     transition: box-shadow .15s, transform .15s;
     touch-action: manipulation;
     will-change: box-shadow, transform;
-    font-size: 14pt;
+    font-size: 1.1em;
     font-weight: 600;
 }
 
@@ -1057,7 +1069,7 @@ input[type=password]:focus.smallInput {
     transform: translateY(2px);
 }
 
-/*MEDIA SCREENS*/
+/*MEDIA SCREENS - MOBILE and TABLET*/
 
 
 @media screen and (max-width:750px) {
@@ -1273,6 +1285,7 @@ input[type=password]:focus.smallInput {
     padding: 10px;
     box-sizing: border-box;
 }
+
     #closeBtn_left_changeUserInfo {
         opacity: 1;
         cursor: pointer;

@@ -4,11 +4,13 @@
 body {
   margin: auto;
   max-width: 1400px;
+  background-color: #7494AC;
+  margin-top: 8px;
 }
 
 html {
-  background-color: rgb(233, 233, 233);
   font-family: 'Roboto', sans-serif;
+  background-color: #7494AC;
 }
 
 .clear {
@@ -22,6 +24,7 @@ html {
   margin-left: 1vw;
   margin-right: 1vw;
   z-index: 1;
+  border-radius: 5px;
 }
 
 header {
@@ -55,7 +58,7 @@ header {
 }
 
 #back-arrow-text {
-  font-size: 16pt;
+  font-size: 1.2em;
   font-weight: 700;
 }
 
@@ -212,7 +215,7 @@ header nav a:hover {
 
 th {
   text-align: left;
-  font-size: 14pt;
+  font-size: 1.1em;
 }
 
 .chart_headers {
@@ -273,7 +276,7 @@ footer {
   }
 
   #back-arrow-text {
-    font-size: 12pt;
+    font-size: 1em;
     font-weight: 700;
   }
 

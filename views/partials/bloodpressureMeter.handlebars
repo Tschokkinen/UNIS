@@ -13,12 +13,20 @@
             <input id="diastolicPres" class="smallInput" type="text" name="diastolicPressure" placeholder="85mmHg" maxlength="3" required>
             <br><br>
             <button form="bloodpressure" type="submit" class="bloodpressure_save_btn">Save</button>
+            
+            <div id="snackbar_bpMeter">Blood pressure saved!</div>
+            <div id="snackbar_bpMeterError1">Systolic value must be a number.</div>
+            <div id="snackbar_bpMeterError2">Diastolic value must be a number.</div>
+            <div id="snackbar_bpMeterError3">Systolic pressure over 180. Check value or contact health services.</div>
+            <div id="snackbar_bpMeterError4">Systolic pressure under 80. Check value or contact health services.</div>
+            <div id="snackbar_bpMeterError5">Diastolic pressure over 120. Check value or contact health services.</div>
+            <div id="snackbar_bpMeterError6">Diastolic pressure under 50. Check value or contact health services.</div>
         </section>
 
         <section id="popup-right-bloodpressure">
             <button type="button" class="bloodpressure_save_btn cancel" id="closeBtn_right_bp" onclick="closeForm()"
                 aria-hidden="true">&times;</button>
-            <label class="meter_notes_labels_bp">Add notes</label>
+            <label for="bloodpressuretext" class="meter_notes_labels_bp">Add notes</label>
             <textarea id="bloodpressuretext" class="bigInput_meters" type="text" name="bloodpressuretext"
                 placeholder="Add notes. Max. 500 characters." maxlength="500"></textarea>
         </section>
