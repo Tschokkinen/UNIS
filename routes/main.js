@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { isUser, isProfessional } = require('../middleware/roleAuth');
 
 const { 
     main, 
@@ -13,21 +14,22 @@ const {
     meterValues
 } = require('../controllers/mainController');
 
-router.get('/', main);
-router.get('/requestUserData', requestUserData);
-router.get('/meterValues', meterValues);
+router.get('/', isUser, main);
+router.get('/requestUserData', isUser, requestUserData);
+router.get('/meterValues', isUser, meterValues);
 
-router.post('/saveSleep', saveSleep);
-router.post('/saveMood', saveMood);
-router.post('/saveBloodpressure', saveBloodpressure);
+router.post('/saveSleep', isUser, saveSleep);
+router.post('/saveMood', isUser, saveMood);
+router.post('/saveBloodpressure', isUser, saveBloodpressure);
 
-router.post('/sendMessageToProfessional', messageToProfessional);
-router.post('/sendMessageToSupport', messageToSupport);
-router.post('/changeUserInfo', changeUserInfo);
-router.post('/validatePassword', validatePassword);
+router.post('/sendMessageToProfessional', isUser, messageToProfessional);
+router.post('/sendMessageToSupport', isUser, messageToSupport);
+router.post('/changeUserInfo', isUser, changeUserInfo);
+router.post('/validatePassword', isUser, validatePassword);
 
 router.get('/logout', (req, res) => {
     res.clearCookie('cookieToken');
+    res.clearCookie('chartCookie');
     res.redirect('/');
 })
 

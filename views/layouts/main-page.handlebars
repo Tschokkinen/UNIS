@@ -24,7 +24,7 @@
                     {{> (messageToSupport) }}
                     <li><a onclick="openFormSendMsgToPro()"><i title="Message your professional" class="fa-solid fa-envelope"></i></a></li>
                     {{> (messageToProfessional) }}
-                    <li><a href="/main/logout"><button class="logOutButton">LOG OUT</button></a></li>
+                    <li><a href={{ logout }}><button class="logOutButton">LOG OUT</button></a></li>
                 </ul>
             </nav>
         </header>
@@ -40,12 +40,7 @@
     <footer>
         <p class="copy">This is a footer with copyrights</p>
     </footer>
-    <script src="scripts/popup_script.js"></script>
-    <script src="scripts/popup.js"></script>
-    <script src="scripts/valueValidator.js"></script>
-    <script src="scripts/requestUserData.js"></script>
-    <script src="scripts/meter_lights.js"></script>
-    <script src="scripts/alerts.js"></script>
+    {{> (scripts) }}
 </body>
 
 </html>
