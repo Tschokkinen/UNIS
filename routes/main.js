@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { isUser, isProfessional } = require('../middleware/roleAuth');
+const { clearChartCookie } = require('../middleware/clearCookies');
 
 const { 
     main, 
@@ -14,7 +15,7 @@ const {
     meterValues
 } = require('../controllers/mainController');
 
-router.get('/', isUser, main);
+router.get('/', isUser, clearChartCookie, main);
 router.get('/requestUserData', isUser, requestUserData);
 router.get('/meterValues', isUser, meterValues);
 
@@ -29,7 +30,6 @@ router.post('/validatePassword', isUser, validatePassword);
 
 router.get('/logout', (req, res) => {
     res.clearCookie('cookieToken');
-    res.clearCookie('chartCookie');
     res.redirect('/');
 })
 

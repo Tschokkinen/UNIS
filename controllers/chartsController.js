@@ -17,10 +17,16 @@ const bcrypt = require('bcrypt');
 const chart = async (req, res) => {
     let backAddress;
     let comments;
+    let decoded;
 
     // Required at the moment because "professional" requires chartCookie
     // in order to access patient chart data.
-    const decoded = jwt.verify(req.cookies.chartCookie, process.env.ACCESS_TOKEN_SECRET);
+    try {
+        decoded = jwt.verify(req.cookies.chartCookie, process.env.ACCESS_TOKEN_SECRET);
+    } catch {
+        decoded = null;
+    }
+    
     // If chartCookie doesn't exist, user is "user"
     if (!decoded) {
         const id = getUserID(req);
