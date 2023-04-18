@@ -7,10 +7,14 @@
             <h2 id="pop_up_header_bloodpressure">BLOOD PRESSURE</h2>
             <a href="https://www.aivoliitto.fi/en/bloodpressure/monitoring/" target=”_blank” id="bloodpressure_a">"How
                 to measure?"</a><br><br>
-            <label for="systolicPres">Systolic pressure: </label>
+            
+            <div class="bp_labels"><label class="bp_labels" for="systolicPres">Systolic pressure: </label>
             <input id="systolicPres" class="smallInput" type="text" name="systolicPressure" placeholder="135mmHg" maxlength="3" required>
-            <label for="diastolicPres">Diastolic pressure:</label>
+            </div>
+            
+            <div class="bp_labels"><label for="diastolicPres">Diastolic pressure:</label>
             <input id="diastolicPres" class="smallInput" type="text" name="diastolicPressure" placeholder="85mmHg" maxlength="3" required>
+            </div>
             <br><br>
             <button form="bloodpressure" type="submit" class="bloodpressure_save_btn">Save</button>
             

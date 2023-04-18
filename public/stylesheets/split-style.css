@@ -68,6 +68,15 @@ body {
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
   }
+
+  .sign_in_player {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .loading_anim {
+    display: none;
+  }
   
   #backSignin-arrow-text {
     font-size: 1.1em;
