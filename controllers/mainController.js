@@ -3,6 +3,7 @@ const { getUserID, calculateBMI } = require('../lib/generalHelpers.js');
 
 // Models
 const User = require('../models/UserModel');
+const Role = require('../models/RoleModel');
 const SleepReview = require('../models/SleepReview');
 const MoodReview = require('../models/MoodReview');
 const BloodPressure = require('../models/BloodPressureModel');
@@ -17,6 +18,8 @@ const main = async (req, res) => {
     const age = user.age ?? 0;
     const bmi = calculateBMI(height, weight);
 
+    const logout = "/main/logout";
+
     console.log("User: ", user);
     res.render(
         'mainView',
@@ -27,7 +30,8 @@ const main = async (req, res) => {
             lastName,
             height,
             weight,
-            bmi
+            bmi,
+            logout
         }),
         changePartial('sleepMeter', 'sleepMeter'),
         changePartial('moodMeter', 'moodMeter'),
@@ -35,8 +39,60 @@ const main = async (req, res) => {
         changePartial('messageToProfessional', 'messageToProfessional'),
         changePartial('messageToSupport', 'messageToSupport'),
         changePartial('changeUserInfo', 'changeUserInfo'),
-        changePartial('infoBank', 'infoBank')
+        changePartial('infoBank', 'infoBank'),
+        changePartial('scripts', 'mainScripts')
 };
+
+// FEATURE FOR PROFESSIONAL
+// Get data for the application main view.
+const mainPro = async (req, res) => {
+    const user = await User.findById(getUserID(req));
+    const firstName = user.firstName;
+    const lastName = user.lastName;
+    
+    const logout = "/mainPro/logout";
+
+    console.log("User: ", user);
+    res.render(
+        'mainViewPro',
+        {
+            layout: 'main-page',
+            firstName,
+            lastName,
+            logout
+        }),
+        changePartial('messageToProfessional', 'messageToProfessional'),
+        changePartial('messageToSupport', 'messageToSupport'),
+        changePartial('scripts', 'mainScriptsPro')
+};
+
+// FEATURE FOR PROFESSIONAL
+const getPatients = async (req, res) => {
+    const userRole = await Role.findOne(
+        {
+            name: 'user'
+        });
+
+    // console.log("userRole: ", userRole);
+
+    const usersOnly = await User.find(
+
+        { 'roles': userRole._id }
+    );
+
+    const patientNames = [];
+    for (let i = 0; i < usersOnly.length; i++) {
+        let newPatient = {
+            firstName: usersOnly[i].firstName,
+            lastName: usersOnly[i].lastName,
+            id: usersOnly[i]._id
+        }
+        patientNames.push(newPatient);
+    }
+    console.log("Patients: ", patientNames);
+    res.status(200).json(patientNames);
+    
+}
 
 // Save sleep data to MongoDB.
 const saveSleep = async (req, res) => {
@@ -233,6 +289,8 @@ const meterValues = async (req, res) => {
 
 module.exports = {
     main,
+    mainPro,
+    getPatients,
     saveSleep,
     saveSleep,
     saveMood,

@@ -10,7 +10,7 @@ const connectDB = require('./config/dbConnection');
 
 // Middleware
 const verifyJWT = require('./middleware/verifyJWT');
-const isUser = require('./middleware/roleAuth');
+const { isUser, isProfessional } = require('./middleware/roleAuth');
 const { logger } = require('./middleware/logger');
 
 // Cors
@@ -65,14 +65,19 @@ app.set('views', './views');
 app.use('/', express.static(path.join(__dirname, 'public/')));
 
 app.use('/', require('./routes/index'));
-// Endpoints beyond this middleware require authentication and user role verification
-app.use(verifyJWT, isUser); 
+app.use('/pro', require('./routes/index'));
+// Endpoints beyond this middleware require authentication
+app.use(verifyJWT);
+// Endpoint beyond this point require "user" user role
 app.use('/main', require('./routes/main'));
 app.use('/charts', require('./routes/charts'));
 app.use('/sleep-and-mood', require('./routes/sleepmood'));
 app.use('/bloodpressure', require('./routes/bloodpressure'));
 app.use('/HRV', require('./routes/hrvpulse'));
 app.use('/comments-from-professional', require('./routes/comments'));
+// Endpoint beyond this point require "professional" user role
+app.use('/mainPro', require('./routes/mainPro'));
+
 
 mongoose.connection.once('open', () => {
     console.log("Connected to MongoDB");

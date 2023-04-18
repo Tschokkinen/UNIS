@@ -1,63 +1,45 @@
-<div class="form-popup-bloodpressure" id="infoBankForm">
-    <form id="bloodpressure" action="/main/saveBloodpressure" class="form-container-bloodpressure" method="POST">
+<div class="form-popup-infobank" id="infoBankForm">
+    <article id="infobank" class="container-infobank">
         <section id="popup-left-bloodpressure" style="flex: 2; gap: 50px;" >
             <div style="flex: 1;">
-            <h2 id="pop_up_header_bloodpressure">Ammattilaisesi</h2>
-            <img src="assets/img//Infobank/yths.jpg" alt="YTHS" style="display: block; margin: auto;">
+            <h2 id="pop_up_header_infobank_left">Ammattilaisesi</h2>
+            <img src="assets/img//Infobank/yths.png" id="ythslogo" alt="YTHS">
             </div>
 
-            <div class="ammattiteksti" style="flex: 2;">moi moi</div>
+            <div class="ammattiteksti" style="flex: 2;">Email: yths@gmail.com <br> Puh: 046 7101073 <br> Muuta infoa: Don't panic</div>
         </section>
-        <section id="popup-right-bloodpressure" style="flex: 4;">
-            <button type="button" class="bloodpressure_save_btn cancel" onclick="closeForm()"
+        <section id="popup-right-infobank" style="flex: 4;">
+            <button type="button" class="infobank_cancel_btn" onclick="closeForm()"
                 aria-hidden="true">&times;</button>
-            <h2 id="pop_up_header_add_notes_bloodpressure">Uniapnea ja Hoito</h2>
+            <h2 id="pop_up_header_infobank_right">Uniapnea ja Hoito</h2>
 
             <div class="linkkikuvat">
+
             <div>
-            <img src="assets/img//Infobank/aivo.png" alt="ohjekuva_1">
-            <h3>Aivoliitto</h3>
-            <a href="https://www.aivoliitto.fi/en/bloodpressure/monitoring/" target=”_blank” id="bloodpressure_a">"Link"</a>
+            <a href="https://www.aivoliitto.fi/en/bloodpressure/monitoring/" target=”_blank” id="infobank_a"><img src="assets/img//Infobank/aivo.png" class="image1" alt="ohjekuva_1"></a>
             </div>
 
             <div>
-            <img src="assets/img//Infobank/yths.jpg" alt="ohjekuva_2">
-            <h3>YTHS</h3>
-            <a href="https://www.yths.fi/en/frontpage/" target=”_blank” id="bloodpressure_a">"Link"</a>
+            <a href="https://www.yths.fi/en/frontpage/" target=”_blank” id="infobank_a"><img src="assets/img//Infobank/yths.png" alt="ohjekuva_2"></a>
             </div>
 
             <div>
-            <div class="kuva">
-            <img src="assets/img//Infobank/kaypa.png" alt="ohjekuva_3">
-            </div>
-            <h3>Käypähoito</h3>
-            <a href="https://www.kaypahoito.fi" target=”_blank” id="bloodpressure_a">"Link"</a>
+            <a href="https://www.kaypahoito.fi" target=”_blank” id="infobank_a"><img src="assets/img//Infobank/kaypa.png" alt="ohjekuva_3"></a>
             </div>
 
             <div>
-            <img src="assets/img//Infobank/kirjasto.png" alt="ohjekuva_4">
-            <h3>Terveyskirjasto</h3>
-            <a href="https://www.terveyskirjasto.fi/" target=”_blank” id="bloodpressure_a">"Link"</a>
+            <a href="https://www.terveyskirjasto.fi/" target=”_blank” id="infobank_a"><img src="assets/img//Infobank/kirjasto.png" alt="ohjekuva_4"></a>
             </div>
 
             <div>
-            <img src="assets/img//Infobank/sydan.png" alt="ohjekuva_5">
-            <h3>Sydänliitto</h3>
-            <a href="https://sydan.fi/" target=”_blank” id="bloodpressure_a">"Link"</a>
+            <a href="https://sydan.fi/" target=”_blank” id="infobank_a"><img src="assets/img//Infobank/sydan.png" alt="ohjekuva_5"></a>
             </div>
 
             <div>
-            <img src="assets/img//Infobank/duo.png" alt="ohjekuva_6">
-            <h3>Duodecim</h3>
-            <a href="https://www.duodecim.fi/2017/06/15/uniapneaan-liittyy-vakavia-terveysriskeja-varhainen-hoito-tarkeaa/" target=”_blank” id="bloodpressure_a">"Link"</a>
+            <a href="https://www.duodecim.fi/2017/06/15/uniapneaan-liittyy-vakavia-terveysriskeja-varhainen-hoito-tarkeaa/" target=”_blank” id="infobank_a"><img src="assets/img//Infobank/duo.png" alt="ohjekuva_6"></a>
             </div>
 
             </div>
         </section>
-
-        <section>
-            <button type="button" class="sleep_save_btn cancel" onclick="closeForm()"
-                aria-hidden="true">&times;</button>
-        </section>
-    </form>
+    </article>
 </div>

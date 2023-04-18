@@ -1,10 +1,12 @@
+const { changePartial } = require('../lib/helpers.js');
+
 const SleepReview = require('../models/SleepReview');
 const MoodReview = require('../models/MoodReview');
 const Bloodpressure = require('../models/BloodPressureModel');
 const Comment = require('../models/CommentModel');
 const User = require('../models/UserModel');
 
-const { getUserID } = require('../lib/generalHelpers.js');
+const { getUserID, getPatientID } = require('../lib/generalHelpers.js');
 
 const jwt = require('jsonwebtoken');
 const path = require('path');
@@ -13,8 +15,71 @@ const { spawn } = require('child_process');
 const bcrypt = require('bcrypt');
 
 const chart = async (req, res) => {
+    let backAddress;
+    let comments;
+    let decoded;
+
+    // Required at the moment because "professional" requires chartCookie
+    // in order to access patient chart data.
+    try {
+        decoded = jwt.verify(req.cookies.chartCookie, process.env.ACCESS_TOKEN_SECRET);
+    } catch {
+        decoded = null;
+    }
+    
+    // If chartCookie doesn't exist, user is "user"
+    if (!decoded) {
+        const id = getUserID(req);
+        const chartToken = jwt.sign(
+            {
+                id
+            },
+            process.env.ACCESS_TOKEN_SECRET,
+            {
+                expiresIn: '1h'
+            }
+        );
+    
+        res.cookie('chartCookie', chartToken, { httpOnly: true });
+
+        backAddress = '/main';
+        comments = 'chartComments'
+    } else { // If chartCookie exists user if "professional"
+        backAddress = '/mainPro';
+        comments = 'chartCommentsPro'
+    }
+
     // res.status(200).json({ 'message': 'success '});
-    res.render('charView', { layout: 'chart' });
+    
+    res.render(
+        'charView',
+        {
+            layout: 'chart',
+            backAddress
+        }),
+        changePartial('comments', comments);
+}
+
+// FEATURE FOR PROFESSIONAL
+const patientIDCookie = async (req, res) => {
+    const { id } = req.params;
+    // res.status(200).json({ 'message': 'success '});
+    console.log("param id: ", id);
+    //Save id of selected patient to chartCookie
+    // const patientID = id;
+    const chartToken = jwt.sign(
+        {
+            id
+        },
+        process.env.ACCESS_TOKEN_SECRET,
+        {
+            expiresIn: '1h'
+        }
+    );
+
+    res.cookie('chartCookie', chartToken, { httpOnly: true });
+    // res.json({ message: 'success'});
+    res.redirect('/charts');
 }
 
 const bloodpressureView = async (req, res) => {
@@ -38,7 +103,8 @@ const commentsView = async (req, res) => {
 }
 
 const getSleepData = async (req, res) => {
-    const sleepReviews = await SleepReview.find({ 'user': getUserID(req) });
+    // const sleepReviews = await SleepReview.find({ 'user': getUserID(req) });
+    const sleepReviews = await SleepReview.find({ 'user': getPatientID(req) });
     // console.log(sleepReviews);
     const sleeps = [];
     for (var i = 0; i < sleepReviews.length; i++) {
@@ -56,7 +122,8 @@ const getSleepData = async (req, res) => {
 }
 
 const getMoodData = async (req, res) => {
-    const moodReviews = await MoodReview.find({ 'user': getUserID(req) });
+    // const moodReviews = await MoodReview.find({ 'user': getUserID(req) });
+    const moodReviews = await MoodReview.find({ 'user': getPatientID(req) });
     // console.log(moodReviews);
     const moods = [];
     for (var i = 0; i < moodReviews.length; i++) {
@@ -74,7 +141,8 @@ const getMoodData = async (req, res) => {
 }
 
 const getBloodpressureData = async (req, res) => {
-    const bloodpressure = await Bloodpressure.find({ 'user': getUserID(req) });
+    // const bloodpressure = await Bloodpressure.find({ 'user': getUserID(req) });
+    const bloodpressure = await Bloodpressure.find({ 'user': getPatientID(req) });
     const bloodpressures = [];
     for (var i = 0; i < bloodpressure.length; i++) {
         const newBloodpressure = {
@@ -94,7 +162,7 @@ const getPulseAndHRV = async (req, res) => {
     // const decoded = jwt.verify(req.cookies.cookieToken, process.env.ACCESS_TOKEN_SECRET);
     // req.body.user = decoded._id;
 
-     // Use your Kubios HRV App username and password and own client_id
+    // Use your Kubios HRV App username and password and own client_id
     const USERNAME = process.env.KUBIOS_USERNAME;
     const PASSWORD = process.env.KUBIOS_PASSWORD;
     const CLIENT_ID = process.env.KUBIOS_CLIENT_ID;
@@ -152,7 +220,8 @@ const getPulseAndHRV = async (req, res) => {
 }
 
 const getCommentsData = async (req, res) => {
-    const comment = await Comment.find({ 'user': getUserID(req) });
+    // const comment = await Comment.find({ 'user': getUserID(req) });
+    const comment = await Comment.find({ 'user': getPatientID(req) });
     // console.log(moodReviews);
     const comments = [];
     for (var i = 0; i < comment.length; i++) {
@@ -162,7 +231,7 @@ const getCommentsData = async (req, res) => {
         const newComment = {
             'comment': comment[i].comment,
             'date': formattedDate
-            
+
         }
         comments.push(newComment);
     }
@@ -171,9 +240,35 @@ const getCommentsData = async (req, res) => {
     res.status(200).json(comments);
 }
 
+// FEATURE FOR PROFESSIONAL
+const addComment = async (req, res) => {
+    const patientID = getPatientID(req);
+
+    if (!patientID) {
+        res.status(400).json({ 'message': 'user ID not found' });
+    }
+
+    console.log("patientID: ", patientID);
+
+    try {
+        // console.log(req.body);
+        await Comment.create({
+            "comment": req.body.comment,
+            "user": patientID
+        });
+
+        res.status(200).redirect('/charts');
+        // res.status(200).json({ "Message": "Success"});
+    } catch (err) {
+        console.error(err);
+        res.sendStatus(500);
+    }
+}
+
 module.exports =
 {
     chart,
+    patientIDCookie,
     bloodpressureView,
     sleepmoodView,
     hrvpulseView,
@@ -182,5 +277,6 @@ module.exports =
     getMoodData,
     getBloodpressureData,
     getPulseAndHRV,
-    getCommentsData
+    getCommentsData,
+    addComment
 };
