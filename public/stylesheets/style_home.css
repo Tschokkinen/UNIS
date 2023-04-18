@@ -3,9 +3,9 @@
 }
 
 body {
-    margin: auto;
+    margin: 0;
+    width: 100%;
     margin-top: 16px;
-    max-width: 1400px;
     background-color: #7494AC;
 }
 
@@ -20,10 +20,10 @@ html {
 
 .wrapper {
     height: 100%;
+    max-width: 1200px;
+    margin: auto;
     background-color: white;
     padding: 30px;
-    margin-left: 5vw;
-    margin-right: 5vw;
     z-index: 1;
     border-style: solid;
     border-color: black;
@@ -162,7 +162,8 @@ main {
 }
 
 .fl_name {
-    line-height: 1;
+    margin-bottom: 24px;
+    letter-spacing: 0.2em;
 }
 
 #right {
@@ -256,6 +257,7 @@ main {
 .main_function_other {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 180px;
@@ -295,6 +297,15 @@ button a {
     width: 100%;
 }
 
+#history_link {
+    text-decoration: none;
+    color: #36395A;
+}
+
+#history_link:hover {
+    color: rgb(85, 0, 255);
+}
+
 #heart_img {
     height: 2.2em;
     margin-right: 1em;
@@ -317,12 +328,12 @@ button a {
 }
 
 #oxygen_img {
-    height: 5.8em;
+    height: 5em;
     margin: 8px;
 }
 
 #graph_img {
-    height: 5.5em;
+    height: 5em;
     margin: 8px;
 }
 

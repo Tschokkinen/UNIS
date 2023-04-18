@@ -2,10 +2,10 @@
 
 
 body {
-  margin: auto;
-  max-width: 1400px;
+  margin: 0;
+  width: 100%;
+  margin-top: 16px;
   background-color: #7494AC;
-  margin-top: 8px;
 }
 
 html {
@@ -21,13 +21,15 @@ html {
   height: 100%;
   background-color: white;
   padding: 24px;
-  margin-left: 1vw;
-  margin-right: 1vw;
+  margin: auto;
+  background-color: white;
+  padding: 30px;
   z-index: 1;
   border-style: solid;
   border-color: black;
   border-width: 2px;
   border-radius: 5px;
+  max-width: 1300px;
 }
 
 header {
@@ -42,7 +44,7 @@ header {
 }
 
 .arrow {
-  border: solid black;
+  border: solid #0D3D64;
   border-width: 0 6px 6px 0;
   display: inline-block;
   height: 12px;
@@ -63,6 +65,7 @@ header {
 #back-arrow-text {
   font-size: 1.2em;
   font-weight: 700;
+  color: #0D3D64;
 }
 
 header nav ul {
@@ -88,7 +91,7 @@ header nav a:hover {
 }
 
 .fa-circle-info {
-  color: rgb(0, 0, 0);
+  color: #0D3D64;
   font-size: 3em;
 }
 
@@ -97,7 +100,7 @@ header nav a:hover {
 }
 
 .fa-calendar-days {
-  color: rgb(0, 0, 0);
+  color: #0D3D64;
   font-size: 3em;
 }
 
@@ -175,7 +178,6 @@ header nav a:hover {
   width: 90%;
   height: 300px;
   border: 1px solid black;
-  ;
   background-color: #ffffffb7;
   border-radius: 5px;
 }
@@ -184,7 +186,6 @@ header nav a:hover {
   width: 90%;
   height: 300px;
   border: 1px solid black;
-  ;
   background-color: #ffffffb7;
   border-radius: 5px;
 }
@@ -193,14 +194,30 @@ header nav a:hover {
   width: 90%;
   height: 300px;
   border: 1px solid black;
-  ;
   background-color: #ffffffb7;
   border-radius: 5px;
 }
 
 #chartdiv4 {
   width: 90%;
-  height: 300px;
+  height: 240px;
+}
+
+#comment_field {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#comment_button {
+  margin-top: 8px;
+  width: 30%;
+}
+
+.comment_inputs {
+  width: 200%;
+  height: 24px;
+  margin-top: 8px;
 }
 
 #comment_table {
@@ -227,6 +244,7 @@ th {
   justify-content: center;
   width: 100%;
   align-items: center;
+  color: #0D3D64;
 }
 
 .magnifying_glass_img {
@@ -244,11 +262,11 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(180, 180, 180);
+  background-color: #7494AC;
   height: fit-content;
   margin-left: 1vw;
   margin-right: 1vw;
-  border-top: 2px solid black;
+  max-width: 1300px;
 }
 
 .copy {
