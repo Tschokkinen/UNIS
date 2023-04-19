@@ -15,7 +15,10 @@ const main = async (req, res) => {
     const lastName = user.lastName;
     const height = user.height ?? 0;
     const weight = user.weight ?? 0;
-    const age = user.age ?? 0;
+    // const age = user.age ?? 0;
+    const rawAge = new Date(user.age) ?? 0;
+    const age = `${rawAge.getDate()}.${rawAge.getMonth() + 1}.${rawAge.getFullYear()}` ?? "0.0.0000";
+    console.log(`Formatted birthdate ${age}`);
     const bmi = calculateBMI(height, weight);
 
     const logout = "/main/logout";
@@ -218,7 +221,8 @@ const requestUserData = async (req, res) => {
         "lastName": user.lastName,
         "weight": user.weight,
         "height": user.height,
-        "age": user.age,
+        // "age": user.age,
+        "age": `${user.age.getFullYear()}-${user.age.getMonth() + 1}-${user.age.getDate()}`,
         "phonenumber": user.phonenumber,
         "email": user.email
     };

@@ -14,7 +14,8 @@ const userSchema = new Schema({
         required: true
     },
     age: {
-        type: Number, // Convert to Date and new Date() for automatic age calculation!
+        // type: Number, // Convert to Date and new Date() for automatic age calculation!
+        type: Date,
         required: false
     },
     weight: {

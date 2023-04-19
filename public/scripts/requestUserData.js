@@ -17,7 +17,8 @@ const setDefaultValue = (userData) => {
     document.getElementById('field_Height').defaultValue = userData.height != undefined || null ? userData.height : "";
     document.getElementById('field_Weight').defaultValue = userData.weight != undefined || null ? userData.weight : "";
     document.getElementById('field_Email').defaultValue = userData.email != undefined || null ? userData.email : "";
-    document.getElementById('field_Age').defaultValue = userData.age != undefined || null ? userData.age : "";
+    // document.getElementById('field_Age').defaultValue = userData.age != undefined || null ? userData.age : "";
+    document.getElementById('field_Age').value = userData.age != undefined || null ? userData.age : "";
     document.getElementById('field_Phonenumber').defaultValue = userData.phonenumber != undefined || null ? userData.phonenumber : "";
     
     // At elements on send message to support/professional : "";
