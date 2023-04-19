@@ -1,4 +1,1 @@
-
-
-15.3.2023 CHECK
-- In signInLeft.handlebars: change login action from GET to POST
+Convert logout to use form and hidden input for CSRF.

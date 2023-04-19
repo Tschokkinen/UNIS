@@ -5,11 +5,13 @@
 
 <!-- Log in form: Email and password -->
 <form id="formID" class="form" action="/" method="POST">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
     <label for="email">Email</label>
     <input tag="INPUT" class="big-input" id="email" type="email" name="email" placeholder="Email" required>
 
     <label for="password">Password</label>
-    <input tag="INPUT" class="big-input" id="password" type="password" name="password" placeholder="Password" height="100" required>
+    <input tag="INPUT" class="big-input" id="password" type="password" name="password" placeholder="Password"
+        height="100" required>
 </form><br>
 
 <div class="put-in-column">
@@ -25,4 +27,5 @@
     <span>Problems signing in? <a href="">Click here.</a></span>
 </div>
 
-{{!-- <script src="scripts/validateForm.js"></script> --}}
+{{!--
+<script src="scripts/validateForm.js"></script> --}}

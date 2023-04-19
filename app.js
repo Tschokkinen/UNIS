@@ -7,6 +7,8 @@ const { engine } = require('express-handlebars');
 const { default: mongoose } = require('mongoose');
 const connectDB = require('./config/dbConnection');
 
+// const session = require('express-session');
+// const MongoStore = require('connect-mongo');
 
 // Middleware
 const verifyJWT = require('./middleware/verifyJWT');
@@ -17,16 +19,25 @@ const { logger } = require('./middleware/logger');
 // const cors = require('cors');
 // const corsOptions = require('./config/corsOptions');
 
-
-
-
 // Connect to database
 connectDB();
 
 const app = express();
 
+// app.use(
+//     session({
+//       secret: process.env.SECRET,
+//       cookie: {},
+//       resave: false,
+//       saveUninitialized: false,
+//       store: new MongoStore({ 
+//         mongoUrl: process.env.MONGO_URI
+//        })
+//     })
+//   )
+
 // Logger to get console logs for GET, POST etc.
-app.use(logger); 
+app.use(logger);
 
 app.use(express.json());
 app.use(cookieParser());
@@ -48,6 +59,7 @@ const options = {
     partialsDir: 'views/partials',
     helpers: require('./lib/helpers.js')
 };
+
 
 app.engine('handlebars', engine(options));
 app.set('view engine', 'handlebars');

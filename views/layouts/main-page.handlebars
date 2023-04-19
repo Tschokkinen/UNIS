@@ -29,7 +29,13 @@
                     {{> (messageToSupport) }}
                     <li><a onclick="openFormSendMsgToPro()"><i title="Message your professional" class="fa-solid fa-envelope"></i></a></li>
                     {{> (messageToProfessional) }}
-                    <li><a href={{ logout }}><button class="logOutButton">LOG OUT</button></a></li>
+                    <li>
+                        <a href={{ logout }}><button class="logOutButton">LOG OUT</button></a>
+                        {{!-- <form action="{{ logout }}" method="POST">
+                            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+                            <button class="logOutButton">LOG OUT</button>
+                        </form> --}}
+                        </li>
                 </ul>
             </nav>
         </header>
