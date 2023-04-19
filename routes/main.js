@@ -30,6 +30,7 @@ router.post('/validatePassword', isUser, validatePassword);
 
 router.get('/logout', (req, res) => {
     res.clearCookie('cookieToken');
+    // req.session.destroy();
     res.redirect('/');
 })
 

@@ -9,6 +9,7 @@ const jwt = require('jsonwebtoken');
 const signInPage = async (req, res) => {
     res.render(
         'splitView',
+        { csrfToken: req.csrfToken() },
         changePartial('leftPartial', 'signInLeft'),
         changePartial('rightPartial', 'signInRight')
     )
@@ -18,6 +19,7 @@ const signInPage = async (req, res) => {
 const signInPagePro = async (req, res) => {
     res.render(
         'splitView',
+        { csrfToken: req.csrfToken() },
         changePartial('leftPartial', 'signInLeftPro'),
         changePartial('rightPartial', 'signInRight')
     )
@@ -56,6 +58,9 @@ const signIn = async (req, res) => {
                 }
             );
             res.cookie('cookieToken', accessToken, { httpOnly: true });
+
+            // req.session.user = req.body.email;
+            // console.log(req.session.user);
 
             if (roles[0].name === "user") {
                 res.status(200).redirect('/main');
