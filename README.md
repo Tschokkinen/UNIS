@@ -12,6 +12,6 @@ Email: pertsa@teboil.com<br>
 Password: 1
 
 Developers and main areas of responsibility:<br>
-<b>Front-end (HTML, CSS, JavaScript):</b> Iira Salo<br>
-<b>Back-end (JavaScript, Python):</b> Gavril Tschokkinen<br>
-<b>Content and medical analysis:</b> Markus Anttila
+<b>Iira Salo:</b> Front-end (HTML, CSS, JavaScript)<br>
+<b>Gavril Tschokkinen:</b> Back-end (JavaScript, Python), front-end (JavaScript)<br>
+<b>Markus Anttila:</b> Content and medical analysis
