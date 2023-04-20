@@ -1,8 +1,8 @@
 # UNIS
 
-Application name: UNIS<br>
-Platform: Web-based<br>
-Version: 0.1<br>
+<b>Application name:</b> UNIS<br>
+  <b>Platform: Web-based</b><br>
+  <b>Version:</b> 0.1<br>
 
 UNIS is an experimental web-based application meant for sleep apnea patients. The application was done as a school project, but all HTML, CSS, and JavaScript was self-written. Teachers only provided rough pointers. UNIS will be updated and HTML, CSS, and JavaScript refactored during the summer of 2023.
 
