@@ -89,7 +89,8 @@ const validatePassword = async () => {
     let password = document.getElementById('field_Password_Changeuserinfo').value;
     let profileEdited = document.getElementById("snackbar_changeUserInfo");
     let profileEditError = document.getElementById("snackbar_changeUserInfoError");
-
+    let heightAlert = document.getElementById("snackbar_heightError");
+    
     const response = await fetch('/main/validatePassword', {
         method: "POST",
         body: JSON.stringify({
@@ -102,8 +103,11 @@ const validatePassword = async () => {
 
     let data = await response.json(response);
     // console.log("Response: ", data.match);
+    let age = document.getElementById("field_Age");
+    let height = document.getElementById("field_Height");
+    let weight = document.getElementById("field_Weight");
 
-    if (data.match) {
+    if (data.match && height.value > 110 && weight.value > 30 && age.value < 80)  {
         document.getElementById('changeUserInfo').submit();
         profileEdited.className = "show";
         profileEditError.className = "hidden";

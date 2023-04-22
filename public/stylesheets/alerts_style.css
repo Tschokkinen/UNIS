@@ -401,6 +401,30 @@
   -webkit-animation: fadein 0.5s, fadeout 0.5s 3.5s;
   animation: fadein 0.5s, fadeout 0.5s 4.5s;
 }
+
+#snackbar_heightError {
+  visibility: hidden;
+  width: 40%;
+  min-width: 200px;
+  margin-left: -25%;
+  background-color: #9e0000bc; 
+  color: #fff; 
+  font-size: 2em;
+  text-align: center; 
+  border-radius: 5px; 
+  padding: 16px; 
+  position: fixed; 
+  z-index: 1; 
+  left: 50%;
+  bottom: 50%;
+}
+
+/* Show the snackbar when clicking on a button */
+#snackbar_snackbar_heightError.show {
+  visibility: visible; /* Show the snackbar */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 3.5s;
+  animation: fadein 0.5s, fadeout 0.5s 4.5s;
+}
   
   /* Animations to fade the snackbar in and out */
   @-webkit-keyframes fadein {
