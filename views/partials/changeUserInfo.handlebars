@@ -19,27 +19,27 @@
 
                 <div>
                     <label for="field_Age">Age</label>
-                    <br><input id="field_Age" class="smallInput" type="number" name="age" placeholder="Age" maxlength="2">
+                    <br><input id="field_Age" class="smallInput" type="text" name="age" placeholder="Age" maxlength="2">
                 </div>
             </div>
 
 <div class="inputs_style">
             <div>
-                <label for="field_Height">Height (cm)</label>
-                <br><input id="field_Height" class="smallInput" type="number" name="height" placeholder="Height"
+                <label for="field_Height">Height</label>
+                <br><input id="field_Height" class="smallInput" type="text" name="height" placeholder="Height"
                     maxlength="3">
             </div>
 
             <div>
                 <label for="field_Weight">Weight</label>
-                <br><input id="field_Weight" class="smallInput" type="number" name="weight" placeholder="Weight"
+                <br><input id="field_Weight" class="smallInput" type="text" name="weight" placeholder="Weight"
                     maxlength="3">
             </div>
 </div>
 <div class="inputs_style">
             <div>
                 <label for="field_Phonenumber">Phonenumber</label>
-                <br><input id="field_Phonenumber" class="smallInput" type="number" name="phonenumber"
+                <br><input id="field_Phonenumber" class="smallInput" type="text" name="phonenumber"
                     placeholder="Phonenumber" maxlength="40">
             </div>
             <div>
@@ -58,6 +58,8 @@
             <div id="snackbar_changeUserInfo">Profile saved!</div>
             <div id="snackbar_changeUserInfoError">Wrong password!</div>
             <div id="snackbar_heightError">Check height!</div>
+            <div id="snackbar_weightError">Check weight!</div>
+            <div id="snackbar_ageError">Check age!</div>
         
         </section>
         <section id="popup-right-changeUserInfo">
@@ -75,7 +77,8 @@
                     <li><b>BMI: </b><span id="bmi">{{bmi}}</span></li><br>
                     <li><b>General health: </b><span id="general_health">Not available</span></li><br>
                     <li><b>Medications: </b><span id="medications">Not available</span></li><br>
-                 </ul>
+                    <li><b>Sleep apnea: </b><span id="bmi">Not available</span></li>
+                </ul>
             </div>
         </section>
     </form>
