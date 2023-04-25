@@ -216,16 +216,22 @@ const changeUserInfo = async (req, res) => {
 
 const requestUserData = async (req, res) => {
     const user = await User.findById(getUserID(req));
+
+    const rawAge = new Date(user.age) ?? 0;
+    const age = `${rawAge.getFullYear()}-${rawAge.getMonth() + 1}-${rawAge.getDate() + 1}` ?? "0000.00.00";
+
     const userData = {
         "firstName": user.firstName,
         "lastName": user.lastName,
         "weight": user.weight,
         "height": user.height,
         // "age": user.age,
-        "age": `${user.age.getFullYear()}-${user.age.getMonth() + 1}-${user.age.getDate()}`,
+        // "age": `${user.age.getFullYear()}-${user.age.getMonth() + 1}-${user.age.getDate()}`,
+        "age": age,
         "phonenumber": user.phonenumber,
         "email": user.email
     };
+    console.log(userData.age);
     res.status(200).json(userData);
 }
 
