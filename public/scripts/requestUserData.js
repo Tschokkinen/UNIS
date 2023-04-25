@@ -3,6 +3,7 @@ const requestUserData = async () => {
     let userData = await response.json(response);
     console.log("Response in requestUserData: ", userData);
 
+    console.log("Repsonde age: ", userData.age);
     setDefaultValue(userData);
 }
 
@@ -18,7 +19,8 @@ const setDefaultValue = (userData) => {
     document.getElementById('field_Weight').defaultValue = userData.weight != undefined || null ? userData.weight : "";
     document.getElementById('field_Email').defaultValue = userData.email != undefined || null ? userData.email : "";
     // document.getElementById('field_Age').defaultValue = userData.age != undefined || null ? userData.age : "";
-    document.getElementById('field_Age').value = userData.age != undefined || null ? userData.age : "";
+    document.getElementById('field_Age').valueAsDate = userData.age != undefined || null ? new Date(userData.age) : new Date();
+    // document.getElementById('field_Age').value = "2011-09-29";
     document.getElementById('field_Phonenumber').defaultValue = userData.phonenumber != undefined || null ? userData.phonenumber : "";
     
     // At elements on send message to support/professional : "";
