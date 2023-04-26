@@ -199,7 +199,7 @@ const changeUserInfo = async (req, res) => {
                     "lastName": lastName != "" ? lastName : user.lastName,
                     "height": height != "" ? height : user.height,
                     "weight": weight != "" ? weight : user.weight,
-                    "age": age != "" ? age : user.age,
+                    "age": age != "" ? new Date(age) : user.age,
                     "phonenumber": phonenumber != "" ? phonenumber : user.phonenumber,
                     "email": email != "" ? email : user.email,
                     // "password": hashedPwd != "" ? hashedPwd : user.password
