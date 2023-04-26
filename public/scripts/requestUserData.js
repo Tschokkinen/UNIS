@@ -3,7 +3,7 @@ const requestUserData = async () => {
     let userData = await response.json(response);
     console.log("Response in requestUserData: ", userData);
 
-    console.log("Repsonde age: ", userData.age);
+    // console.log("Repsonde age: ", userData.age);
     setDefaultValue(userData);
 }
 
