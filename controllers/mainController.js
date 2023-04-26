@@ -184,6 +184,7 @@ const changeUserInfo = async (req, res) => {
         // password
     } = req.body;
 
+    console.log("age ", age);
     // console.log("POST changeUserInfo");
     // Get current user data.
     const user = await User.findById(getUserID(req));
@@ -199,7 +200,7 @@ const changeUserInfo = async (req, res) => {
                     "lastName": lastName != "" ? lastName : user.lastName,
                     "height": height != "" ? height : user.height,
                     "weight": weight != "" ? weight : user.weight,
-                    "age": age != "" ? new Date(age) : user.age,
+                    "age": age != "" ? new Date(age) : new Date(user.age),
                     "phonenumber": phonenumber != "" ? phonenumber : user.phonenumber,
                     "email": email != "" ? email : user.email,
                     // "password": hashedPwd != "" ? hashedPwd : user.password
