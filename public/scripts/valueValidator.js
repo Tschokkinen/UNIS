@@ -75,14 +75,14 @@ const validateMoodData = (form) => {
 }
 
 const validatePassword = async () => {
-    // console.log("clicked");
+    console.log("clicked");
     let password = document.getElementById('field_Password_Changeuserinfo').value;
     let profileEdited = document.getElementById("snackbar_changeUserInfo");
     let passwordError = document.getElementById("snackbar_changeUserInfoError");
     let heightError = document.getElementById("snackbar_heightError");
     let weightError = document.getElementById("snackbar_weightError");
     let ageError = document.getElementById("snackbar_ageError");
-
+    
     const response = await fetch('/main/validatePassword', {
         method: "POST",
         body: JSON.stringify({
