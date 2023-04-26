@@ -85,11 +85,11 @@ const validateMoodData = (form) => {
 }
 
 const validatePassword = async () => {
-    // console.log("clicked");
+    console.log("clicked");
     let password = document.getElementById('field_Password_Changeuserinfo').value;
     let profileEdited = document.getElementById("snackbar_changeUserInfo");
     let profileEditError = document.getElementById("snackbar_changeUserInfoError");
-
+    // console.log("Nice");
     const response = await fetch('/main/validatePassword', {
         method: "POST",
         body: JSON.stringify({
@@ -102,7 +102,6 @@ const validatePassword = async () => {
 
     let data = await response.json(response);
     // console.log("Response: ", data.match);
-
     if (data.match) {
         document.getElementById('changeUserInfo').submit();
         profileEdited.className = "show";
