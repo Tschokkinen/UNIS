@@ -95,11 +95,10 @@ const validatePassword = async () => {
 
     let data = await response.json(response);
     // console.log("Response: ", data.match);
-    let age = document.getElementById("field_Age").value;
     let height = document.getElementById("field_Height").value;
     let weight = document.getElementById("field_Weight").value;
 
-    if (data.match && height >= 110  && height <= 245 && weight >= 30 && weight <= 250 && age <= 65 && age >= 18)  {
+    if (data.match && height >= 110  && height <= 245 && weight >= 30 && weight <= 250)  {
         document.getElementById('changeUserInfo').submit();
         profileEdited.className = "show";
    } else if (!data.match) {
@@ -111,10 +110,7 @@ const validatePassword = async () => {
     } else if (weight < 30 || weight > 250) {
         weightError.className = "show";
         setTimeout(function () { weightError.className = weightError.className.replace("show", ""); }, 4000);
-    } else if (age < 18 || age > 65) {
-        ageError.className = "show";
-        setTimeout(function () { ageError.className = ageError.className.replace("show", ""); }, 4000);
-    }
+    } 
 }
 
 /*Show alert/snackbar at Message To Professional view*/
