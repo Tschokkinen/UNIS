@@ -6,11 +6,11 @@ const { signInPage, signInPagePro, signIn, registerPage, registerUser } = requir
 
 router.route('/')
     .get(csrfProtection, signInPage)
-    .post(signIn);
+    .post(csrfProtection, signIn);
 
 router.route('/pro')
     .get(csrfProtection, signInPagePro)
-    .post(signIn);
+    .post(csrfProtection, signIn);
 
 router.route('/register')
     .get(registerPage)
