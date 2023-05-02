@@ -1,27 +1,4 @@
-/*SIGN IN page*/
-
-#snackbar_signInError {
-  visibility: hidden;
-  width: 40%;
-  min-width: 200px;
-  margin-left: -25%;
-  background-color: #9e0000bc; 
-  color: #fff; 
-  font-size: 2em;
-  text-align: center; 
-  border-radius: 5px; 
-  padding: 16px; 
-  position: fixed; 
-  z-index: 1; 
-  left: 50%;
-  bottom: 50%;
-}
-
-#snackbar_snackbar_signInError.show {
-  visibility: visible; /* Show the snackbar */
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 3.5s;
-  animation: fadein 0.5s, fadeout 0.5s 3.5s;
-}
+/*Input alerts*/
 
 /*SLEEP METER*/
 
@@ -37,8 +14,7 @@
   text-align: center; 
   border-radius: 5px; 
   padding: 16px; 
-  position: fixed; 
-  z-index: 1; 
+  position: fixed;  
   left: 50%;
   bottom: 50%;
 }
@@ -62,7 +38,6 @@
   border-radius: 5px; 
   padding: 16px; 
   position: fixed; 
-  z-index: 1; 
   left: 50%;
   bottom: 50%;
 }
@@ -88,7 +63,6 @@
   border-radius: 5px; 
   padding: 16px; 
   position: fixed; 
-  z-index: 1; 
   left: 50%;
   bottom: 50%; 
 }
@@ -113,7 +87,6 @@
   border-radius: 5px; 
   padding: 16px; 
   position: fixed; 
-  z-index: 1; 
   left: 50%;
   bottom: 50%;
 }
@@ -139,7 +112,6 @@
   border-radius: 5px; 
   padding: 16px; 
   position: fixed; 
-  z-index: 1; 
   left: 50%;
   bottom: 50%;
 }
@@ -170,7 +142,6 @@
   border-radius: 5px; 
   padding: 16px; 
   position: fixed; 
-  z-index: 1; 
   left: 50%;
   bottom: 50%;
 }
@@ -194,7 +165,6 @@
   border-radius: 5px; 
   padding: 16px; 
   position: fixed; 
-  z-index: 1; 
   left: 50%;
   bottom: 50%;
 }
@@ -218,7 +188,6 @@
   border-radius: 5px; 
   padding: 16px; 
   position: fixed; 
-  z-index: 1; 
   left: 50%;
   bottom: 50%;
 }
@@ -241,8 +210,7 @@
   text-align: center; 
   border-radius: 5px; 
   padding: 16px; 
-  position: fixed; 
-  z-index: 1; 
+  position: fixed;  
   left: 50%;
   bottom: 50%;
 }
@@ -266,7 +234,6 @@
   border-radius: 5px; 
   padding: 16px; 
   position: fixed; 
-  z-index: 1; 
   left: 50%;
   bottom: 50%;
 }
@@ -289,8 +256,7 @@
   text-align: center; 
   border-radius: 5px; 
   padding: 16px; 
-  position: fixed; 
-  z-index: 1; 
+  position: fixed;  
   left: 50%;
   bottom: 50%;
 }
@@ -310,7 +276,6 @@
   border-radius: 5px; 
   padding: 16px; 
   position: fixed; 
-  z-index: 1; 
   left: 50%;
   bottom: 50%; 
 }
@@ -337,8 +302,7 @@
   text-align: center; 
   border-radius: 5px; 
   padding: 16px; 
-  position: fixed; 
-  z-index: 1; 
+  position: fixed;  
   left: 50%;
   bottom: 50%;
   }
@@ -364,8 +328,7 @@
   text-align: center; 
   border-radius: 5px; 
   padding: 16px; 
-  position: fixed; 
-  z-index: 1; 
+  position: fixed;  
   left: 50%;
   bottom: 50%;
 }
@@ -389,8 +352,7 @@
   text-align: center; 
   border-radius: 5px; 
   padding: 16px; 
-  position: fixed; 
-  z-index: 1; 
+  position: fixed;  
   left: 50%;
   bottom: 50%;
 }
@@ -414,7 +376,6 @@
   border-radius: 5px; 
   padding: 16px; 
   position: fixed; 
-  z-index: 1; 
   left: 50%;
   bottom: 50%;
 }
@@ -438,7 +399,6 @@
   border-radius: 5px; 
   padding: 16px; 
   position: fixed; 
-  z-index: 1; 
   left: 50%;
   bottom: 50%;
 }

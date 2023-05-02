@@ -1,5 +1,4 @@
-/* The popup/modal form - hidden by default */
-
+/* Popup/modal styling - hidden by default */
 
 /*GENERAL STYLES*/
 
@@ -68,7 +67,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 3;
+    z-index: 1;
     height: 80%;
     width: 70%;
     max-width: 900px;
@@ -147,16 +146,12 @@
     align-items: center;
     appearance: none;
     box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-    box-sizing: border-box;
     display: inline-flex;
     justify-content: center;
-    list-style: none;
     overflow: hidden;
     text-align: left;
     text-decoration: none;
     transition: box-shadow .15s, transform .15s;
-    touch-action: manipulation;
-    will-change: box-shadow, transform;
     font-size: 1.1em;
     font-weight: 600;
 }
@@ -215,7 +210,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 3;
+    z-index: 1;
     height: 80%;
     width: 70%;
     max-width: 900px;
@@ -294,17 +289,12 @@
     align-items: center;
     appearance: none;
     box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-    box-sizing: border-box;
     display: inline-flex;
     justify-content: center;
-    line-height: 1;
-    list-style: none;
     overflow: hidden;
     text-align: left;
     text-decoration: none;
     transition: box-shadow .15s, transform .15s;
-    touch-action: manipulation;
-    will-change: box-shadow, transform;
     font-size: 1.1em;
     font-weight: 600;
 }
@@ -317,7 +307,7 @@
     padding: 0px 0px;
     border-radius: 5px;
     width: 40px;
-    height: 40px !important;
+    height: 40px;
     font-size: 2em;
 }
 
@@ -363,7 +353,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 3;
+    z-index: 1;
     height: 80%;
     width: 70%;
     max-width: 900px;
@@ -466,17 +456,12 @@
     align-items: center;
     appearance: none;
     box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-    box-sizing: border-box;
     display: inline-flex;
     justify-content: center;
-    line-height: 1;
-    list-style: none;
     overflow: hidden;
     text-align: left;
     text-decoration: none;
     transition: box-shadow .15s, transform .15s;
-    touch-action: manipulation;
-    will-change: box-shadow, transform;
     font-size: 1.1em;
     font-weight: 600;
 }
@@ -489,7 +474,7 @@
     padding: 0px 0px;
     border-radius: 5px;
     width: 40px;
-    height: 40px !important;
+    height: 40px;
     font-size: 2em;
 }
 
@@ -517,7 +502,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 3;
+    z-index: 1;
     height: 80%;
     width: 70%;
     max-width: 900px;
@@ -640,16 +625,11 @@
     align-items: center;
     appearance: none;
     box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-    box-sizing: border-box;
     display: inline-flex;
     justify-content: center;
-    line-height: 1;
-    list-style: none;
     overflow: hidden;
     text-align: left;
     text-decoration: none;
-    transition: box-shadow .15s, transform .15s;
-    touch-action: manipulation;
     will-change: box-shadow, transform;
     font-size: 1.1em;
     font-weight: 600;
@@ -690,7 +670,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 3;
+    z-index: 1;
     height: 80%;
     width: 70%;
     max-width: 900px;
@@ -847,17 +827,13 @@
     align-items: center;
     appearance: none;
     box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-    box-sizing: border-box;
     display: inline-flex;
     justify-content: center;
-    line-height: 1;
     list-style: none;
     overflow: hidden;
     text-align: left;
     text-decoration: none;
     transition: box-shadow .15s, transform .15s;
-    touch-action: manipulation;
-    will-change: box-shadow, transform;
     font-size: 1.1em;
     font-weight: 600;
 }
@@ -897,7 +873,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 3;
+    z-index: 1;
     height: 80%;
     width: 70%;
     max-width: 900px;
@@ -1018,17 +994,13 @@ input[type=password]:focus.smallInput {
     align-items: center;
     appearance: none;
     box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-    box-sizing: border-box;
     display: inline-flex;
     justify-content: center;
-    line-height: 1;
     list-style: none;
     overflow: hidden;
     text-align: left;
     text-decoration: none;
     transition: box-shadow .15s, transform .15s;
-    touch-action: manipulation;
-    will-change: box-shadow, transform;
     font-size: 1.1em;
     font-weight: 600;
 }
@@ -1063,7 +1035,7 @@ input[type=password]:focus.smallInput {
 
 /*INFO BANK*/
 
-.linkkikuvat{
+.infobank_link_img{
     display: flex;
     flex-wrap: wrap;
     border-radius: 5px;
@@ -1075,7 +1047,7 @@ input[type=password]:focus.smallInput {
     padding: 24px;
     background-color: white;
 }
-.linkkikuvat div{
+.infobank_link_img div{
     width: 50%;
     padding: 10px;
     box-sizing: border-box;
@@ -1084,7 +1056,7 @@ input[type=password]:focus.smallInput {
 
     
 }
-.linkkikuvat div img{
+.infobank_link_img div img{
     width: 150px;
     box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -1163,7 +1135,6 @@ input[type=password]:focus.smallInput {
     border-width: 2px;
     appearance: none;
     box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-    box-sizing: border-box;
     display: inline-flex;
     justify-content: center;
     line-height: 1;
@@ -1172,8 +1143,6 @@ input[type=password]:focus.smallInput {
     text-align: left;
     text-decoration: none;
     transition: box-shadow .15s, transform .15s;
-    touch-action: manipulation;
-    will-change: box-shadow, transform;
     font-weight: 600;
     background-color: red;
     align-self: flex-end;
@@ -1181,7 +1150,7 @@ input[type=password]:focus.smallInput {
     padding: 0px 0px;
     border-radius: 5px;
     width: 40px;
-    height: 40px !important;
+    height: 40px;
     font-size: 2em;
 }
 
