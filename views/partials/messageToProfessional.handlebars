@@ -1,7 +1,6 @@
 <div class="form-popup-messagePro" id="messageToProForm">
     <!-- Email API service at https://web3forms.com/-->
-    <form id="messageToPro" action="https://api.web3forms.com/submit" method="POST"
-        class="form-container-messagePro" method="POST">
+    <form id="messageToPro" action="https://api.web3forms.com/submit" class="form-container-messagePro" method="POST">
 
         <section id="popup-left-messagePro">
             <button type="button" class="message_send_btn cancel" id="closeBtn_left_msgPro" onclick="closeForm()"
@@ -14,12 +13,12 @@
             <input type="hidden" id="field_LastName_msgPro" name="lastName">
             <input type="hidden" id="field_Email_msgPro" name="email">
 
-            <label for="messageToProHeader" id="headers_msgPro">Topic:</label>
-            <textarea class="smallInput_webform" id="messageToProHeader" type="text" name="messageToProHeader"
+            <label for="messageToProHeader" class="headers_msgPro">Topic:</label>
+            <textarea class="smallInput_webform" id="messageToProHeader" name="messageToProHeader"
                 placeholder="Topic of message" maxlength="100" required></textarea>
             <br>
-            <label for="messageToProContent" id="headers_msgPro">Message:</label>
-            <textarea class="bigInput_webform" id="messageToProContent" type="text" name="messageToProContent"
+            <label for="messageToProContent" class="headers_msgPro">Message:</label>
+            <textarea class="bigInput_webform" id="messageToProContent" name="messageToProContent"
                 placeholder="Message to your healthcare professional. Max. 2000 characters." maxlength="2000"
                 required></textarea>
             <br>
