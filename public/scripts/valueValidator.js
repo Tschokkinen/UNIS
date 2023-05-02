@@ -142,19 +142,3 @@ function emailSentSup() {
         emailAlertSup.className = "show";
     }
 }
-
-function loagingAnimation() {
-    const inputFieldEmail = document.getElementById("email");
-    const inputFieldPW = document.getElementById("password");
-    const loadingAnim = document.getElementById("loadingAnim");
-    const passwordError = document.getElementById("snackbar_signInError");
-
-    /*Show the snackbar ONLY if both required input fields are filled*/
-    if (inputFieldEmail.value === "" || inputFieldPW.value === "") {
-        loadingAnim.style.display = "none";
-
-    }
-    else {
-        loadingAnim.className = "show";
-     }
-}

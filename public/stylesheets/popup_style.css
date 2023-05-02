@@ -1100,11 +1100,22 @@ input[type=password]:focus.smallInput {
 #popup-right-infobank {
     display: flex;
     align-items: center;
-    flex: 1;
+    flex: 4;
     background-color: rgb(151, 150, 150);
     border-radius: 5px;
     flex-direction: column;
     border-style: ridge;
+}
+
+#popup-left-infobank {
+    flex: 1.5;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border-style: ridge;
+    border-radius: 5px;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #ythslogo{
@@ -1191,8 +1202,11 @@ input[type=password]:focus.smallInput {
 }
 
 .ammattiteksti {
-    align-self: flex-start;
     font-weight: bold;
+    flex: 2;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 40px;
 }
 
 
