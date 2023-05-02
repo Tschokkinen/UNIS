@@ -15,25 +15,25 @@
                 </label>
 
                 <label class="smiley_img_sleep">
-                    <input id="" type="radio" name="sleepvalue" value="2">
+                    <input type="radio" name="sleepvalue" value="2">
                     <img title="I slept poorly. 2 points." class="smiley_img_sleep" id="orange_img_sleep" onclick="orangeMarkSleep('orange_img_sleep')"
                         src="assets/img/sleepMeterImg/orange_sleep.png" alt="I slept poorly.">
                 </label>
 
                 <label class="smiley_img_sleep">
-                    <input id="" type="radio" name="sleepvalue" value="3">
+                    <input type="radio" name="sleepvalue" value="3">
                     <img title="I slept moderately. 3 points." class="smiley_img_sleep" id="yellow_img_sleep" onclick="yellowMarkSleep('yellow_img_sleep')"
                         src="assets/img/sleepMeterImg/yellow_sleep.png" alt="I slept moderately.">
                 </label>
 
                 <label class="smiley_img_sleep">
-                    <input id="" type="radio" name="sleepvalue" value="4">
+                    <input type="radio" name="sleepvalue" value="4">
                     <img title="I slept good. 4 points." class="smiley_img_sleep" id="green2_img_sleep" onclick="green2MarkSleep('green2_img_sleep')"
                         src="assets/img/sleepMeterImg/green2_sleep.png" alt="I slept good.">
                 </label>
 
                 <label class="smiley_img_sleep">
-                    <input id="" type="radio" name="sleepvalue" value="5">
+                    <input type="radio" name="sleepvalue" value="5">
                     <img title="I slept very good. 5 points." class="smiley_img_sleep" id="green1_img_sleep" onclick="green1MarkSleep('green1_img_sleep')"
                         src="assets/img/sleepMeterImg/green1_sleep.png" alt="I slept very good.">
                 </label>
@@ -42,14 +42,13 @@
             <button form="sleepMeter" type="submit" class="sleep_save_btn">Save</button>
             <div id="snackbar_sleepMeter">Sleep saved!</div>
             <div id="snackbar_sleepMeterError">Select sleep quality!</div>
-            {{!-- <button form="sleepMeter" type="submit" class="sleep_save_btn" onclick="closeForm()">Save</button> --}}
         </section>
 
         <section id="popup-right-sleep">
             <button type="button" class="sleep_save_btn cancel" id="closeBtn_right_sleep" onclick="closeForm()"
                 aria-hidden="true">&times;</button>
             <label for="sleepMeter_input" class="meter_notes_labels">Add notes</label>
-            <textarea id="sleepMeter_input" class="bigInput_meters" type="text" name="sleepmetertext" placeholder="Add notes. Max. 500 characters."
+            <textarea id="sleepMeter_input" class="bigInput_meters" name="sleepmetertext" placeholder="Add notes. Max. 500 characters."
                 maxlength="500"></textarea>
         </section>
     </form>

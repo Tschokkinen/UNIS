@@ -31,7 +31,6 @@ body {
     flex: 1.5;
     background-color: white;
     display: flex;
-    align-items: left;
     border-style: ridge;
     border-radius: 5px;
     flex-direction: column;

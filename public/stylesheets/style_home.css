@@ -3,7 +3,6 @@
 }
 
 body {
-    margin: 0;
     width: 100%;
     margin-top: 16px;
     background-color: #7494AC;
@@ -29,6 +28,10 @@ html {
     border-color: black;
     border-width: 2px;
     border-radius: 5px;
+}
+
+a {
+    text-decoration: none;
 }
 
 header {
@@ -60,9 +63,8 @@ header {
 header nav ul {
     display: flex;
     list-style-type: none;
-    padding-left: 10%;
+    padding-left: 5%;
     align-items: center;
-    flex-direction: row;
 }
 
 header nav li {
@@ -101,7 +103,7 @@ header nav a {
     align-items: center;
     background-color: #c543470f;
     border-radius: 3px;
-    border-width: 1px;
+    border-width: 2px;
     box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
     box-sizing: border-box;
     color: #C54347;
@@ -110,11 +112,8 @@ header nav a {
     height: 48px;
     width: 48px;
     justify-content: center;
-    list-style: none;
     transition: box-shadow .15s, transform .15s;
-    touch-action: manipulation;
-    will-change: box-shadow, transform;
-    font-size: 0.8em;
+    font-size: 0.7em;
     font-weight: 600;
     margin-top: 10px;
 }
@@ -126,8 +125,11 @@ header nav a {
 .logOutButton:hover {
     box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
     transform: translateY(-2px);
-    color: rgb(244, 0, 0);
     border-color: red;
+}
+
+.logOutButton a:hover {
+    color: red;
 }
 
 .logOutButton:active {
@@ -364,6 +366,7 @@ button a {
     margin-right: 2em;
     margin-top: 1.5em;
     margin-left: -16px;
+    line-height: 2.5;
 }
 
 .profile_details_box {
@@ -496,7 +499,7 @@ footer {
 
     .unislogo {
         height: 80px;
-        margin-right: auto;
+        margin-right: -72px;
     }
 
     #UNIS_main_header{
