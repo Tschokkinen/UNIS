@@ -41,6 +41,7 @@ app.use(logger);
 
 app.use(express.json());
 app.use(cookieParser());
+// const csrfProtection = csrf({ cookie: true })
 
 // Is cross origin (CORS) even needed???
 // app.use(cors(corsOptions));
@@ -75,7 +76,6 @@ app.set('views', './views');
 
 // Path for static files
 app.use('/', express.static(path.join(__dirname, 'public/')));
-
 app.use('/', require('./routes/index'));
 app.use('/pro', require('./routes/index'));
 // Endpoints beyond this middleware require authentication

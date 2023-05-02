@@ -15,7 +15,10 @@ const main = async (req, res) => {
     const lastName = user.lastName;
     const height = user.height ?? 0;
     const weight = user.weight ?? 0;
-    const age = user.age ?? 0;
+    // const age = user.age ?? 0;
+    const rawAge = new Date(user.age) ?? 0;
+    const age = `${rawAge.getDate()}.${rawAge.getMonth() + 1}.${rawAge.getFullYear()}` ?? "0.0.0000";
+    console.log(`Formatted birthdate ${age}`);
     const bmi = calculateBMI(height, weight);
 
     const logout = "/main/logout";
@@ -181,6 +184,7 @@ const changeUserInfo = async (req, res) => {
         // password
     } = req.body;
 
+    console.log("age ", age);
     // console.log("POST changeUserInfo");
     // Get current user data.
     const user = await User.findById(getUserID(req));
@@ -196,7 +200,7 @@ const changeUserInfo = async (req, res) => {
                     "lastName": lastName != "" ? lastName : user.lastName,
                     "height": height != "" ? height : user.height,
                     "weight": weight != "" ? weight : user.weight,
-                    "age": age != "" ? age : user.age,
+                    "age": age != "" ? new Date(age) : new Date(user.age),
                     "phonenumber": phonenumber != "" ? phonenumber : user.phonenumber,
                     "email": email != "" ? email : user.email,
                     // "password": hashedPwd != "" ? hashedPwd : user.password
@@ -213,15 +217,22 @@ const changeUserInfo = async (req, res) => {
 
 const requestUserData = async (req, res) => {
     const user = await User.findById(getUserID(req));
+
+    const rawAge = new Date(user.age) ?? 0;
+    const age = `${rawAge.getFullYear()}-${rawAge.getMonth() + 1}-${rawAge.getDate() + 1}` ?? "0000.00.00";
+
     const userData = {
         "firstName": user.firstName,
         "lastName": user.lastName,
         "weight": user.weight,
         "height": user.height,
-        "age": user.age,
+        // "age": user.age,
+        // "age": `${user.age.getFullYear()}-${user.age.getMonth() + 1}-${user.age.getDate()}`,
+        "age": age,
         "phonenumber": user.phonenumber,
         "email": user.email
     };
+    console.log(userData.age);
     res.status(200).json(userData);
 }
 
