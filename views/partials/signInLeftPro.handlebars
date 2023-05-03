@@ -5,6 +5,7 @@
 
 <!-- Log in form: Email and password -->
 <form id="formID" class="form" action="/" method="POST">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
     <label for="email">Email</label>
     <input class="big-input" id="email" type="email" name="email" placeholder="Email" required>
 
