@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { isUser, isProfessional } = require('../middleware/roleAuth');
 
 const {
     chart,
@@ -12,7 +13,7 @@ const {
 } = require('../controllers/chartsController');
 
 router.get('/', chart); // Chart page.
-router.get('/:id', patientIDCookie) // Pro chart.
+router.get('/:id', isProfessional, patientIDCookie) // Pro chart.
 
 router.get('/data/getSleepData', getSleepData);
 router.get('/data/getMoodData', getMoodData);
