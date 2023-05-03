@@ -1063,7 +1063,7 @@ input[type=password]:focus.smallInput {
 
 /*INFO BANK*/
 
-.linkkikuvat{
+.linkimages{
     display: flex;
     flex-wrap: wrap;
     border-radius: 5px;
@@ -1075,7 +1075,7 @@ input[type=password]:focus.smallInput {
     padding: 24px;
     background-color: white;
 }
-.linkkikuvat div{
+.linkimages div{
     width: 50%;
     padding: 10px;
     box-sizing: border-box;
@@ -1084,19 +1084,24 @@ input[type=password]:focus.smallInput {
 
     
 }
-.linkkikuvat div img{
+.linkimages div img{
     width: 150px;
     box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 #pop_up_header_infobank_right {
     margin-top: -40px;
-   
 }
+
+#pop_up_header_infobank_left {
+    margin-top: -40px;
+}
+
 #popup-right-infobank {
     display: flex;
     align-items: center;
     flex: 4;
-    background-color: rgb(151, 150, 150);
+    background-color: #7494ac57;
     border-radius: 5px;
     flex-direction: column;
     border-style: ridge;
@@ -1166,6 +1171,12 @@ input[type=password]:focus.smallInput {
     transform: translateY(2px);
 }
 
+#closeBtn_left_infobank {
+    opacity: 0;
+    cursor: default;
+    pointer-events: none;
+}
+
 .infobank_cancel_btn {
     color: white;
     border: none;
@@ -1196,7 +1207,7 @@ input[type=password]:focus.smallInput {
     font-size: 2em;
 }
 
-.ammattiteksti {
+.protext {
     font-weight: bold;
     flex: 2;
     text-align: center;
@@ -1434,5 +1445,54 @@ input[type=password]:focus.smallInput {
     input[type=password].smallInput {
         width: 90%;
     }
+
+    /*INFOBANK*/
+
+    .container-infobank {
+        flex-direction: column;
+    }
+
+    .form-popup-infobank {
+        margin-bottom: 25%;
+        max-height: 800px;
+    }
+
+    #closeBtn_left_infobank {
+        opacity: 1;
+        cursor: pointer;
+        pointer-events: initial;
+    }
+
+    .infobank_cancel_btn {
+        opacity: 0;
+        cursor: default;
+        pointer-events: none;
+    }
+
+    #pop_up_header_infobank_left {
+        margin-top: 0px;
+    }
+
+    .linkimages{
+        flex-direction: column;
+    }
+
+    #ythslogo{
+        width: 150px;
+    }
+
+    #pop_up_header_infobank_right {
+        margin-left: 40px;
+    }
+
+    .protext {
+        margin-bottom: 24px;
+    }
+
+    .linkimages{
+        padding: 16px;
+        margin-bottom: 16px;
+    }
+
 }
 
