@@ -3,6 +3,7 @@
 }
 
 body {
+    margin: 0;
     width: 100%;
     margin-top: 16px;
     background-color: #7494AC;
