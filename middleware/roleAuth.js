@@ -25,7 +25,7 @@ const isUser = async (req, res, next) => {
         if (roles[i].name === "user") {
             next();
             return;
-        } 
+        }
     }
 
     res.status(403).send({ message: "Require User Role!" });

@@ -26,7 +26,7 @@ const userSchema = new Schema({
         type: Number,
         required: false
     },
-    phonenumber: { 
+    phonenumber: {
         type: String, // Using Number leads to having first zero dropped form the number!
         required: false
     },
@@ -70,7 +70,7 @@ userSchema.statics.validatePassword = async function (userID, password) {
     if (!match) {
         return false;
     }
-    
+
     return true;
 }
 

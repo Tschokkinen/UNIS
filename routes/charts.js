@@ -1,10 +1,10 @@
 const router = require('express').Router();
 
-const { 
-    chart, 
+const {
+    chart,
     patientIDCookie,
-    getSleepData, 
-    getMoodData, 
+    getSleepData,
+    getMoodData,
     getBloodpressureData,
     getPulseAndHRV,
     getCommentsData,

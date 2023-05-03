@@ -52,7 +52,7 @@ header {
     margin-top: 2.6em;
 }
 
-#UNIS_main_header{
+#UNIS_main_header {
     font-size: 1.5em;
     margin-right: auto;
     margin-left: 3.5em;
@@ -503,9 +503,9 @@ footer {
         margin-right: -72px;
     }
 
-    #UNIS_main_header{
-       visibility: hidden;
-       margin-left: -8px;
+    #UNIS_main_header {
+        visibility: hidden;
+        margin-left: -8px;
     }
 
     header nav li {

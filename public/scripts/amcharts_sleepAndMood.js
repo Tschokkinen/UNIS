@@ -100,10 +100,10 @@ am5.ready(function () {
             })
         }));
 
-        series.strokes.template.setAll({ strokeWidth: 2 })
+    series.strokes.template.setAll({ strokeWidth: 2 })
 
 
-        series.get("tooltip").get("background").set("fillOpacity", 0.5);
+    series.get("tooltip").get("background").set("fillOpacity", 0.5);
 
     const series2 = chart.series.push(am5xy.LineSeries.new(root, {
         name: "Series 2",

@@ -69,7 +69,7 @@ const signIn = async (req, res) => {
             if (roles[0].name === "professional") {
                 res.status(200).redirect('/mainPro');
             }
-            
+
         } else {
             res.redirect('/'); // Display error message
         }

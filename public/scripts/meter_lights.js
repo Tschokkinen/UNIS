@@ -3,7 +3,7 @@ const moodMeterLight = document.getElementById('mood_meter_light');
 const bloodpressureMeterLight = document.getElementById('bloodpressure_meter_light');
 
 const setMeterLights = async () => {
-    const response = await fetch ('/main/meterValues');
+    const response = await fetch('/main/meterValues');
     const data = await response.json();
     console.log("Data: ", data);
 

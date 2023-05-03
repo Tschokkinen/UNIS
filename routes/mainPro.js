@@ -2,10 +2,10 @@ const router = require('express').Router();
 const { isUser, isProfessional } = require('../middleware/roleAuth');
 const { clearChartCookie } = require('../middleware/clearCookies');
 
-const { 
+const {
     mainPro,
     getPatients,
-    messageToProfessional, 
+    messageToProfessional,
     messageToSupport
 } = require('../controllers/mainController');
 

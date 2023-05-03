@@ -437,8 +437,8 @@
 }
 
 .bp_labels {
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Set a style for the submit/login button */
@@ -1036,7 +1036,7 @@ input[type=date]:focus.smallInput {
 
 /*INFO BANK*/
 
-.infobank_link_img{
+.infobank_link_img {
     display: flex;
     flex-wrap: wrap;
     border-radius: 5px;
@@ -1048,23 +1048,27 @@ input[type=date]:focus.smallInput {
     padding: 24px;
     background-color: white;
 }
-.infobank_link_img div{
+
+.infobank_link_img div {
     width: 50%;
     padding: 10px;
     box-sizing: border-box;
     line-height: 5;
     background-color: white;
 
-    
+
 }
-.infobank_link_img div img{
+
+.infobank_link_img div img {
     width: 150px;
     box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 #pop_up_header_infobank_right {
     margin-top: -40px;
-   
+
 }
+
 #popup-right-infobank {
     display: flex;
     align-items: center;
@@ -1086,7 +1090,7 @@ input[type=date]:focus.smallInput {
     justify-content: center;
 }
 
-#ythslogo{
+#ythslogo {
     width: 300px;
 }
 
@@ -1405,4 +1409,3 @@ input[type=date]:focus.smallInput {
         width: 90%;
     }
 }
-

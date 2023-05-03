@@ -90,7 +90,7 @@ am5.ready(function () {
             })
         }));
 
-        series.strokes.template.setAll({ strokeWidth: 2 })
+    series.strokes.template.setAll({ strokeWidth: 2 })
 
 
     series.get("tooltip").get("background").set("fillOpacity", 0.5);

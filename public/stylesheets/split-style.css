@@ -56,41 +56,41 @@ body {
     height: 8px;
     width: 8px;
     padding: 2px;
-  }
-  
-  .arrow:hover {
+}
+
+.arrow:hover {
     border-color: rgb(85, 0, 255);
     text-shadow: 1px 1px 2px #3b3b3b;
-  }
-  
-  .left {
+}
+
+.left {
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
-  }
+}
 
-  .sign_in_player {
+.sign_in_player {
     display: flex;
     flex-wrap: wrap;
-  }
+}
 
-  .loading_anim {
+.loading_anim {
     display: none;
-  }
-  
-  #backSignin-arrow-text {
+}
+
+#backSignin-arrow-text {
     font-size: 1.1em;
     font-weight: 700;
     color: black;
-  }
+}
 
-  #backSignin-arrow-text:hover {
+#backSignin-arrow-text:hover {
     color: rgb(85, 0, 255);
     text-shadow: 0px 1px 1px #3b3b3b;
-  }
+}
 
-  .back-link {
+.back-link {
     text-decoration: none;
-  }
+}
 
 .unis_app_header {
     font-size: 1.2em;
@@ -204,17 +204,17 @@ form label {
 }
 
 @media screen and (max-width:750px) {
-  
+
     #container {
         flex-direction: column;
     }
-  
+
     .left-side {
         order: 1;
     }
-  
+
     .right-side {
         order: 2;
         justify-content: space-around;
     }
-  }
+}
