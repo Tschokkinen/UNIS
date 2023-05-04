@@ -33,14 +33,14 @@
         <img id="sleep_img" src="assets/img/sleep.png" alt="Sleep meter.">
         <br><span>Sleep meter<img title="You have saved results for today." class="light_img" id="sleep_meter_light"
                 src="assets/img/red_light.png" alt="Sleep meter. Green light. Measured today."></span></button>
-                
+
     {{> (sleepMeter) }}
 
     <button title="Record your current mood" class="main_function_measure" onclick="openFormMood()">
         <!-- mood_img source: Pixabay, Clker-Free-Vector-Images. https://pixabay.com/fi/users/clker-free-vector-images-3736/ -->
         <!-- green_light_img source: Pixabay, OpenClipart-Vectors. https://pixabay.com/fi/users/openclipart-vectors-30363/ -->
         <img id="mood_img" src="assets/img/emotions.png" alt="Mood meter.">
-       <br><span>Mood meter<img title="You have saved results for today." class="light_img" id="mood_meter_light"
+        <br><span>Mood meter<img title="You have saved results for today." class="light_img" id="mood_meter_light"
                 src="assets/img/red_light.png" alt="Mood meter. Green light. Measured today."></span></button>
 
     {{> (moodMeter) }}
@@ -49,8 +49,9 @@
         <!-- blood_pressure_img source: Pixabay, MostafaElTurkey36. https://pixabay.com/fi/users/mostafaelturkey36-13328910/ -->
         <!-- red_light_img source: Pixabay, OpenClipart-Vectors. https://pixabay.com/fi/users/openclipart-vectors-30363/ -->
         <img id="blood_pressure_img" src="assets/img/blood_pressure.png" alt="Blood pressure measurements.">
-        <br><span id="bp_btn_text">Blood pressure<img title="No saved results for today." class="light_img" id="bloodpressure_meter_light"
-                src="assets/img/red_light.png" alt="Blood pressure. red light. Not measured today."></span></button>
+        <br><span id="bp_btn_text">Blood pressure<img title="No saved results for today." class="light_img"
+                id="bloodpressure_meter_light" src="assets/img/red_light.png"
+                alt="Blood pressure. red light. Not measured today."></span></button>
 
     {{> (bloodpressureMeter) }}
 
@@ -72,5 +73,5 @@
         <br><span>Infobank</span></button>
 
     {{> (infoBank) }}
-        
+
 </section>

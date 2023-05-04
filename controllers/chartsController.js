@@ -26,7 +26,7 @@ const chart = async (req, res) => {
     } catch {
         decoded = null;
     }
-    
+
     // If chartCookie doesn't exist, user is "user"
     if (!decoded) {
         const id = getUserID(req);
@@ -39,7 +39,7 @@ const chart = async (req, res) => {
                 expiresIn: '1h'
             }
         );
-    
+
         res.cookie('chartCookie', chartToken, { httpOnly: true });
 
         backAddress = '/main';
@@ -50,7 +50,7 @@ const chart = async (req, res) => {
     }
 
     // res.status(200).json({ 'message': 'success '});
-    
+
     res.render(
         'charView',
         {

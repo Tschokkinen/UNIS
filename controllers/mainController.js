@@ -52,7 +52,7 @@ const mainPro = async (req, res) => {
     const user = await User.findById(getUserID(req));
     const firstName = user.firstName;
     const lastName = user.lastName;
-    
+
     const logout = "/mainPro/logout";
 
     console.log("User: ", user);
@@ -94,7 +94,7 @@ const getPatients = async (req, res) => {
     }
     console.log("Patients: ", patientNames);
     res.status(200).json(patientNames);
-    
+
 }
 
 // Save sleep data to MongoDB.

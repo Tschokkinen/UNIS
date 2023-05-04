@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const bloodPressureSchema = new Schema ({
+const bloodPressureSchema = new Schema({
     systolicPressure: {
         type: Number,
         required: true

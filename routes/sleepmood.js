@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
-const { 
-    sleepmoodView, 
+const {
+    sleepmoodView,
     getSleepData,
     getMoodData
 } = require('../controllers/chartsController');

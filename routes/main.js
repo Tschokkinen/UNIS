@@ -2,13 +2,13 @@ const router = require('express').Router();
 const { isUser, isProfessional } = require('../middleware/roleAuth');
 const { clearChartCookie } = require('../middleware/clearCookies');
 
-const { 
-    main, 
-    saveSleep, 
-    saveMood, 
-    saveBloodpressure, 
-    messageToProfessional, 
-    messageToSupport, 
+const {
+    main,
+    saveSleep,
+    saveMood,
+    saveBloodpressure,
+    messageToProfessional,
+    messageToSupport,
     changeUserInfo,
     requestUserData,
     validatePassword,

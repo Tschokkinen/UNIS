@@ -48,7 +48,7 @@ const validatePressureData = (form) => {
 const validateSleepData = (form) => {
     let sleepAlertSaved = document.getElementById("snackbar_sleepMeter");
     let sleepAlertError = document.getElementById("snackbar_sleepMeterError");
-    
+
     // console.log("form.sleepValue: ", form.sleepvalue.value);
     if (form.sleepvalue.value === '') {
         sleepAlertError.className = "show";
@@ -63,7 +63,7 @@ const validateSleepData = (form) => {
 const validateMoodData = (form) => {
     let moodAlertSaved = document.getElementById("snackbar_moodMeter");
     let moodAlertError = document.getElementById("snackbar_moodMeterError");
-    
+
     if (form.moodvalue.value === '') {
         moodAlertError.className = "show";
         setTimeout(function () { moodAlertError.className = moodAlertError.className.replace("show", ""); }, 4000);
@@ -82,7 +82,7 @@ const validatePassword = async () => {
     let heightError = document.getElementById("snackbar_heightError");
     let weightError = document.getElementById("snackbar_weightError");
     let ageError = document.getElementById("snackbar_ageError");
-    
+
     const response = await fetch('/main/validatePassword', {
         method: "POST",
         body: JSON.stringify({
@@ -98,10 +98,10 @@ const validatePassword = async () => {
     let height = document.getElementById("field_Height").value;
     let weight = document.getElementById("field_Weight").value;
 
-    if (data.match && height >= 110  && height <= 245 && weight >= 30 && weight <= 250)  {
+    if (data.match && height >= 110 && height <= 245 && weight >= 30 && weight <= 250) {
         document.getElementById('changeUserInfo').submit();
         profileEdited.className = "show";
-   } else if (!data.match) {
+    } else if (!data.match) {
         passwordError.className = "show";
         setTimeout(function () { passwordError.className = passwordError.className.replace("show", ""); }, 4000);
     } else if (height < 110 || height > 245) {
@@ -110,7 +110,7 @@ const validatePassword = async () => {
     } else if (weight < 30 || weight > 250) {
         weightError.className = "show";
         setTimeout(function () { weightError.className = weightError.className.replace("show", ""); }, 4000);
-    } 
+    }
 }
 
 /*Show alert/snackbar at Message To Professional view*/

@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const { isUser, isProfessional } = require('../middleware/roleAuth');
 
-const { 
-    chart, 
+const {
+    chart,
     patientIDCookie,
-    getSleepData, 
-    getMoodData, 
+    getSleepData,
+    getMoodData,
     getBloodpressureData,
     getPulseAndHRV,
     getCommentsData,

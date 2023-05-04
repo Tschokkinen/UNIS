@@ -9,7 +9,7 @@ const checkPasswordStrength = (currentPassword) => {
     if (strongPassword.test(currentPassword)) {
         password.style.backgroundColor = '#90EE90';
         passwordLabel.textContent = "Password - Strength: Strong";
-    } else if (mediumPassword.test(currentPassword)){
+    } else if (mediumPassword.test(currentPassword)) {
         password.style.backgroundColor = '#ADD8E6';
         passwordLabel.textContent = "Password - Strength: Medium";
     } else {
