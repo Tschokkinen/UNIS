@@ -10,8 +10,8 @@ UNIS is an experimental web-based application meant for sleep apnea patients. Th
 <h2>Try UNIS</h2>
 You can try UNIS on Render: https://unis-816d.onrender.com/ (mind the long loading time)<br>
 If you don't want to create your own account, you can use the demo account:<br>
-Email: pertsa@teboil.com<br>
-Password: 1
+<b>Email:</b> pertsa@teboil.com<br>
+<b>Password:</b> 1
 
 <h2>Developers and main areas of responsibility:</h2>
 <b>Iira Salo:</b> Front-end (HTML, CSS, JavaScript)<br>
