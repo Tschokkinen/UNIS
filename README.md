@@ -5,7 +5,11 @@
   <b>Version:</b> 0.1<br>
 
 <h2>About</h2>
-UNIS is an experimental web-based application meant for sleep apnea patients. The application was done as a school project, but all HTML, CSS, and JavaScript was self-written. Teachers only provided rough pointers. UNIS will be updated and HTML, CSS, and JavaScript refactored during the summer of 2023.
+UNIS is an experimental web-based application meant for sleep apnea patients. The application was done as a school project, but all HTML, CSS, and JavaScript was self-written. Teachers only provided rough pointers.
+<br><br>
+Working on this project taught me quite a lot about the importance of a good user interface. During the development we conducted some user tests and observed how people tried to use our application: some tests were carried through by using Figma prototypes and some with actual web-based prototypes. We found out that some of the UI elements and user tasks we thought were self-explanatory were actually far from it. We finetuned the front-end according to the gathered data and came up with a pretty solid UI – at least that's how I feel. :) 
+<br><br>
+The project was documentation heavy because we created a product requirements document for the project and for testing a test plan and a report based on our findings. The documents helped quite a lot with the development process and without those we couldn't have reached the results we did.
 
 <h2>Try UNIS</h2>
 You can try UNIS on Render: https://unis-816d.onrender.com/ (mind the long loading time)<br><br>
