@@ -5,7 +5,7 @@
   <b>Version:</b> 0.1<br>
 
 <h2>About</h2>
-UNIS is an experimental web-based application meant for sleep apnea patients. The application was done as a school project, but all HTML, CSS, and JavaScript was self-written. Teachers only provided rough pointers.
+UNIS is an experimental web-based application meant for sleep apnea patients. The application was done as a university project, but all HTML, CSS, and JavaScript was self-written. Teachers only provided rough pointers.
 <br><br>
 Working on this project taught me quite a lot about the importance of a good user interface. During the development we conducted some user tests and observed how people tried to use our application: some tests were carried through by using Figma prototypes and some with actual web-based prototypes. We found out that some of the UI elements and user tasks we thought were self-explanatory were actually far from it. We finetuned the front-end according to the gathered data and came up with a pretty solid UI – at least that's how I feel. :) 
 At the end of the project we also did some System and Acceptance testing.<br><br>
